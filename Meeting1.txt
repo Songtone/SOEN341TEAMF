@@ -1,6 +1,8 @@
-Hey!
+Everyone was here!(Except unknown person)
 
 Discussed:
 -What kind of framework we are using
 -MySQL
 -Javascript
+-How the web application is going to work
+-
