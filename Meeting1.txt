@@ -1,1 +1,6 @@
 Hey!
+
+Discussed:
+-What kind of framework we are using
+-MySQL
+-Javascript
