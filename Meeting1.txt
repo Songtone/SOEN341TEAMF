@@ -8,9 +8,9 @@ Discussed:
   - MYSQL, javascript
   
 -How the web application is going to work:
-  - 2 tire aricecture components we can use  
+  - 2 tire architecture components we can use  
   
-Taks to complete before next meeting:
+Tasks to complete before next meeting:
 -Research the types of framework to use for this project.
 -Overview of the DBMS 2 tire Arcitecture for implementing the web app
 -Learn Github / familarize with Scrum development stages (if nessesary).
