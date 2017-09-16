@@ -1,8 +1,17 @@
-Everyone was here!(Except unknown person)
+Note: Everyone was here!(Except for Li Sun)
 
 Discussed:
--What kind of framework we are using
--MySQL
--Javascript
--How the web application is going to work
--
+-What kind of framework we are using:
+  - Front end and backend componenets
+  
+-Programing laguages we could implement (tentative for now):
+  - MYSQL, javascript
+  
+-How the web application is going to work:
+  - 2 tire aricecture components we can use  
+  
+Taks to complete before next meeting:
+-Research the types of framework to use for this project.
+-Overview of the DBMS 2 tire Arcitecture for implementing the web app
+-Learn Github / familarize with Scrum development stages (if nessesary).
+-Research Kijiji to learn basic features of the site.
