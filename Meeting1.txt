@@ -1,4 +1,5 @@
 Note: Everyone was here!(Except for Li Sun)
+Meeting duration: 1 hr 30 mins
 
 Discussed:
 -What kind of framework we are using:
