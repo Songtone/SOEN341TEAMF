@@ -1,0 +1,15 @@
+FEATURES:
+
+-Register/Sign In
+-Search Bar (Search Field, Type of Transaction, Geographical Area)
+-Navigation Buttons (Home, Categories, Profile)
+-Featured Items for Sale
+-Main Categories
+  -Sub Categories
+
+Implemtintaton decisions:
+Software Arictecture : 3-tire DBMS 
+Web App Framework: Meteor
+Frontend programing- HTML5, CSS and some JS
+Middle layer programing- JS
+Backend programing- MongoDB
