@@ -1,12 +1,40 @@
 <head>
   <title>soen341webapp</title>
+    <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <nav class="blue lighten-2">
+    <div class="container">
+      <div class="nav-wrapper">
+          <a href="#" class="brand-logo center">
+              TITLE
+          </a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li class="nav-item">
+                  {{> loginButtons}}
+              </li>
 
+          </ul>
+      </div>
+      </div>
+  </nav>
+
+{{> search }}
 
 </body>
 
+<Template name="search">
+    <form>
+        <div class="container">
+            
+        <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+        </div>
+        </div>
+    </form>
+</Template>
 
 
