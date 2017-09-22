@@ -7,34 +7,53 @@
   <nav class="blue lighten-2">
     <div class="container">
       <div class="nav-wrapper">
-          <a href="#" class="brand-logo center">
-              TITLE
-          </a>
+
+          <a href="#" class="brand-logo center">Classifieds Site-TeamF</a>
+
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="nav-item">
                   {{> loginButtons}}
               </li>
-
           </ul>
+
       </div>
-      </div>
+    </div>
   </nav>
+
 
 {{> search }}
 
+
+  <div class ="container">
+      <h6>Inserted Database Items :</h6>
+      <ul class ="collection">
+       {{#each ads}} <!-- this is connecting to nodes from main.js file function , loop over items-->
+          {{> testList}}
+       {{/each}}
+      </ul>
+  </div>
+
 </body>
 
+<!------------------------------Templates------------------------------------>
 <Template name="search">
     <form>
         <div class="container">
 
         <div class="input-field">
+
             <input placeholder="search" id="search" type="search" required>
             <label class="label-icon" for="search"><i class="material-icons"></i></label>
             <i class="material-icons">close</i>
+
         </div>
         </div>
     </form>
 </Template>
 
 
+<!--Use this to test the db values-->
+
+<Template name ="testList">
+    <li class ="collection-item">{{text}}</li>
+</Template>
