@@ -3,8 +3,8 @@
     <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body>
-  <nav class="blue lighten-2">
+<body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
+  <nav class="blue darken-3">
     <div class="container">
       <div class="nav-wrapper">
 
@@ -24,15 +24,75 @@
 {{> search }}
 
 
-  <div class ="container">
+    <!-- this is something that seb and nick will be adding in the feature list-->
+  <!--<div class ="container">
       <h6>Inserted Database Items :</h6>
-      <ul class ="collection">
-       {{#each ads}} <!-- this is connecting to nodes from main.js file function , loop over items-->
-          {{> testList}}
+      <ul class ="collection">-->
+       <!--{{#each ads}}--> <!-- this is connecting to nodes from main.js file function , loop over items-->
+          <!--{{> testList}}
        {{/each}}
       </ul>
-  </div>
+  </div>-->
+    
+    <main>
+        <div class="container">
+            <div class="center">
+                <h4>
+                    List here
+                </h4>
+                <div class="row">
+                    <div class="col s4">
+                        <ul>
+                            <li>
+                                list1
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col s4">
+                        <ul>
+                            <li>
+                                list2
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col s4">
+                        <ul>
+                            <li>
+                                list3
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+             
+    </main>
 
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">MakerHub</h5>
+                    <p class="grey-text text-lighten-4">About</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Information</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright MakerHub
+                <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 <!------------------------------Templates------------------------------------>
@@ -56,4 +116,9 @@
 
 <Template name ="testList">
     <li class ="collection-item">{{text}}</li>
+</Template>
+
+<!--Footer template-->
+<Template name="footer">
+
 </Template>
