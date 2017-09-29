@@ -1,59 +1,128 @@
 <head>
-  <title>soen341webapp</title>
+    <title>MakerHub</title>
     <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
 </head>
 
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
 
+
+
 {{> nav }}
-{{>search }}
 
-    <main>
-            <ul class ="collection">
-                <div class="row">
-                    <div class="col m4">
-                        <div class="card light-blue darken-3"> <!--add the cards to pull from database -->
-                            <div class="card-content white-text">
-                                <h5>Heading</h5>
-                                <h4 class="card-title">Ad Title</h4>
-                                <p>Description</p>
-                                <br>
-                                <p class="black-text">post by User</p>
-                                <br>
-                                <p>Date: 1111111</p>
-                            </div>
-                            <div class="card-action"> <!-- the items in the card-->
-                                <a href="#">I also want this</a>
-                                <a href="#">I will make this</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m4">
-                        <div class="card light-blue darken-3"> <!--add the cards to pull from database -->
-                            <div class="card-content white-text">
-                                <h5>Heading</h5>
-                                <h4 class="card-title">Ad Title</h4>
-                                <p>Description</p>
-                                <br>
-                                <p class="black-text">post by User</p>
-                                <br>
-                                <p>Date: 1111111</p>
-                            </div>
-                            <div class="card-action"> <!-- the items in the card-->
-                                <a href="#">I also want this</a>
-                                <a href="#">I will make this</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ul>
+{{> search }}
 
 
-    </main>
+  <div class ="container">
+      <h6>Inserted Database Items :</h6>
+      <ul class ="collection">
+       {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
+       <div class="row">
+        <div class="col m4">
+          <div class="card light-blue darken-3">
+            <div class="card-content white-text">
+              <h5>{{category}}</h5>
+              <h4 class="card-title">{{title}}</h4>
+              <p>{{desc}}</p>
+              <br>
+              <p class="black-text">post by {{userId}}</p>
+              <br>
+              <p>{{createdAt}}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">I also want this</a>
+              <a href="#">I will make this</a>
+            </div>
+          </div>
+        </div>
+        </div>
 
 
-{{> addPost}} <!-- add post modal template -->
+          
+          
+       {{/each}}
+      </ul>
+  </div>
+  
+  
+  
+  
+  
+  
+    
+ {{> footer }}
+ 
+ {{> addPost}} <!-- add post modal template -->
+ <script>
+  $(document).ready(function(){
+    $('.modal').modal();
+  });
+  
+  $(document).ready(function() {
+    $('select').material_select();
+  });
+         
+ </script>
+ 
+ </body>
 
+<!------------------------------Templates (to put in seperate folder)------------------------------------>
+
+
+<Template name="nav">
+  <nav class="blue darken-3">
+    <div class="container">
+      <div class="nav-wrapper">
+
+          <a href="#" class="brand-logo center">MakerHub</a>
+
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li class="nav-item">
+                  {{> loginButtons}}
+              </li>
+          </ul>
+          <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
+
+      </div>
+    </div>
+  </nav>
+</Template>
+
+
+
+
+
+
+
+
+
+<Template name="search">
+    <form>
+        <div class="container">
+
+        <div class="input-field">
+
+            <input placeholder="search" id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons"></i></label>
+            <i class="material-icons">close</i>
+
+        </div>
+        </div>
+    </form>
+</Template>
+
+
+
+
+
+
+
+
+
+
+
+
+<Template name="footer">
     <footer class="page-footer blue darken-3">
         <div class="container">
             <div class="row">
@@ -79,91 +148,54 @@
             </div>
         </div>
     </footer>
-
-<script>
-    $(document).ready(function(){
-        $('.modal').modal();
-    });
-
-    $(document).ready(function() {
-        $('select').material_select();
-    });
-
-</script>
-
-</body>
-
-<!------------------------------Templates------------------------------------>
-
-<Template name="nav">
-    <nav class="blue darken-3">
-        <div class="container">
-            <div class="nav-wrapper">
-
-                <a href="#" class="brand-logo center">MakerHub</a>
-
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="nav-item">
-                        {{> loginButtons}}
-                    </li>
-                </ul>
-                <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
-
-            </div>
-        </div>
-    </nav>
 </Template>
 
-<Template name="search">
-    <form>
-        <div class="container">
 
-        <div class="input-field">
 
-            <input placeholder="search" id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons"></i></label>
-            <i class="material-icons">close</i>
 
-        </div>
-        </div>
-    </form>
-</Template>
+
+
+
 
 
 <Template name="addPost">
-    <div id="addPost" class="modal">
-        <div class="modal-content">
-
-            <h3 class="card-panel">New Want</h3>
-
-            <form class ="add-form card-panel">
-                <div class="input-field col s6">
-                    <select id="category">
-                        <option value="" disabled selected>Choose a category</option>
-                        <option value="Arts">Arts</option>
-                        <option value="Prop">Prop</option>
-                        <option value="Software">Software</option>
-                    </select>
-                    <label>Category</label>
-                </div>
-
-                <div class="input-field col s6">
-                    <input placeholder="what do you want?" id="title" type="text" class="validate">
-                    <label for="title">Want Title</label>
-                </div>
-
-                <div class="input-field col s6">
-                    <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
-                    <label for="desc">Description</label>
-                </div>
-
-                <input class="waves-effect waves-light btn" type="submit" id="submit"/>
-            </form>
-
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  <div id="addPost" class="modal">
+    <div class="modal-content">
+        
+        <h3 class="card-panel">New Want</h3>
+      
+        <form class ="add-form card-panel">
+            <div class="input-field col s6">
+              <select id="category">
+                <option value="" disabled selected>Choose a category</option>
+                <option value="Arts">Arts</option>
+                <option value="Prop">Prop</option>
+                <option value="Software">Software</option>
+              </select>
+              <label>Category</label>
             </div>
-
+            
+            <div class="input-field col s6">
+              <input placeholder="what do you want?" id="title" type="text" class="validate">
+              <label for="title">Want Title</label>
+            </div>
+        
+            <div class="input-field col s6">
+              <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
+              <label for="desc">Description</label>
+            </div>
+          
+            <input class="waves-effect waves-light btn" type="submit" id="submit"/>
+        </form>
+      
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
+      
     </div>
+  </div>
 </Template>
+
+
+
+

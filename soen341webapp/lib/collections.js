@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 
-export const Ads = new Mongo.Collection("Ads"); // create the collection for test ads
+export const Posts = new Mongo.Collection("posts"); // create the collection for test ads
 
 // use meteor mongo on cmd and performed from client side
 //db.Ads.insert({ text: "FirstItem-Bat", createdAt: new Date() });
