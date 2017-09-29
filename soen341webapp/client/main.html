@@ -1,7 +1,7 @@
 <head>
     <title>MakerHub</title>
     <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
 
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
@@ -14,12 +14,12 @@
 
 
   <div class ="container">
-      <h6>Inserted Database Items :</h6>
       <ul class ="collection">
        {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
        <div class="row">
         <div class="col m4">
           <div class="card light-blue darken-3">
+
             <div class="card-content white-text">
               <h5>{{category}}</h5>
               <h4 class="card-title">{{title}}</h4>
@@ -29,41 +29,46 @@
               <br>
               <p>{{createdAt}}</p>
             </div>
+
+            <!--if you are logged in, you can see this div -Josh -->
+            {{#if currentUser}}
             <div class="card-action">
               <a href="#">I also want this</a>
               <a href="#">I will make this</a>
             </div>
+            {{/if}}
+
           </div>
         </div>
         </div>
 
 
-          
-          
+
+
        {{/each}}
       </ul>
   </div>
-  
-  
-  
-  
-  
-  
-    
+
+
+
+
+
+
+
  {{> footer }}
- 
+
  {{> addPost}} <!-- add post modal template -->
  <script>
   $(document).ready(function(){
     $('.modal').modal();
   });
-  
+
   $(document).ready(function() {
     $('select').material_select();
   });
-         
+
  </script>
- 
+
  </body>
 
 <!------------------------------Templates (to put in seperate folder)------------------------------------>
@@ -81,7 +86,13 @@
                   {{> loginButtons}}
               </li>
           </ul>
+
+          <!--if you are logged in, you can see the add post button -Josh -->
+          {{#if currentUser}}
           <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
+          {{else}}
+          <p>Please login to Add a Want</p>
+          {{/if}}
 
       </div>
     </div>
@@ -161,9 +172,9 @@
 <Template name="addPost">
   <div id="addPost" class="modal">
     <div class="modal-content">
-        
+
         <h3 class="card-panel">New Want</h3>
-      
+
         <form class ="add-form card-panel">
             <div class="input-field col s6">
               <select id="category">
@@ -174,28 +185,24 @@
               </select>
               <label>Category</label>
             </div>
-            
+
             <div class="input-field col s6">
               <input placeholder="what do you want?" id="title" type="text" class="validate">
               <label for="title">Want Title</label>
             </div>
-        
+
             <div class="input-field col s6">
               <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
               <label for="desc">Description</label>
             </div>
-          
+
             <input class="waves-effect waves-light btn" type="submit" id="submit"/>
         </form>
-      
+
         <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
-      
+
     </div>
   </div>
 </Template>
-
-
-
-
