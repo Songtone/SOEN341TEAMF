@@ -7,11 +7,9 @@
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
 
 
-
 {{> nav }}
 
 {{> search }}
-
 
   <div class ="container">
       <ul class ="collection">
@@ -43,16 +41,9 @@
         </div>
 
 
-
-
        {{/each}}
       </ul>
   </div>
-
-
-
-
-
 
 
  {{> footer }}
@@ -73,7 +64,6 @@
 
 <!------------------------------Templates (to put in seperate folder)------------------------------------>
 
-
 <Template name="nav">
   <nav class="blue darken-3">
     <div class="container">
@@ -87,7 +77,7 @@
               </li>
           </ul>
 
-          <!--if you are logged in, you can see the add post button -Josh -->
+          <!--if you are logged in, you can see the add post button -->
           {{#if currentUser}}
           <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
           {{else}}
@@ -99,14 +89,7 @@
   </nav>
 </Template>
 
-
-
-
-
-
-
-
-
+<!--Templete for Search-->
 <Template name="search">
     <form>
         <div class="container">
@@ -122,17 +105,7 @@
     </form>
 </Template>
 
-
-
-
-
-
-
-
-
-
-
-
+<!--Templete for footer -->
 <Template name="footer">
     <footer class="page-footer blue darken-3">
         <div class="container">
@@ -161,14 +134,7 @@
     </footer>
 </Template>
 
-
-
-
-
-
-
-
-
+<!--Templete for addPost enter the form for the options-->
 <Template name="addPost">
   <div id="addPost" class="modal">
     <div class="modal-content">
