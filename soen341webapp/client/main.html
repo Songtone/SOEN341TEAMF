@@ -18,11 +18,16 @@
       <ul class ="collection">
        {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
        <div class="row">
-        <div class="col m4">
+        <div class="col s8">
           <div class="card light-blue darken-3">
             <div class="card-content white-text">
-              <h5>{{category}}</h5>
+              <!--<h5>{{category}}</h5>-->
+                <div class="titleCard">
+                <div class="col s2">
+                    <img src ="https://t3.ftcdn.net/jpg/01/17/38/06/500_F_117380631_jx6tY1M9aa4GJUPQr0tdw1eJa23JK31u.jpg" alt="" class="circle responsive-img">
+                </div>
               <h4 class="card-title">{{title}}</h4>
+                </div>
               <p>{{desc}}</p>
               <br>
               <p class="black-text">post by {{userId}}</p>
