@@ -46,9 +46,10 @@
   </div>
 
 
+{{> addPost}} <!-- add post modal template -->
+
  {{> footer }}
 
- {{> addPost}} <!-- add post modal template -->
  <script>
   $(document).ready(function(){
     $('.modal').modal();
@@ -105,35 +106,6 @@
     </form>
 </Template>
 
-<!--Templete for footer -->
-<Template name="footer">
-    <footer class="page-footer blue darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">MakerHub</h5>
-                    <p class="grey-text text-lighten-4">About</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Information</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                � 2017 Copyright MakerHub
-                <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
-            </div>
-        </div>
-    </footer>
-</Template>
-
 <!--Templete for addPost enter the form for the options-->
 <Template name="addPost">
   <div id="addPost" class="modal">
@@ -171,4 +143,33 @@
 
     </div>
   </div>
+</Template>
+
+<!--Templete for footer -->
+<Template name="footer">
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">MakerHub</h5>
+                    <p class="grey-text text-lighten-4">About</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Information</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                � 2017 Copyright MakerHub
+                <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
+            </div>
+        </div>
+    </footer>
 </Template>
