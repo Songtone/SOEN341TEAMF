@@ -13,18 +13,17 @@ import './main.html';
 
 Template.body.helpers({
     posts(){
-        return Posts.find({}); 
+        return Posts.find({});
     }
 });
-
 
 
 Template.addPost.events({
     'submit form': function(event, template) {
         event.preventDefault(); // prevent page reload
-        
-        var userId = "USERNAME";
         var category = event.target.category.value;
+        if(category!=""){
+        var userId = "USERNAME";
         var title = event.target.title.value;
         var desc = event.target.desc.value;
 
@@ -36,14 +35,18 @@ Template.addPost.events({
            desc,
            createdAt: new Date()
         });
-        
+
         //clear form
         event.target.reset();
-        
+
         //close modal
         $('.modal').modal('close');
-        
+
         return false;
-        
+
     }
+    else{
+      alert("You have not chosen a category");
+    }
+}
 });

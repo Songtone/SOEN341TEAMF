@@ -1,23 +1,23 @@
 <head>
-    <title>MakerHub</title>
-    <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+  <title>MakerHub</title>
+  <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
-<body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
+<body class=" blue-grey lighten-4">
+  <!-- this is the color for the entire background-->
 
 
 
-{{> nav }}
-
-{{> search }}
+  {{> nav }} {{> search }}
 
 
-  <div class ="container">
-      <h6>Inserted Database Items :</h6>
-      <ul class ="collection">
-       {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
-       <div class="row">
+  <div class="container">
+    <h6>Inserted Database Items :</h6>
+    <ul class="collection">
+      {{#each posts}}
+      <!-- this is connecting to nodes from main.js file function , loop over items-->
+      <div class="row">
         <div class="col m4">
           <div class="card light-blue darken-3">
             <div class="card-content white-text">
@@ -35,36 +35,81 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
 
 
-          
-          
-       {{/each}}
-      </ul>
+
+
+      {{/each}}
+    </ul>
   </div>
-  
-  
-  
-  
-  
-  
-    
- {{> footer }}
- 
- {{> addPost}} <!-- add post modal template -->
- <script>
-  $(document).ready(function(){
-    $('.modal').modal();
-  });
-  
-  $(document).ready(function() {
-    $('select').material_select();
-  });
-         
- </script>
- 
- </body>
+  {{> footer }} {{> addPost}}
+  <!-- add post modal template -->
+  <script>
+    $(document).ready(function() {
+      $('.modal').modal();
+    });
+
+    $(document).ready(function() {
+      $('select').material_select();
+    });
+
+    function CategoryChange() {
+      var y = document.getElementById("plid");
+      for (var i = 0; i < 8; i++) {
+        if (y.length > 1) {
+          y.remove(y.length - 1);
+        }
+      }
+      var categoriesvar = document.getElementById("category");
+      var value = categoriesvar.options[categoriesvar.selectedIndex].value;
+      alert(value);
+      if (value == "Prop") {
+        dropdownforprop();
+
+      } else if (value == "Software") {
+        dropdownforsoft();
+
+      } else if (value == "Arts") {
+        dropdownforarts();
+        
+      }
+    };
+
+    function dropdownforprop() {
+      var select = document.getElementById('plid');
+      select.options[0].innerHTML = "What type of prop are you looking for?";
+      select.options[select.options.length] = new Option('Electronic', 'Electronic');
+      select.options[select.options.length] = new Option('Wooden', 'Wooden');
+      select.options[select.options.length] = new Option('Metal', 'Metal');
+      select.options[select.options.length] = new Option('Clothes', 'Clothes');
+    }
+
+    function dropdownforsoft() {
+      var select = document.getElementById('plid');
+      select.options[0].innerHTML = "What language are you looking for?";
+      select.options[select.options.length] = new Option('Assembly', 'Assembly');
+      select.options[select.options.length] = new Option('C#', 'C#');
+      select.options[select.options.length] = new Option('C++', 'C++');
+      select.options[select.options.length] = new Option('Java', 'Java');
+      select.options[select.options.length] = new Option('JavaScript', 'JavaScript');
+      select.options[select.options.length] = new Option('Ruby', 'Ruby');
+      select.options[select.options.length] = new Option('Python', 'Python');
+      select.options[select.options.length] = new Option('VHDL', 'VHDL');
+    }
+
+    function dropdownforarts() {
+      var select = document.getElementById('plid');
+      select.options[0].innerHTML = "What type of arts are you looking for?";
+      select.options[select.options.length] = new Option('Music', 'Music');
+      select.options[select.options.length] = new Option('Painting', 'Painting');
+      select.options[select.options.length] = new Option('Poster', 'Poster');
+      select.options[select.options.length] = new Option('Sculptures', 'Sculptures');
+
+    }
+  </script>
+
+</body>
 
 <!------------------------------Templates (to put in seperate folder)------------------------------------>
 
@@ -120,8 +165,6 @@
 
 
 
-
-
 <Template name="footer">
     <footer class="page-footer blue darken-3">
         <div class="container">
@@ -161,12 +204,12 @@
 <Template name="addPost">
   <div id="addPost" class="modal">
     <div class="modal-content">
-        
+
         <h3 class="card-panel">New Want</h3>
-      
+
         <form class ="add-form card-panel">
             <div class="input-field col s6">
-              <select id="category">
+              <select id="category" name="Categories" onchange="CategoryChange()">
                 <option value="" disabled selected>Choose a category</option>
                 <option value="Arts">Arts</option>
                 <option value="Prop">Prop</option>
@@ -174,28 +217,32 @@
               </select>
               <label>Category</label>
             </div>
-            
+
             <div class="input-field col s6">
-              <input placeholder="what do you want?" id="title" type="text" class="validate">
-              <label for="title">Want Title</label>
+              <select id="plid" >
+                <option value="" disabled selected>You must choose a category first</option>
+              </select>
+              <label id="subcategorylabel">Sub-Category</label>
             </div>
-        
+            <div class="input-field col s6" id="">
+              <input placeholder="what do you want?" id="title" type="text" class="validate">
+              <label id="titlelabel" for="title">Want Title</label>
+            </div>
+
             <div class="input-field col s6">
               <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
-              <label for="desc">Description</label>
+              <label id="desclabel" for="desc">Description</label>
             </div>
-          
+
             <input class="waves-effect waves-light btn" type="submit" id="submit"/>
         </form>
-      
+
         <div class="modal-footer">
           <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
-      
+
     </div>
   </div>
+
+
 </Template>
-
-
-
-
