@@ -1,5 +1,7 @@
 <head>
+
     <title>MakerHub</title>
+
     <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
 </head>
@@ -21,7 +23,7 @@
         {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
             <div class="row">
                 <div class="col s8">
-                    <div class="card blue lighten-1">
+                    <div class="card blue lighten-1 medium">
                         <div class="card-content black-text">
                             <!--<h5>{{category}}</h5>-->
                             <div class="titleCard orange darken-1">
@@ -32,11 +34,17 @@
                                 <h4 class="card-title">{{title}}</h4>
                             </div>
                             <div class="description blue lighten-5">
-                                <p>{{desc}}</p>
+                                <div class="container">
+                                    <p>{{desc}}</p>
+                                    <br>
+                                    <br>
+                                </div>
                                 <br>
-                                <p class="black-text">post by {{userId}}</p>
                                 <br>
+                                <br>
+                                <p class="black-text center">post by {{userId}}</p>
                                 <p>{{createdAt}}</p>
+
                             </div>
                         </div>
                         <div class="card-action blue darken-4">
