@@ -16,7 +16,10 @@
 .row{
     display: inline-block;
 }
-
+.searchBar{
+    margin:auto;
+    width: 600px;
+}
 
 /***-------------------------------------Style by ID------------------***/
 
