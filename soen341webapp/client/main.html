@@ -3,12 +3,10 @@
     <title>MakerHub</title>
 
     <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
 </head>
 
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
-
-
 
 {{> nav }}
 
@@ -61,150 +59,136 @@
     </ul>
 </div>
 
- {{> footer }}
- 
- {{> addPost}} <!-- add post modal template -->
+
+
+  {{> footer }}
+  {{> addPost}} <!-- add post modal template -->
+
+
  <script>
   $(document).ready(function(){
     $('.modal').modal();
   });
-  
+
   $(document).ready(function() {
     $('select').material_select();
   });
-         
+
+
  </script>
- 
+
  </body>
 
 <!------------------------------Templates (to put in separate folder)------------------------------------>
-
 
 <Template name="nav">
   <nav class="blue darken-3">
     <div class="container">
       <div class="nav-wrapper">
 
-          <a href="#" class="brand-logo center">MakerHub</a>
+        <a href="#" class="brand-logo center">MakerHub</a>
 
           <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li class="nav-item">
                   {{> loginButtons}}
               </li>
           </ul>
+
+          <!--if you are logged in, you can see the add post button -->
+          {{#if currentUser}}
           <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
+          {{else}}
+          <p>Please login to Add a Want</p>
+          {{/if}}
+
 
       </div>
     </div>
   </nav>
 </Template>
 
-
-
-
-
-
-
-
+<!--Templete for Search-->
 
 <Template name="search">
-    <form>
-        <div class="container">
-        <div class="input-field blue lighten-1">
-            <input placeholder="search" id="search" type="search" required>
-            <label class="label-icon" for="search"><i class="material-icons"></i></label>
-            <i class="material-icons">close</i>
+  <form>
+    <div class="container">
+      <div class="input-field">
+        <input placeholder="search" id="search" type="search" required>
+        <label class="label-icon" for="search"><i class="material-icons"></i></label>
+        <i class="material-icons">close</i>
+      </div>
+      <div class="input-field col s6">
+        <select id="category">
+          <option value="" disabled selected>Choose a category</option>
+          <option value="Arts">Arts</option>
+          <option value="Prop">Prop</option>
+          <option value="Software">Software</option>
+        </select>
+      </div>
+    </div>
+  </form>
 
-        </div>
-        </div>
-    </form>
 </Template>
 
 
-
-
-
-
-
-
-
-
-
+<!--Templete for footer -->
 
 <Template name="footer">
-    <footer class="page-footer blue darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">MakerHub</h5>
-                    <p class="grey-text text-lighten-4">About</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Information</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
-                    </ul>
-                </div>
-            </div>
+  <footer class="page-footer blue darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">MakerHub</h5>
+          <p class="grey-text text-lighten-4">About</p>
         </div>
-        <div class="footer-copyright">
-            <div class="container">
-                � 2017 Copyright MakerHub
-                <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
-            </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Information</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
+          </ul>
         </div>
-    </footer>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        � 2017 Copyright MakerHub
+        <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
+      </div>
+    </div>
+  </footer>
 </Template>
-
-
-
-
-
-
-
 
 
 <Template name="addPost">
   <div id="addPost" class="modal">
     <div class="modal-content">
-        
-        <h3 class="card-panel">New Want</h3>
-      
-        <form class ="add-form card-panel">
-            <div class="input-field col s6">
-              <select id="category">
-                <option value="" disabled selected>Choose a category</option>
-                <option value="Arts">Arts</option>
-                <option value="Prop">Prop</option>
-                <option value="Software">Software</option>
-              </select>
-              <label>Category</label>
-            </div>
-            
-            <div class="input-field col s6">
-              <input placeholder="what do you want?" id="title" type="text" class="validate">
-              <label for="title">Want Title</label>
-            </div>
-        
-            <div class="input-field col s6">
-              <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
-              <label for="desc">Description</label>
-            </div>
-          
-            <input class="waves-effect waves-light btn" type="submit" id="submit"/>
-        </form>
-      
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <h3 class="card-panel">New Want</h3>
+      <form class ="add-form card-panel">
+        <div class="input-field col s6">
+          <select id="category">
+            <option value="" disabled selected>Choose a category</option>
+            <option value="Arts">Arts</option>
+            <option value="Prop">Prop</option>
+            <option value="Software">Software</option>
+          </select>
+          <label>Category</label>
         </div>
-      
+        <div class="input-field col s6">
+          <input placeholder="what do you want?" id="title" type="text" class="validate">
+          <label for="title">Want Title</label>
+        </div>
+        <div class="input-field col s6">
+          <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
+          <label for="desc">Description</label>
+        </div>
+        <input class="waves-effect waves-light btn" type="submit" id="submit"/>
+      </form>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
     </div>
   </div>
 </Template>
-
-
-
-
