@@ -4,40 +4,40 @@ import {Accounts} from 'meteor/accounts-base';
 
 //Accounts config
 Accounts.ui.config({
-    passwordSignupFields:'USERNAME_ONLY'
+  passwordSignupFields:'USERNAME_ONLY'
 })
 
 import './main.html';
 
 Template.body.helpers({
-    posts(){
-        return Posts.find({});
-    }
+  posts(){
+    return Posts.find({});
+  }
 });
 
 Template.addPost.events({
-    'submit form': function(event, template) {
-        event.preventDefault(); // prevent page reload
+  'submit form': function(event, template) {
+    event.preventDefault(); // prevent page reload
 
-        var userId = "USERNAME";
-        var category = event.target.category.value;
-        var title = event.target.title.value;
-        var desc = event.target.desc.value;
+    var userId = "USERNAME";
+    var category = event.target.category.value;
+    var title = event.target.title.value;
+    var desc = event.target.desc.value;
 
-        Posts.insert({
-           userId,
-           category,
-           title,
-           desc,
-           createdAt: new Date()
-        });
+    Posts.insert({
+      userId,
+      category,
+      title,
+      desc,
+      createdAt: new Date()
+    });
 
-        //clear form
-        event.target.reset();
+    //clear form
+    event.target.reset();
 
-        //close modal
-        $('.modal').modal('close');
+    //close modal
+    $('.modal').modal('close');
 
-        return false;
-    }
+    return false;
+  }
 });
