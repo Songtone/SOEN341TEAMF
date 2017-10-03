@@ -6,7 +6,7 @@ import './main.html';
 //Accounts config
 Accounts.ui.config({
     passwordSignupFields:'USERNAME_ONLY'
-})
+});
 
 // To obtain the posts fom the collections
 Template.body.helpers({
