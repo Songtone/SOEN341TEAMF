@@ -1,4 +1,4 @@
-import { Template } from 'meteor/templating';
+import {Template} from 'meteor/templating';
 import {Posts} from '../lib/collections.js'; // import the "table"
 import {Accounts} from 'meteor/accounts-base';
 
@@ -11,7 +11,8 @@ import './main.html';
 
 Template.body.helpers({
   posts(){
-    return Posts.find({});
+    var searchWords = document.getElementsByTagName("search")[0].value;
+    return Posts.find({"title": searchWords});
   }
 });
 

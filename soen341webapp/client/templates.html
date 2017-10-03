@@ -2,16 +2,13 @@
   <nav class="blue darken-3">
     <div class="container">
       <div class="nav-wrapper">
-
         <a href="#" class="brand-logo center">MakerHub</a>
-
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="nav-item">
             {{> loginButtons}}
           </li>
         </ul>
         <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
-
       </div>
     </div>
   </nav>
@@ -21,7 +18,7 @@
   <form>
     <div class="container">
       <div class="input-field">
-        <input placeholder="search" id="search" type="search" required>
+        <input placeholder="search" name= "search" id="search" type="search" required>
         <label class="label-icon" for="search"><i class="material-icons"></i></label>
         <i class="material-icons">close</i>
       </div>
@@ -83,6 +80,28 @@
       </form>
       <div class="modal-footer">
         <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+  </div>
+</Template>
+
+<Template name="post">
+  <div class="row">
+    <div class="col m4">
+      <div class="card light-blue darken-3">
+        <div class="card-content white-text">
+          <h5>{{category}}</h5>
+          <h4 class="card-title">{{title}}</h4>
+          <p>{{desc}}</p>
+          <br>
+          <p class="black-text">post by {{userId}}</p>
+          <br>
+          <p>{{createdAt}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">I also want this</a>
+          <a href="#">I will make this</a>
+        </div>
       </div>
     </div>
   </div>

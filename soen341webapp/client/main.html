@@ -13,31 +13,13 @@
     <h6>Inserted Database Items :</h6>
     <ul class ="collection">
       {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
-      <div class="row">
-        <div class="col m4">
-          <div class="card light-blue darken-3">
-            <div class="card-content white-text">
-              <h5>{{category}}</h5>
-              <h4 class="card-title">{{title}}</h4>
-              <p>{{desc}}</p>
-              <br>
-              <p class="black-text">post by {{userId}}</p>
-              <br>
-              <p>{{createdAt}}</p>
-            </div>
-            <div class="card-action">
-              <a href="#">I also want this</a>
-              <a href="#">I will make this</a>
-            </div>
-          </div>
-        </div>
-      </div>
+        {{> post}}
       {{/each}}
     </ul>
   </div>
 
   {{> footer }}
-  {{> addPost}} <!-- add post modal template -->
+  {{> addPost}}
 
   <script>
   $(document).ready(function(){
