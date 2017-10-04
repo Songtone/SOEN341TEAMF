@@ -14,17 +14,14 @@
   </nav>
 </Template>
 
-<Template name="search">
-  <form>
-    <div class="container">
-      <div class="input-field">
-        <input placeholder="search" name= "search" id="search" type="search" required>
-        <label class="label-icon" for="search"><i class="material-icons"></i></label>
-        <i class="material-icons">close</i>
-      </div>
-    </div>
-  </form>
-</Template>
+<template name="posts">
+  <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+  <ul class ="collection">
+    {{#each searchResults}}
+      {{> post }}
+    {{/each}}
+  </ul>
+</template>
 
 <Template name="footer">
   <footer class="page-footer blue darken-3">

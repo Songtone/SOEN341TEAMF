@@ -7,19 +7,14 @@
   <div w3-include-html="templates.html"></div>
 
   {{> nav }}
-  {{> search }}
 
   <div class ="container">
     <h6>Inserted Database Items :</h6>
-    <ul class ="collection">
-      {{#each posts}} <!-- this is connecting to nodes from main.js file function , loop over items-->
-        {{> post}}
-      {{/each}}
-    </ul>
+    {{> posts }}
   </div>
 
   {{> footer }}
-  {{> addPost}}
+  {{> addPost }}
 
   <script>
   $(document).ready(function(){
