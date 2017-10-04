@@ -22,14 +22,16 @@ Template.addPost.events({
 
 
 
-        var userId = "USERNAME"; // change this to actual username of the person.
+  var userId = Meteor.User().username;
 
         var category = event.target.category.value;
         if(category!=""){
         var title = event.target.title.value;
         var desc = event.target.desc.value;
 
+
         var subcategory= event.target.subcategory.value;
+
 
 
         Posts.insert({
@@ -44,6 +46,7 @@ Template.addPost.events({
         //clear form
         event.target.reset();
 
+
         //close modal
         $('.modal').modal('close');
 
@@ -52,5 +55,6 @@ Template.addPost.events({
     else {
       alert("Please fill in all fields before you submit your want")
     }
+
   }
 });
