@@ -1,0 +1,12 @@
+#set up for travis to recognize that we are using meteor with nodeJS and mongoDb -> setup to test again laika
+# source: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+language: node_js
+node_js:
+  - "7"
+before_install:
+  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/master/configure.sh | /bin/sh"
+services:
+  - mongodb
+env:
+  - LAIKA_OPTIONS="-t 5000"
+script: 
