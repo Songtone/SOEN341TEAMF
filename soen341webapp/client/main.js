@@ -19,8 +19,9 @@ Template.body.helpers({
 Template.addPost.events({
     'submit form': function(event, template) {
         event.preventDefault(); // prevent page reload
-        
-        var userId = "USERNAME"; // change this to actual username of the person.
+
+        //var userId = "USERNAME"; // change this to actual username of the person.
+        var userId = Meteor.user().username;
 
         var category = event.target.category.value;
         var title = event.target.title.value;
@@ -33,6 +34,8 @@ Template.addPost.events({
            desc,
            createdAt: new Date()
         });
+
+
 
         //clear form
         event.target.reset();
