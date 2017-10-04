@@ -9,3 +9,4 @@ services:
   - mongodb
 env:
   - LAIKA_OPTIONS="-t 5000"
+script: ./run_build.sh
