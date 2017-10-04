@@ -22,7 +22,9 @@ Template.addPost.events({
 
 
 
+
         var userId = Meteor.user().username;
+
 
         var category = event.target.category.value;
         if(category!=""){
