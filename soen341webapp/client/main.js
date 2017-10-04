@@ -1,14 +1,14 @@
 import { Template } from 'meteor/templating';
 import {Posts} from '../lib/collections.js'; // import the "table"
-import {Accounts} from 'meteor/accounts-base';
+import {Accounts} from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
+import './main.html';
 
 //Accounts config
 Accounts.ui.config({
-  passwordSignupFields:'USERNAME_ONLY'
-})
+    passwordSignupFields:'USERNAME_ONLY'
+});
 
-import './main.html';
-
+// To obtain the posts fom the collections
 Template.body.helpers({
   posts(){
     return Posts.find({});
@@ -21,29 +21,40 @@ Template.search.events({
   }
 });
 
+//submit form will retrive data from user and insert into Post collection.
 Template.addPost.events({
-  'submit form': function(event, template) {
-    event.preventDefault(); // prevent page reload
+    'submit form': function(event, template) {
+        event.preventDefault(); // prevent page reload
+        var userId = Meteor.user().username;
 
-    var userId = "USERNAME";
-    var category = event.target.category.value;
-    var title = event.target.title.value;
-    var desc = event.target.desc.value;
 
-    Posts.insert({
-      userId,
-      category,
-      title,
-      desc,
-      createdAt: new Date()
-    });
+        var category = event.target.category.value;
+        if(category!=""){
+        var title = event.target.title.value;
+        var desc = event.target.desc.value;
 
-    //clear form
-    event.target.reset();
+        var subcategory= event.target.subcategory.value;
 
-    //close modal
-    $('.modal').modal('close');
 
-    return false;
+        Posts.insert({
+           userId,
+           category,
+           subcategory,
+           title,
+           desc,
+           createdAt: new Date()
+        });
+
+        //clear form
+        event.target.reset();
+
+        //close modal
+        $('.modal').modal('close');
+
+        return false;
+    }
+    else {
+      alert("Please fill in all fields before you submit your want")
+    }
   }
 });
