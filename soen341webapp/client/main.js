@@ -22,7 +22,9 @@ Template.addPost.events({
 
 
 
-        var userId = "USERNAME"; // change this to actual username of the person.
+
+        var userId = Meteor.user().username;
+
 
         var category = event.target.category.value;
         if(category!=""){
