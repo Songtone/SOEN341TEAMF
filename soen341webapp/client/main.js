@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
-import { Accounts } from 'meteor/accounts-base';
 import { Tracker } from 'meteor/tracker';
+import {Accounts} from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import './main.html';
 
 //Accounts config
@@ -42,11 +42,12 @@ Template.posts.helpers({
   }
 });
 
+//submit form will retrive data from user and insert into Post collection.
 Template.addPost.events({
   'submit form': function(event, template) {
     event.preventDefault(); // prevent page reload
 
-    var userId = "USERNAME";
+    var userId = "USERNAME"; // change this to actual username of the person.
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
