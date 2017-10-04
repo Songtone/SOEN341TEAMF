@@ -56,3 +56,9 @@ Template.addPost.events({
     }
   }
 });
+Template.addPost.events({
+    'click .delete-post':function(){
+    Posts.remove(this._id);
+    return false;
+    }
+});
