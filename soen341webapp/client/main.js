@@ -41,7 +41,7 @@ Template.posts.helpers({
   }
 });
 
-//submit form will retrive data from user and insert into Post collection.
+//submit form will retrieve data from user and insert into Post collection.
 Template.addPost.events({
   'submit form': function(event, template) {
     event.preventDefault(); // prevent page reload
