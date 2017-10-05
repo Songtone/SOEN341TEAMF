@@ -1,127 +1,169 @@
 <Template name="nav">
-  <nav class="blue darken-3">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo center">MakerHub</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="nav-item">
-            {{> loginButtons}}
-          </li>
-        </ul>
-        <!--if you are logged in, you can see the add post button -->
-        {{#if currentUser}}
-          <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a>
-          {{else}}
-          <p>Please login to Add a Want</p>
-        {{/if}}
-      </div>
-    </div>
-  </nav>
+    <nav class="blue darken-3">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="brand-logo center">MakerHub</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="nav-item">
+                        {{> loginButtons}}
+                    </li>
+                </ul>
+                <!--if you are logged in, you can see the add post button -->
+                {{#if currentUser}}
+                <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
+                <p>Please login to Add a Want</p>
+                {{/if}}
+            </div>
+        </div>
+    </nav>
 </Template>
 
 <template name="posts">
-  <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-  <ul class ="collection">
-    {{#each searchResults}}
-      {{> post }}
-    {{/each}}
-  </ul>
+    <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+    <ul class="collection">
+        <div class="feature center">
+            FEATURED REQUESTS
+        </div>
+        {{#each searchResults}} {{> post }} {{/each}}
+    </ul>
 </template>
 
 <Template name="footer">
-  <footer class="page-footer blue darken-3">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">MakerHub</h5>
-          <p class="grey-text text-lighten-4">About</p>
+    <footer class="page-footer blue darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">MakerHub</h5>
+                    <p class="grey-text text-lighten-4">About</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Information</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Information</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Terms of use</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Privacy Policy</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Help</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Team Members</a></li>
-          </ul>
+        <div class="footer-copyright">
+            <div class="container">
+                � 2017 Copyright MakerHub
+                <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        � 2017 Copyright MakerHub
-        <a class="grey-text text-lighten-4 right" href="#!">Site powered by Meteor</a>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </Template>
 
 <Template name="addPost">
-  <div id="addPost" class="modal">
-    <div class="modal-content">
-      <h3 class="card-panel">New Want</h3>
-      <form class ="add-form card-panel">
-        <div class="input-field col s6">
-          <select id="category" onchange="CategoryChange()" >
-            <option value="" disabled selected>Choose a category</option>
-            <option value="Arts">Arts</option>
-            <option value="Prop">Prop</option>
-            <option value="Software">Software</option>
-          </select>
-          <label>Category</label>
+    <div id="addPost" class="modal">
+        <div class="modal-content">
+            <h3 class="card-panel">New Want</h3>
+            <form class="add-form card-panel">
+                <div class="input-field col s6">
+                    <select id="category" onchange="CategoryChange()">
+                        <option value="" disabled selected>Choose a category</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Prop">Prop</option>
+                        <option value="Software">Software</option>
+                    </select>
+                    <label>Category</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Please choose a main category first" id="subcategory" type="text" class="validate">
+                    <label for="subcategory" id="subcategoryinfo">Want SubCategory</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="what do you want?" id="title" type="text" class="validate">
+                    <label for="title">Want Title</label>
+                </div>
+                <div class="input-field col s6">
+                    <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
+                    <label for="desc">Description</label>
+                </div>
+                <input class="waves-effect waves-light btn" type="submit" id="submit" />
+            </form>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+            </div>
         </div>
-        <div class="input-field col s6">
-          <input placeholder="Please choose a main category first" id="subcategory" type="text" class="validate">
-          <label for="subcategory" id="subcategoryinfo">Want SubCategory</label >
-          </div>
-          <div class="input-field col s6">
-            <input placeholder="what do you want?" id="title" type="text" class="validate">
-            <label for="title">Want Title</label>
-          </div>
-          <div class="input-field col s6">
-            <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
-            <label for="desc">Description</label>
-          </div>
-          <input class="waves-effect waves-light btn" type="submit" id="submit"/>
-        </form>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
-        </div>
-      </div>
     </div>
-  </Template>
+</Template>
 
 <Template name="post">
-  <div class="row">
-    <div class="col s8">
-      <div class="card blue lighten-1 medium">
-        <div class="card-content black-text">
-          <!--<h5>{{category}}</h5>-->
-          <div class="titleCard orange darken-1">
-            <div class="col s2">
-              <img src="https://t3.ftcdn.net/jpg/01/17/38/06/500_F_117380631_jx6tY1M9aa4GJUPQr0tdw1eJa23JK31u.jpg"
-              alt="" class="circle responsive-img"><!--adding a picture to the cards-->
+    <div class="row">
+        <div class="col s8">
+            <div class="card blue lighten-1 medium">
+                <div class="card-content black-text">
+                    <!--<h5>{{category}}</h5>-->
+                    <div class="titleCard orange darken-1">
+                        <div class="col s2">
+                            <img src="https://t3.ftcdn.net/jpg/01/17/38/06/500_F_117380631_jx6tY1M9aa4GJUPQr0tdw1eJa23JK31u.jpg" alt="" class="circle responsive-img">
+                            <!--adding a picture to the cards-->
+                        </div>
+                        <h4 class="card-title">{{title}}</h4>
+                        <!--title of the card-->
+                    </div>
+                    <div class="description blue lighten-5">
+                        <div class="container">
+                            <p>{{desc}}</p>
+                            <!--description of the card-->
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <p class="black-text center">post by {{userId}}</p>
+                        <!--user who added this card-->
+                        <p>{{createdAt}}</p>
+                        <!--time the card was created-->
+                    </div>
+                </div>
+                <div class="card-action blue darken-4">
+                    <a href="#">I also want this</a>
+                    <a href="#">I will make this</a>
+                </div>
             </div>
-            <h4 class="card-title">{{title}}</h4><!--title of the card-->
-          </div>
-          <div class="description blue lighten-5">
-            <div class="container">
-              <p>{{desc}}</p><!--description of the card-->
-              <br>
-              <br>
-            </div>
-            <br>
-            <br>
-            <br>
-            <p class="black-text center">post by {{userId}}</p><!--user who added this card-->
-            <p>{{createdAt}}</p><!--time the card was created-->
-          </div>
         </div>
-        <div class="card-action blue darken-4">
-          <a href="#">I also want this</a>
-          <a href="#">I will make this</a>
-        </div>
-      </div>
     </div>
-  </div>
+</Template>
+
+<Template name="profile">
+    <div class="container">
+        <div style="border:2px black;">
+            <div style="background-color:white;">
+                <div class="container">
+                    <br>
+                    <h5 class="header">Username: Test</h5>
+                    <br>
+                    <img src="http://www.loftladderscotland.com/avatars/default_avatar.png" style="width:250px">
+                </div>
+
+                <div class="container">
+                    <div class="header">
+                        <br>
+                        <h5>Skills:</h5>
+                        <h6>Excellent Linguistic skills</h6>
+                        <h6>Efficient communicator</h6>
+                        <h6>Excellent leadership skills</h6>
+                        <br>
+                        <h5>Activity:</h5>
+                        <h6>Number of Posts: #</h6>
+                        <h6>Number of Likes: #</h6>
+                        <h6>Number of Searches: #</h6>
+                        <br>
+                        <h5>Contact Info:</h5>
+                        <h6>Email Address: test@test.com</h6>
+                        <h6>Telephone Number: (555) 555-5555</h6>
+                        <br>
+                    </div>
+                    <button class="button">Edit profile</button>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
 </Template>
