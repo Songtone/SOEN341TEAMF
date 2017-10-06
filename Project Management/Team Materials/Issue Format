@@ -1,0 +1,8 @@
+
+User-Feature      (Issue 1)
+  - Sub-Feature   (Issue 2)
+  - Sub-Feature   (Issue 3)
+  - ...
+  
+Sub-Features close when their code has been implemented/merged into master.
+User-Features close when all related Sub-Features close.
