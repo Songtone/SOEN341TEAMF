@@ -16,6 +16,9 @@
 .row{
     display: inline-block;
 }
+.brand-logo{
+    margin-top:10px;
+}
 
 /***-------------------------------------Style by ID------------------***/
 
