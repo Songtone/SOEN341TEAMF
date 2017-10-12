@@ -47,10 +47,11 @@ Template.addPost.events({
     event.preventDefault(); // prevent page reload
     var userId = Meteor.user().username;
     var category = event.target.category.value;
-    if(category!=""){
-      var title = event.target.title.value;
-      var desc = event.target.desc.value;
-      var subcategory= event.target.subcategory.value;
+    var title = event.target.title.value;
+    var desc = event.target.desc.value;
+    var subcategory= event.target.subcategory.value;
+    if(category!="" && subcategory!="" && title!="" && desc !=""){
+
 
       Posts.insert({
         userId,
