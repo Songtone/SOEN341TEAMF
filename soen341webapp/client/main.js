@@ -73,3 +73,10 @@ Template.addPost.events({
     }
   }
 });
+
+Template.posts.events({
+  'click .delete-post': function() {
+    Posts.remove(this._id);
+    return false;
+  }
+});
