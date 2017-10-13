@@ -41,6 +41,18 @@ Template.posts.helpers({
   }
 });
 
+/* logical implementation of the like counter, likes should be stored in the user profile to allow users to 
+*  see which item they have liked before. Each post also has to store the amount of likes they have.
+*  USE INTERNAL ID "_id" to get unique references to posts.
+*/ 
+Tmeplate.post.events({
+  'mouseclick input': function(event, template){
+      var $counter = $(this).find(".count");
+      var count = $counter.text() | 0; //corose current count to an int
+      $counter.text(count + 1);//set new count
+  }
+});
+
 //submit form will retrieve data from user and insert into Post collection.
 Template.addPost.events({
   'submit form': function(event, template) {
