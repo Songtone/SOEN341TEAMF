@@ -20,7 +20,8 @@ Posts.search = function(query) {
     return Posts.find({});
   return Posts.find({
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
-    {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
+    {'desc': { $regex: RegExp.escape(query), $options: 'i' }},
+    {'category': { $regex: RegExp.escape(query), $options: 'i' }}]
   });
 };
 
