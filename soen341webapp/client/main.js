@@ -25,8 +25,8 @@ Posts.search = function(query) {
 };
 
 Template.posts.events({
-  'keypress input': function(event, template) {
-    if (event.which === 13) {
+  'keyup input': function(event, template) {
+    if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 8) {
       Session.set('postsSearchQuery', event.target.value);
     }
   }
