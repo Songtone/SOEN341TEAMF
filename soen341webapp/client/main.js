@@ -50,6 +50,7 @@ Template.addPost.events({
     var title = event.target.title.value;
     var desc = event.target.desc.value;
     var subcategory= event.target.subcategory.value;
+    var likes = 0;
     if(category!="" && subcategory!="" && title!="" && desc !=""){
 
 
@@ -59,6 +60,7 @@ Template.addPost.events({
         subcategory,
         title,
         desc,
+        likes,
         createdAt: new Date()
       });
 
