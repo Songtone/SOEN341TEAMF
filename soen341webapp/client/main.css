@@ -19,7 +19,8 @@
 .brand-logo{
     margin-top:10px;
 }
-button {
+/***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
+button { 
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
