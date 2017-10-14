@@ -80,6 +80,7 @@ Template.posts.events({
     return false;
   }
 });
+// this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
 Template.posts.events({'click .edit-Post': function(){
   var editmodal= document.getElementById("editPost");
       editmodal.style.display = "block";
@@ -91,6 +92,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editTime").val(this.createdAt).focus().blur();
 }
 });
+// this function checks if the edited form is complete (no empty fields) then edits the original post 
 Template.editPost.events ({'click .submit-edited-post': function(){
   var EditTitle= $("#edittitle").val();
   var EditSubCat= $("#editsubcategory").val();
