@@ -41,14 +41,15 @@ Template.posts.helpers({
   }
 });
 
-/* logical implementation of the like counter, likes should be stored in the user profile to allow users to
+/* logical implementation of the like counter, likes should be stored in the 'likes' collection to allow users to
 *  see which item they have liked before. Each post also has to store the amount of likes they have.
-*  USE INTERNAL ID "_id" to get unique references to posts.
+*  USE INTERNAL POST AND USER ID "_id" to get unique references to posts.
 */
 Template.post.events({
   'click .like-button': function() {
     console.log("trigger like");
     Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
+    Meteor.users.update({ _id : Meteor.user()._id }, {$set: {likedPosts: [this._id]}});
     return false;
   }
 });
@@ -64,8 +65,6 @@ Template.addPost.events({
     var subcategory= event.target.subcategory.value;
     var likes = 0;
     if(category!="" && subcategory!="" && title!="" && desc !=""){
-
-
       Posts.insert({
         userId,
         category,
@@ -75,7 +74,6 @@ Template.addPost.events({
         likes,
         createdAt: new Date()
       });
-
       //clear form
       event.target.reset();
       //close modal
