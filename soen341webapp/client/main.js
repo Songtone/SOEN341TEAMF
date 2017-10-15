@@ -41,13 +41,15 @@ Template.posts.helpers({
   }
 });
 
-/* logical implementation of the like counter, likes should be stored in the user profile to allow users to 
+/* logical implementation of the like counter, likes should be stored in the user profile to allow users to
 *  see which item they have liked before. Each post also has to store the amount of likes they have.
 *  USE INTERNAL ID "_id" to get unique references to posts.
 */
 Template.post.events({
-  'click .like-button': function(){
-    Posts.find({'_id': this._id}).likes = this.likes + 1;
+  'click .like-button': function() {
+    console.log("trigger like");
+    Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
+    return false;
   }
 });
 
