@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
+import { Likes } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
 import './main.html';
@@ -48,8 +49,16 @@ Template.posts.helpers({
 Template.post.events({
   'click .like-button': function() {
     console.log("trigger like");
-    Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
-    Meteor.users.update({ _id : Meteor.user()._id }, {$set: {likedPosts: [this._id]}});
+    var cursor = Likes.find({ "post" : this._id, "likedBy": Meteor.user()._id});
+    var myDocument = cursor.nextObject();
+    console.log(myDocument);
+    // if the user has not liked this post
+    if(_.isEmpty(myDocument)){
+      console.log("like added");
+      Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
+      Likes.insert ({ "post" : this._id, "likedBy": Meteor.user()._id});
+    }
+
     return false;
   }
 });
