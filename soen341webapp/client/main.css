@@ -19,6 +19,14 @@
 .brand-logo{
     margin-top:10px;
 }
+/***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
+button { 
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    outline:none;
+}
 
 /***-------------------------------------Style by ID------------------***/
 
