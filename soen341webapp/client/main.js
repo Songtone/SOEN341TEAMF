@@ -1,5 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
+import { Likes } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
 import './main.html';
@@ -41,6 +42,30 @@ Template.posts.helpers({
   }
 });
 
+/* logical implementation of the like counter, likes should be stored in the 'likes' collection to allow users to
+*  see which item they have liked before. Each post also has to store the amount of likes they have.
+*  USE INTERNAL POST AND USER ID "_id" to get unique references to posts.
+*/
+Template.post.events({
+  'click .like-button': function() {
+    var cursor = Likes.find({ "post" : this._id, "likedBy": Meteor.user()._id});
+    var count = cursor.count();
+    // if the user has not liked this post, like it (save post _id and user _id as like)
+    if(!count){
+      Likes.insert ({ "post" : this._id, "likedBy": Meteor.user()._id});
+      Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
+    }
+    // if the user has already liked this post, unlike it (remove like from db.likes)
+    else if(cursor){
+      Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+        Likes.remove({_id: like._id});
+      });
+      Posts.update ({ _id : this._id }, { $set : { likes: this.likes-1}});
+    }
+    return false;
+  }
+});
+
 //submit form will retrieve data from user and insert into Post collection.
 Template.addPost.events({
   'submit form': function(event, template) {
@@ -50,18 +75,17 @@ Template.addPost.events({
     var title = event.target.title.value;
     var desc = event.target.desc.value;
     var subcategory= event.target.subcategory.value;
+    var likes = 0;
     if(category!="" && subcategory!="" && title!="" && desc !=""){
-
-
       Posts.insert({
         userId,
         category,
         subcategory,
         title,
         desc,
+        likes,
         createdAt: new Date()
       });
-
       //clear form
       event.target.reset();
       //close modal
@@ -77,9 +101,14 @@ Template.addPost.events({
 Template.posts.events({
   'click .delete-post': function() {
     Posts.remove(this._id);
+    //remove likes associated with this post
+    Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+      Likes.remove({_id: like._id});
+    });
     return false;
   }
 });
+
 // this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
 Template.posts.events({'click .edit-Post': function(){
   var editmodal= document.getElementById("editPost");
@@ -92,7 +121,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editTime").val(this.createdAt).focus().blur();
 }
 });
-// this function checks if the edited form is complete (no empty fields) then edits the original post 
+// this function checks if the edited form is complete (no empty fields) then edits the original post
 Template.editPost.events ({'click .submit-edited-post': function(){
   var EditTitle= $("#edittitle").val();
   var EditSubCat= $("#editsubcategory").val();
