@@ -91,7 +91,7 @@ Template.addPost.events({
     }
     else {
       alert("Please fill in all fields before you submit your want")
-    }
+     }
   }
 });
 
@@ -100,4 +100,35 @@ Template.posts.events({
     Posts.remove(this._id);
     return false;
   }
+});
+// this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
+Template.posts.events({'click .edit-Post': function(){
+  var editmodal= document.getElementById("editPost");
+      editmodal.style.display = "block";
+      $("#edittitle").val(this.title).focus().blur();
+      $("#editsubcategory").val(this.subcategory).focus().blur();
+      $("#editdesc").val(this.desc).focus().blur();
+      $("#editID").val(this._id).focus().blur();
+      $("#editUserID").val(this.userId).focus().blur();
+      $("#editTime").val(this.createdAt).focus().blur();
+}
+});
+// this function checks if the edited form is complete (no empty fields) then edits the original post 
+Template.editPost.events ({'click .submit-edited-post': function(){
+  var EditTitle= $("#edittitle").val();
+  var EditSubCat= $("#editsubcategory").val();
+  var Editdesc= $("#editdesc").val();
+  var EditCat= $("#editcategory").val();
+  var EditId= $("#editID").val();
+  var EditTime=$("#editTime").val();
+  var EditUserID=$("#editUserID").val();
+  if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
+  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, category:EditCat, userId:EditUserID,createdAt:EditTime });
+  var editmodal= document.getElementById("editPost");
+  editmodal.style.display = "none";
+}
+  else {
+    alert("Please fill in all fields before you submit your want");
+   }
+}
 });

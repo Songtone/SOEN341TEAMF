@@ -1,6 +1,6 @@
 <head>
   <title>MakerHub</title>
-  <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
@@ -19,7 +19,7 @@
   {{> profile}}
   {{> footer }}
   {{> addPost}} <!-- add post modal template -->
-
+  {{> editPost}}
 
   <script>
     $(document).ready(function(){
@@ -41,7 +41,6 @@
 
       } else if (value == "Arts") {
         $("#subcategory").attr("placeholder", "Specify the type of art you are looking for").val("").focus().blur();
-
       }
     };
   </script>
