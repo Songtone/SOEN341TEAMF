@@ -48,17 +48,20 @@ Template.posts.helpers({
 */
 Template.post.events({
   'click .like-button': function() {
-    console.log("trigger like");
     var cursor = Likes.find({ "post" : this._id, "likedBy": Meteor.user()._id});
-    var myDocument = cursor.nextObject();
-    console.log(myDocument);
-    // if the user has not liked this post
-    if(_.isEmpty(myDocument)){
-      console.log("like added");
-      Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
+    var count = cursor.count();
+    // if the user has not liked this post, like it (save post _id and user _id as like)
+    if(!count){
       Likes.insert ({ "post" : this._id, "likedBy": Meteor.user()._id});
+      Posts.update ({ _id : this._id }, { $set : { likes: this.likes+1}});
     }
-
+    // if the user has already liked this post, unlike it (remove like from db.likes)
+    else if(cursor){
+      Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+        Likes.remove({_id: like._id});
+      });
+      Posts.update ({ _id : this._id }, { $set : { likes: this.likes-1}});
+    }
     return false;
   }
 });
@@ -98,9 +101,14 @@ Template.addPost.events({
 Template.posts.events({
   'click .delete-post': function() {
     Posts.remove(this._id);
+    //remove likes associated with this post
+    Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+      Likes.remove({_id: like._id});
+    });
     return false;
   }
 });
+
 // this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
 Template.posts.events({'click .edit-Post': function(){
   var editmodal= document.getElementById("editPost");
@@ -113,7 +121,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editTime").val(this.createdAt).focus().blur();
 }
 });
-// this function checks if the edited form is complete (no empty fields) then edits the original post 
+// this function checks if the edited form is complete (no empty fields) then edits the original post
 Template.editPost.events ({'click .submit-edited-post': function(){
   var EditTitle= $("#edittitle").val();
   var EditSubCat= $("#editsubcategory").val();
