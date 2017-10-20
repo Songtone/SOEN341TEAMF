@@ -119,6 +119,8 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
       $("#editTime").val(this.createdAt).focus().blur();
+      $("#editcategory").val(this.category)
+      $("#editlikes").val(this.likes)
 }
 });
 // this function checks if the edited form is complete (no empty fields) then edits the original post
@@ -130,8 +132,9 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var EditId= $("#editID").val();
   var EditTime=$("#editTime").val();
   var EditUserID=$("#editUserID").val();
+  var Editlikes=$("#editlikes").val
   if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
-  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, category:EditCat, userId:EditUserID,createdAt:EditTime });
+  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
 }
