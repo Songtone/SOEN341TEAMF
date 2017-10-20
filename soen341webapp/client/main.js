@@ -132,7 +132,7 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var EditId= $("#editID").val();
   var EditTime=$("#editTime").val();
   var EditUserID=$("#editUserID").val();
-  var Editlikes=$("#editlikes").val
+  var Editlikes=$("#editlikes").val();
   if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
   Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
