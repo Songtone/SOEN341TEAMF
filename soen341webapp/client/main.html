@@ -4,21 +4,13 @@
 </head>
 
 <body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
-  <div w3-include-html="templates.html"></div>
-  {{> nav }}
-  <div class="container">
-    <div class="feature center">
-      SEARCH
-    </div>
-    <ul class="collection">
-      {{> posts }}
-    </ul>
-  </div>
 
-  <!-- {{> profile}} -->
+
+  {{> nav }}
+  {{> posts }}
   {{> profile}}
   {{> footer }}
-  {{> addPost}} <!-- add post modal template -->
+  {{> addPost}} 
   {{> editPost}}
 
   <script>
