@@ -7,9 +7,7 @@
 
 
   {{> nav }}
-  {{> posts }}
-  {{> profile}}
-  {{> footer }}
+  {{> Template.dynamic template=mainLayout}}
   {{> addPost}} 
   {{> editPost}}
 
@@ -35,5 +33,7 @@
         $("#subcategory").attr("placeholder", "Specify the type of art you are looking for").val("").focus().blur();
       }
     };
+
+    $(".side-nav-button").sideNav({closeOnClick: true});
   </script>
 </body>
