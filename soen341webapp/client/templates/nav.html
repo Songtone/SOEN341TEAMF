@@ -15,6 +15,12 @@
                 <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
                 <button disabled>Please login to Add a Want </button>
                 {{/if}}
+
+                {{#if currentUser}}
+                <a class="waves-effect waves-light btn modal-trigger" href="#addUserData">FILL PROFILE</a> {{else}}
+                <button disabled> ... </button>
+                {{/if}}
+
             </div>
         </div>
     </nav>
