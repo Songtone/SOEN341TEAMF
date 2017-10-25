@@ -100,6 +100,7 @@ Template.addPost.events({
   }
 });
 
+//Form used to add user data to the logged in user
 Template.addUserData.events({
   'submit form': function(event, template) {
     event.preventDefault(); // prevent page reload
@@ -109,6 +110,8 @@ Template.addUserData.events({
     var city = event.target.city.value;
     var province= event.target.province.value;
     if(firstName!="" && LastName!="" && city!="" && province!=""){
+
+      /* for Arnav to remove */
       Accounts.onCreateUser(function(options, user) {
         if (user.profile == undefined) user.profile = {};
             _.extend(user.profile, { firstName : firstName },
@@ -116,6 +119,8 @@ Template.addUserData.events({
                                    { city : city },
                                    { province : province });
         });
+      /* for Arnav to remove */
+
       //clear form
       event.target.reset();
       //close modal
