@@ -96,7 +96,7 @@ Template.addPost.events({
       return false;
     }
     else {
-      alert("Please fill in all fields before you submit your want")
+      alert("Please fill in all fields before you submit your profile changes")
      }
   }
 });
