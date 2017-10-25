@@ -3,7 +3,7 @@ FlowRouter.route( '/profile', {
   	action: function() {
   		console.log( "test is successfull" );
     	BlazeLayout.render( 'mainLayout', { 
-    		profile: 'profile',
+    		body: 'profile',
     		footer:'footer' 
     	}); 
   	}
@@ -13,7 +13,7 @@ FlowRouter.route( '/', {
 	name: 'test', 
   	action: function() {
     	BlazeLayout.render( 'mainLayout', { 
-    		posts:'posts',
+    		body:'posts',
     		footer:'footer' 
     	}); 
   	}
@@ -32,8 +32,8 @@ FlowRouter.route( '/likes', {
 FlowRouter.route( '/wants', {
   name: 'test', 
     action: function() {
-      alert("wants page not created yet");
       BlazeLayout.render( 'mainLayout', { 
+        body: 'wants',
         footer:'footer' 
       }); 
     }
