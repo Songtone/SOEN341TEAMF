@@ -104,11 +104,14 @@ Template.addPost.events({
 Template.addUserData.events({
   'submit form': function(event, template) {
     event.preventDefault(); // prevent page reload
+
+      // store the user input form fields into specific variables
     var userId = Meteor.user().username;
     var firstName = event.target.firstName.value;
     var lastName = event.target.LastName.value;
     var city = event.target.city.value;
     var province= event.target.province.value;
+
     if(firstName!="" && LastName!="" && city!="" && province!=""){
 
       //TODO Remove the logic for examding user feilds to inserting in the new colletion
