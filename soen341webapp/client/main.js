@@ -111,7 +111,7 @@ Template.addUserData.events({
     var province= event.target.province.value;
     if(firstName!="" && LastName!="" && city!="" && province!=""){
 
-      /* for Arnav to remove */
+      //TODO Remove the logic for examding user feilds to inserting in the new colletion
       Accounts.onCreateUser(function(options, user) {
         if (user.profile == undefined) user.profile = {};
             _.extend(user.profile, { firstName : firstName },
@@ -119,7 +119,6 @@ Template.addUserData.events({
                                    { city : city },
                                    { province : province });
         });
-      /* for Arnav to remove */
 
       //clear form
       event.target.reset();
