@@ -10,9 +10,7 @@ Accounts.ui.config({
   passwordSignupFields:'USERNAME_ONLY'
 });
 
-Accounts.onCreateUser(function(options, user) {
-  return _.extend(user, {...options});
-});
+
 
 //RegEx function to remove reformat search string
 RegExp.escape = function(s) {
