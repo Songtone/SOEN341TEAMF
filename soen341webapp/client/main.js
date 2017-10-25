@@ -98,6 +98,35 @@ Template.addPost.events({
   }
 });
 
+Template.addUserData.events({
+  'submit form': function(event, template) {
+    event.preventDefault(); // prevent page reload
+    var userId = Meteor.user().username;
+    var firstName = event.target.firstName.value;
+    var lastName = event.target.LastName.value;
+    var city = event.target.city.value;
+    var province= event.target.province.value;
+    if(firstName!="" && LastName!="" && city!="" && province!=""){
+      Accounts.onCreateUser(function(options, user) {
+        if (user.profile == undefined) user.profile = {};
+            _.extend(user.profile, { firstName : firstName },
+                                   { lastName : lastName },
+                                   { city : city },
+                                   { province : province });
+        });
+      //clear form
+      event.target.reset();
+      //close modal
+      $('.modal').modal('close');
+      return false;
+    }
+    else {
+      alert("Please fill in all fields before you submit your want")
+     }
+  }
+});
+
+
 Template.posts.events({
   'click .delete-post': function() {
     Posts.remove(this._id);
