@@ -77,6 +77,7 @@ Template.addPost.events({
     var subcategory= event.target.subcategory.value;
     var likes = 0;
     if(category!="" && subcategory!="" && title!="" && desc !=""){
+        if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
         category,
@@ -92,6 +93,7 @@ Template.addPost.events({
       $('.modal').modal('close');
       return false;
     }
+  }
     else {
       alert("Please fill in all fields before you submit your want")
      }
@@ -134,9 +136,11 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var EditUserID=$("#editUserID").val();
   var Editlikes=$("#editlikes").val();
   if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
+    if (confirm("Are you sure you want to edit this want?")){
   Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
+}
 }
   else {
     alert("Please fill in all fields before you submit your want");
