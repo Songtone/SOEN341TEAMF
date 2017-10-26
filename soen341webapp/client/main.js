@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
+import { UserData } from '../lib/collections.js'; // the collection "user info"
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
 import './main.html';
@@ -76,13 +77,13 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
-    var subcategory= event.target.subcategory.value;
+    var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subcategory!="" && title!="" && desc !=""){
+    if(category!="" && subCategory!="" && title!="" && desc !=""){
       Posts.insert({
         userId,
         category,
-        subcategory,
+        subCategory,
         title,
         desc,
         likes,
@@ -113,27 +114,26 @@ Template.addUserData.events({
     var province= event.target.province.value;
 
     if(firstName!="" && LastName!="" && city!="" && province!=""){
+      //added the information of the user in to the collections, userdata to later display on profile card.
+        UserData.insert({
+              firstName,
+              lastName,
+              city,
+              province
+          });
+          //clear form
+          event.target.reset();
+          //close modal
+          $('.modal').modal('close');
+          return false;
 
-      //TODO Remove the logic for examding user feilds to inserting in the new colletion
-      Accounts.onCreateUser(function(options, user) {
-        if (user.profile == undefined) user.profile = {};
-            _.extend(user.profile, { firstName : firstName },
-                                   { lastName : lastName },
-                                   { city : city },
-                                   { province : province });
-        });
-
-      //clear form
-      event.target.reset();
-      //close modal
-      $('.modal').modal('close');
-      return false;
     }
     else {
-      alert("Please fill in all fields before you submit your want")
-     }
+        alert("Please fill in all fields before you submit your want");
+    }
+
   }
-});
+ });
 
 
 Template.posts.events({
