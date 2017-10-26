@@ -102,12 +102,14 @@ Template.addPost.events({
 
 Template.posts.events({
   'click .delete-post': function() {
+    if (confirm("Are you sure you want to delete this post?")){
     Posts.remove(this._id);
     //remove likes associated with this post
     Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
       Likes.remove({_id: like._id});
     });
     return false;
+  }
   }
 });
 
@@ -140,6 +142,10 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
+}
+else {
+    var editmodal= document.getElementById("editPost");
+    editmodal.style.display = "none";
 }
 }
   else {
