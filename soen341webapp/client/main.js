@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
 import { UserData } from '../lib/collections.js'; // the collection "user info"
+import { Wants } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
 import './main.html';
@@ -79,7 +80,8 @@ Template.addPost.events({
     var desc = event.target.desc.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subCategory!="" && title!="" && desc !=""){
+    if(category!="" && subcategory!="" && title!="" && desc !=""){
+        if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
         category,
@@ -95,6 +97,7 @@ Template.addPost.events({
       $('.modal').modal('close');
       return false;
     }
+  }
     else {
       alert("Please fill in all fields before you submit your profile changes")
      }
@@ -139,12 +142,14 @@ Template.addUserData.events({
 
 Template.posts.events({
   'click .delete-post': function() {
+    if (confirm("Are you sure you want to delete this post?")){
     Posts.remove(this._id);
     //remove likes associated with this post
     Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
       Likes.remove({_id: like._id});
     });
     return false;
+  }
   }
 });
 
@@ -173,12 +178,53 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var EditUserID=$("#editUserID").val();
   var Editlikes=$("#editlikes").val();
   if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
+    if (confirm("Are you sure you want to edit this want?")){
   Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
+}
+else {
+    var editmodal= document.getElementById("editPost");
+    editmodal.style.display = "none";
+}
 }
   else {
     alert("Please fill in all fields before you submit your want");
    }
 }
 });
+
+
+Template.posts.events({
+  'click .want-button': function() {
+    var userId =  Meteor.userId();
+    var postId =  Posts.findOne(this._id)._id;
+
+    var cursor = Wants.find({ "userId" : userId, "postId": postId});
+    var count = cursor.count();
+
+    //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
+
+    if(!count){
+      Wants.insert({
+        userId,
+        postId,
+        createdAt: new Date()
+      }); 
+    }
+
+    else if(cursor){
+      Wants.find({ "userId" : userId, "postId": postId}).forEach(function(want){
+        Wants.remove({_id: want._id});
+      });
+    }
+  }
+});
+
+Template.wants.helpers({
+  userWants: function() {
+    return Wants.find({ userId: Meteor.userId()});
+  },
+
+});
+
