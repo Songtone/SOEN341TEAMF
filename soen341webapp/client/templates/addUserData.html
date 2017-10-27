@@ -1,0 +1,31 @@
+<!--this will allow user to add their personal information using the form and using input form-->
+<Template name="addUserData">
+    <div id="addUserData" class="modal">
+        <div class="modal-content">
+            <h3 class="card-panel">Profile Info</h3>
+            <form class="add-form card-panel">
+                <div class="input-field col s6">
+                    <input placeholder="Please enter your first name" id="firstName" type="text" class="validate">
+                    <label for="firstName">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Please enter your last name" id="lastName" type="text" class="validate">
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Please enter the name of your city" id="city" type="text" class="validate">
+                    <label for="city">City</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Try to be as descriptive as possible" id="province" type="text" class="validate">
+                    <label for="province">Province</label>
+                </div>
+                <input class="waves-effect waves-light btn" type="submit" id="submitUserData" />
+            </form>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+            </div>
+        </div>
+    </div>
+</Template>
+<!--submitUserData-->
