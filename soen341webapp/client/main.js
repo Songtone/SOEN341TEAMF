@@ -20,13 +20,13 @@ RegExp.escape = function(s) {
 };
 
 Posts.search = function(query) {
-  console.log("looking for: " + query);
+  const options = {sort: {likes: -1}};
   if(_.isEmpty(query))
-    return Posts.find({});
+    return Posts.find({}, options);
   return Posts.find({
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
     {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  });
+  }, options);
 };
 
 Template.posts.events({
@@ -210,7 +210,7 @@ Template.posts.events({
         userId,
         postId,
         createdAt: new Date()
-      }); 
+      });
     }
 
     else if(cursor){
@@ -227,4 +227,3 @@ Template.wants.helpers({
   },
 
 });
-
