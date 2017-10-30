@@ -1,7 +1,7 @@
 <Template name="nav">
 
-    <nav class="blue darken-3">
-        <div class="container">
+    <nav class="navigateBar blue-grey lighten-1">
+
             <div class="nav-wrapper">
                 <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
                 <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub" width="150" height="50"></a>
@@ -11,6 +11,7 @@
                     </li>
                 </ul>
                 <!--if you are logged in, you can see the add post button -->
+                <div class="topLeft">
                 {{#if currentUser}}
                 <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
                 <button disabled>Please login to Add a Want </button>
@@ -20,9 +21,9 @@
                 <a class="waves-effect waves-light btn modal-trigger" href="#addUserData">FILL PROFILE</a> {{else}}
                 <button disabled> ... </button>
                 {{/if}}
-
+                </div>
             </div>
-        </div>
+
     </nav>
 
       <ul id="slide-out" class="side-nav">

@@ -1,24 +1,18 @@
 
 <template name="posts">
-        <ul class="collection">
-            <div class="searchbackground center">
-                <div class="searchbar center">
+            <div class="searchBackground center ">
+                <div class="searching">
             <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
                 </div>
             </div>
-            <ul class="collection">
                 <div class="feature center">
                     FEATURED REQUESTS
                 </div>
                 {{#each searchResults}} {{> post }} {{/each}}
-            </ul>
-        </ul>
-
-
 </template>
 
 <Template name="post">
-    <div class="row">
+    <div class="adRow row">
         <div class="col s8">
             <div class="card blue lighten-1 medium">
                 <div class="card-content black-text">
