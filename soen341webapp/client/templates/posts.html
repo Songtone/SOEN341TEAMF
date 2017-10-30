@@ -1,39 +1,35 @@
-
 <template name="posts">
-            <div class="searchBackground center ">
-                <div class="searching">
+    <div class="searchBackground center ">
+        <div class="searching center">
             <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-                </div>
-            </div>
-                <div class="feature center">
-                    FEATURED REQUESTS
-                </div>
-                {{#each searchResults}} {{> post }} {{/each}}
+        </div>
+    </div>
+    <div class="feature center">
+        FEATURED REQUESTS
+    </div>
+    {{#each searchResults}} {{> post }} {{/each}}
 </template>
 
 <Template name="post">
-    <div class="adRow row">
+    <div class="row">
         <div class="col s8">
-            <div class="card blue lighten-1 medium">
-                <div class="card-content black-text">
+            <div class="card blue-grey lighten-2 medium">
+                <div class="card-content white-text">
                     <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-                    <div>{{category}}<a href="#" class="delete-post right"><i class="material-icons red-text text-darken-4">close</i></a></div>
+                    <div>{{category}}<a href="#" class="delete-post right"><i
+                            class="material-icons red-text text-darken-4">close</i></a></div>
                     <div>{{subcategory}}</div>
 
-                    <div class="titleCard orange darken-1">
-                        <div class="col s2">
-                            <img src="https://t3.ftcdn.net/jpg/01/17/38/06/500_F_117380631_jx6tY1M9aa4GJUPQr0tdw1eJa23JK31u.jpg" alt="" class="circle responsive-img">
-                            <!--adding a picture to the cards-->
-                        </div>
+                    <div class="titleCard white-text">
                         <h4 class="card-title">{{title}}</h4>
                         <p>Likes: {{likes}}
-                          {{#if currentUser}}
+                            {{#if currentUser}}
                             <button class="like-button">Like</button>
-                          {{/if}}
+                            {{/if}}
                         </p>
                         <!--title of the card-->
                     </div>
-                    <div class="description blue lighten-5">
+                    <div class="description blue lighten-5 black-text">
                         <div class="container">
                             <p>{{desc}}</p>
                             <!--description of the card-->
@@ -48,14 +44,15 @@
                         <p>{{createdAt}}</p>
                         <!--time the card was created-->
                     </div>
-                </div>
-                <div class="card-action blue darken-4">
+                <div class="bottomCard">
                     <a href="#" class="want-button">I also want this</a>
                     <a href="#">I will make this</a>
                     {{#if currentUser}}
                     <br>
-                     <a  class="edit-Post" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;">Edit Text</a>
-                     {{/if}}
+                    <a class="edit-Post" onmouseover="this.style.cursor='pointer'"
+                       style="cursor: pointer; cursor: hand;">Edit Text</a>
+                    {{/if}}
+                </div>
                 </div>
             </div>
         </div>
