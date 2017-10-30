@@ -1,11 +1,11 @@
 
 <template name="posts">
-    <div class="container">
-        <div class="feature center">
-          SEARCH
-        </div>
         <ul class="collection">
+            <div class="searchbackground center">
+                <div class="searchbar center">
             <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                </div>
+            </div>
             <ul class="collection">
                 <div class="feature center">
                     FEATURED REQUESTS
@@ -13,7 +13,8 @@
                 {{#each searchResults}} {{> post }} {{/each}}
             </ul>
         </ul>
-    </div>
+
+
 </template>
 
 <Template name="post">
