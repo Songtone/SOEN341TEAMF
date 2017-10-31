@@ -18,7 +18,7 @@ Template.addUserData.events({
         var city = event.target.city.value;
         var province= event.target.province.value;
         var phoneNumber = event.target.phonenumber.value;
-        var profilePic = "http://www.loftladderscotland.com/avatars/default_avatar.png";
+        var profilePic = event.target.profilePicture.value;
 
         if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!=""){
             //added the information of the user in to the collections, userdata to later display on profile card.
