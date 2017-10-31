@@ -45,6 +45,8 @@ margin-left: 400px;
     float:right;
 }
 .cardCategory{/*div for the category name*/
+    border-style: double;
+    border-color: orange;
     float: left;
 }
 .cardSubCategory{/*div for the sub category*/
