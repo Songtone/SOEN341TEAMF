@@ -1,5 +1,9 @@
 /***-----------------------------------Style by Class--------------------***/
 .navigateBar{
+    overflow: hidden;
+    position: fixed;
+    top:0;
+    z-index: 9;
     height: 75px;
     padding-top: 7px;
 }
