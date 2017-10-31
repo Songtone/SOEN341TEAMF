@@ -19,38 +19,50 @@
             <div class="card medium">
                 <div class="card-content white-text">
                     <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-                    <div>{{category}}<a href="#" class="delete-post right"><i
-                            class="material-icons red-text text-darken-4">close</i></a></div>
-
+                    <div class="cardCategory">{{category}}</div>
+                    <div class="cardSubCategory">{{subcategory}}</div>
+                    <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
+                             class="material-icons red-text text-darken-4">close</i></a>-->
+                    <!--we don't need this on the front page-->
+                    <br>
                     <div class="titleCard white-text">
-                        <h4 class="card-title">{{title}}</h4>
+                        <div class="cardTitle"><h4 class="card-title">{{title}}</h4></div><!--title of the card-->
+                        <div class="editPost"><a class="edit-Post btn-floating teal"
+                                                 onmouseover="this.style.cursor='pointer'"
+                                                 style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="likeAndTime">
+                        <p class="timeCreated">{{createdAt}}</p>
+                    </div>
+                    <!--time the card was created-->
+                    <div class="likeSection">
                         <p>Likes: {{likes}}
                             {{#if currentUser}}
                             <button class="like-button"></button>
                             {{/if}}
                         </p>
-                        <!--title of the card-->
                     </div>
+                    <div class="userSection">
+                        <p class="right">{{userId}}</p>
+                        <!--user who added this card-->
+                    </div>
+                    <br>
                     <div class="description blue lighten-5 black-text">
                         <p>{{desc}}</p>
                         <!--description of the card-->
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <p class="black-text center">post by {{userId}}</p>
-                        <!--user who added this card-->
-                        <p>{{createdAt}}</p>
-                        <!--time the card was created-->
+
+
                     </div>
                     <div class="bottomCard">
-                        <a href="#" class="want-button">I also want this</a>
-                        <a href="#">I will make this</a>
+                        <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
+                        <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
                         {{#if currentUser}}
                         <br>
-                        <a class="edit-Post" onmouseover="this.style.cursor='pointer'"
-                           style="cursor: pointer; cursor: hand;">Edit Text</a>
+
                         {{/if}}
                     </div>
                 </div>
