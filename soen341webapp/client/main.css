@@ -65,7 +65,9 @@ margin-left: 400px;
     float: left;
 }
 .userSection{
-    background-color: teal;
+    height: 30px;
+    border-style: double;
+    border-color: burlywood;
     margin-right: 30px;
     float: right;
 }
@@ -119,7 +121,7 @@ margin-left: 400px;
 .feature{
     border-bottom: solid;
     border-bottom-width: 2px;
-    border-bottom-color: darkturquoise;
+    border-bottom-color: orange;
 
 
     width: 75%;
@@ -137,6 +139,9 @@ margin-left: 400px;
     max-height:100%;
 }
 .featureText{
+    border-style: groove;
+    border-width: 3px;
+    border-color: burlywood;
     display: inline;
     background-image: url("http://www.activeworlds.com/newsletter/yellow/ap_cooper18.png");
 }
