@@ -225,5 +225,9 @@ Template.wants.helpers({
   userWants: function() {
     return Wants.find({ userId: Meteor.userId()});
   },
+  postTitle: function( postId) {
+  var post= Posts.findOne({ _id: postId });
+  return post.title;
+  },
 
 });

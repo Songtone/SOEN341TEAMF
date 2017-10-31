@@ -5,10 +5,8 @@
                 <div>
                     <h2>Wants</h2>
                     <ul>
-                        {{#each userWants}} 
-
-                              <li><a href="#">{{postId}}</a></li>                      
-
+                        {{#each userWants}}
+                                <li><a href="#">{{postTitle(postId)}}</a></li>
                         {{/each}}
                     </ul>
                 </div>
@@ -16,6 +14,3 @@
         </div>
     </div>
 </Template>
-
-
-
