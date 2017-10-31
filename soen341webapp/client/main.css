@@ -24,6 +24,11 @@ margin-left: 400px;
     color: black;
     font-weight: bolder;
 }
+.like-button{
+    width: 20px;
+    height: 20px;
+    background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");
+}
 .description{
     border-style: solid;
     border-color: aqua;
@@ -46,7 +51,6 @@ margin-left: 400px;
     padding-left: 25%;
     padding-top: 175px;
     padding-bottom: 150px;
-
 }
 .searching{
     border-style: solid;
@@ -57,8 +61,11 @@ margin-left: 400px;
 
 }
 .feature{
-    margin-left: 30%;
+    margin-left: 33%;
     width: 500px;
+    font-size: larger;
+    font-weight: 700;
+    font-family: "Droid Sans";
     color: white;
     border: transparent;
 }
