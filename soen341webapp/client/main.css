@@ -9,6 +9,9 @@
 .login{
 margin-left: 400px;
 }
+.searchIcon{
+    margin-left:660px;
+}
 .card{/*this will make the cards have a small effect when hovering over them - Seb*/
     background-image: url("https://image.ibb.co/eMBOt6/cool_Image.gif");
     width: 360px;

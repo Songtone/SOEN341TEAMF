@@ -1,8 +1,11 @@
 <template name="posts">
     <div class="searchBackground center ">
-        <div class="searching center">
-            <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-        </div>
+        <form>
+            <div class="searching input-field center">
+                <input id="search" type="text" value="{{postsSearchQuery}}">
+                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+            </div>
+        </form>
     </div>
     <div class="feature center">
         <div class="featureText">FEATURED REQUESTS</div>
@@ -29,12 +32,10 @@
                         <!--title of the card-->
                     </div>
                     <div class="description blue lighten-5 black-text">
-                        <div class="container">
-                            <p>{{desc}}</p>
-                            <!--description of the card-->
-                            <br>
-                            <br>
-                        </div>
+                        <p>{{desc}}</p>
+                        <!--description of the card-->
+                        <br>
+                        <br>
                         <br>
                         <br>
                         <br>
@@ -43,15 +44,15 @@
                         <p>{{createdAt}}</p>
                         <!--time the card was created-->
                     </div>
-                <div class="bottomCard">
-                    <a href="#" class="want-button">I also want this</a>
-                    <a href="#">I will make this</a>
-                    {{#if currentUser}}
-                    <br>
-                    <a class="edit-Post" onmouseover="this.style.cursor='pointer'"
-                       style="cursor: pointer; cursor: hand;">Edit Text</a>
-                    {{/if}}
-                </div>
+                    <div class="bottomCard">
+                        <a href="#" class="want-button">I also want this</a>
+                        <a href="#">I will make this</a>
+                        {{#if currentUser}}
+                        <br>
+                        <a class="edit-Post" onmouseover="this.style.cursor='pointer'"
+                           style="cursor: pointer; cursor: hand;">Edit Text</a>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
         </div>
