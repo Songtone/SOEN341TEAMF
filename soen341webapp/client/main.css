@@ -8,18 +8,18 @@
     height: 75px;
     padding-top: 7px;
 }
-.side-nav-button{
+.side-nav-button{/*div for the side nav bar on the top left*/
 
     color: black;
     margin-left: 20px;
 }
-.topLeft{/*div for the add want and fill profiel buttons*/
+.topLeft{/*div for the add want and fill profile buttons*/
     margin-left: 100px;
 }
 .login{/*the login button*/
 margin-left: 400px;
 }
-.searchIcon{
+.searchIcon{/*div for the search icon*/
     margin-left:660px;
 }
 /*Card section starts here */
@@ -34,61 +34,57 @@ margin-left: 400px;
     rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
-.titleCard{
-    color: black;
-    font-weight: bolder;
-}
-.cardTitle{
+.cardTitle{/*div for the card title*/
     float: left;
 }
-.editPost{
+.editPost{/*div for the edit post button*/
     margin-right: 25px;
     margin-top: 10px;
     height: 10px;
     width: 10px;
     float:right;
 }
-.cardCategory{
+.cardCategory{/*div for the category name*/
     float: left;
 }
-.cardSubCategory{
+.cardSubCategory{/*div for the sub category*/
     float: right;
 }
-.like-button{
+.like-button{/*div for the like button*/
     right: 0;
     top:10px;
     width: 20px;
     height: 20px;
     background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");
 }
-.likeSection{
+.likeSection{/*div for the like section*/
     float: left;
 }
-.userSection{
+.userSection{/*div for the user section*/
     height: 30px;
     border-style: double;
     border-color: burlywood;
     margin-right: 30px;
     float: right;
 }
-.description{
+.description{/*div for the description*/
     margin-top: 15px;
     height: 150px;
     border-style: solid;
     border-color: burlywood;
 }
-.bottomCard{
+.bottomCard{/*div for the bottom of the cards*/
     margin-top: 10px;
 }
-.card:hover {
+.card:hover {/*div for the effect on the cards*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px
     rgba(0,0,0,0.22);
 }
 /*End of card section*/
-.row{
+.row{/*div for making the cards in a row*/
     display: inline-block;
 }
-.brand-logo{
+.brand-logo{/*div for the logo*/
     position:absolute;
     top: 7px;
     left:0; right:0;
@@ -97,7 +93,7 @@ margin-left: 400px;
     max-width:100%;
     max-height:100%;
 }
-.searchBackground{
+.searchBackground{/*div for the search background*/
     background-image: url("https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg");
     background-size: 1700px 500px;
     width: 100%;
@@ -105,7 +101,7 @@ margin-left: 400px;
     padding-top: 175px;
 
 }
-.searching{
+.searching{/*div for the search bar*/
     border-style: solid;
     border-width: 3px;
     border-color: darkturquoise;
@@ -118,7 +114,7 @@ margin-left: 400px;
     max-height:100%;
 }
 
-.feature{
+.feature{/*div for the feature section*/
     border-bottom: solid;
     border-bottom-width: 2px;
     border-bottom-color: orange;
@@ -138,17 +134,17 @@ margin-left: 400px;
     max-width:100%;
     max-height:100%;
 }
-.featureText{
+.featureText{/*div for the feature text*/
     border-style: groove;
     border-width: 3px;
     border-color: burlywood;
     display: inline;
     background-image: url("http://www.activeworlds.com/newsletter/yellow/ap_cooper18.png");
 }
-.footing{
+.footing{/*div for the footer*/
      margin-left: 250px;
  }
-.information{
+.information{/*div for the information on the footer*/
     margin-left: 300px;
 }
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
