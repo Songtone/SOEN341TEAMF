@@ -28,7 +28,8 @@ Template.addUserData.events({
                 lastName,
                 city,
                 province,
-                phoneNumber
+                phoneNumber,
+                profilePic
             });
             //clear form
             event.target.reset();
