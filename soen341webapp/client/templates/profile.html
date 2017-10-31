@@ -2,6 +2,7 @@
     <div class="container">
         <div style="border:2px black;">
             <div style="background-color:white;">
+                {{#each userInfo}}
                 <div class="container">
                     <br>
                     <h5 class="header">Username: {{userName}}</h5>
@@ -32,6 +33,7 @@
                     <br>
                     <br>
                 </div>
+                    {{/each}}
             </div>
         </div>
     </div>

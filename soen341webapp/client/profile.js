@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { UserData } from '../lib/collections.js'; // the collection "user info"
 import { Tracker } from 'meteor/tracker';
 import './main.html';
+import { Accounts } from 'meteor/accounts-base';
 
 
 
