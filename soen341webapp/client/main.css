@@ -1,6 +1,7 @@
 
 
 /***-----------------------------------Style by Class--------------------***/
+
 .navigateBar{
     height: 75px;
     padding-top: 7px;
@@ -12,7 +13,7 @@
 margin-left: 400px;
 }
 .card{/*this will make the cards have a small effect when hovering over them - Seb*/
-    background-image: url("http://wallpapercraft.net/wp-content/uploads/2016/06/Cool-Wallpaper-HD-For-Girls.jpg");
+    background-image: url("https://image.ibb.co/eMBOt6/cool_Image.gif");
     width: 360px;
     height: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
@@ -22,10 +23,10 @@ margin-left: 400px;
 .titleCard{
     color: black;
     font-weight: bolder;
-
 }
-.card-action{
-    background-image: url("http://wallpapercraft.net/wp-content/uploads/2016/06/Cool-Wallpaper-HD-For-Girls.jpg");
+.description{
+    border-style: solid;
+    border-color: aqua;
 }
 .card:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px
@@ -56,8 +57,7 @@ margin-left: 400px;
 
 }
 .feature{
-    margin-left: 35%;
-    position: center;
+    margin-left: 30%;
     width: 500px;
     color: white;
     border: transparent;
