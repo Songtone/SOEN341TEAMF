@@ -8,6 +8,11 @@
     height: 75px;
     padding-top: 7px;
 }
+.side-nav-button{
+
+    color: black;
+    margin-left: 20px;
+}
 .topLeft{/*div for the add want and fill profiel buttons*/
     margin-left: 100px;
 }
