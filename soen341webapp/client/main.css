@@ -94,6 +94,8 @@ margin-left: 400px;
     max-height:100%;
 }
 .searchBackground{/*div for the search background*/
+    border-bottom-style: solid;
+    border-bottom-color: burlywood;
     background-image: url("https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg");
     background-size: 1700px 500px;
     width: 100%;
@@ -104,7 +106,7 @@ margin-left: 400px;
 .searching{/*div for the search bar*/
     border-style: solid;
     border-width: 3px;
-    border-color: darkturquoise;
+    border-color: burlywood;
     width: 700px;
     background-color: whitesmoke;
     top:15px; bottom:0;
