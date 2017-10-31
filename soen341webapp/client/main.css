@@ -1,5 +1,6 @@
 /***-----------------------------------Style by Class--------------------***/
 .navigateBar{
+    background-image: url("http://godconversations.com/wp-content/uploads/2015/04/dream.jpg");
     overflow: hidden;
     position: fixed;
     top:0;
@@ -7,17 +8,21 @@
     height: 75px;
     padding-top: 7px;
 }
-.topLeft{
+.topLeft{/*div for the add want and fill profiel buttons*/
     margin-left: 100px;
 }
-.login{
+.login{/*the login button*/
 margin-left: 400px;
 }
 .searchIcon{
     margin-left:660px;
 }
-.card{/*this will make the cards have a small effect when hovering over them - Seb*/
-    background-image: url("https://image.ibb.co/eMBOt6/cool_Image.gif");
+/*Card section starts here */
+.card{/*this will make the cards have a small effect when hovering over them*/
+    border-style: groove;
+    border-color: burlywood;
+    border-width: 2px;
+    background-image: url("https://wallpaperscraft.com/image/wood_background_texture_36573_300x360.jpg");
     width: 360px;
     height: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
@@ -63,7 +68,7 @@ margin-left: 400px;
     margin-top: 15px;
     height: 150px;
     border-style: solid;
-    border-color: aqua;
+    border-color: burlywood;
 }
 .bottomCard{
     margin-top: 10px;
@@ -72,11 +77,13 @@ margin-left: 400px;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px
     rgba(0,0,0,0.22);
 }
+/*End of card section*/
 .row{
     display: inline-block;
 }
 .brand-logo{
     position:absolute;
+    top: 7px;
     left:0; right:0;
     margin:auto;
 
@@ -97,7 +104,7 @@ margin-left: 400px;
     border-color: darkturquoise;
     width: 700px;
     background-color: whitesmoke;
-
+    top:15px; bottom:0;
     left:0; right:0;
     margin:auto;
     max-width:100%;
@@ -110,7 +117,7 @@ margin-left: 400px;
     border-bottom-color: darkturquoise;
 
 
-    width: 100%;
+    width: 75%;
     height: 60px;
     font-size: larger;
     font-weight: 700;
