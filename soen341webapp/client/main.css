@@ -1,7 +1,4 @@
-
-
 /***-----------------------------------Style by Class--------------------***/
-
 .navigateBar{
     height: 75px;
     padding-top: 7px;
@@ -93,7 +90,7 @@ margin-left: 400px;
 }
 .featureText{
     display: inline;
-    background-color: black;
+    background-image: url("http://www.activeworlds.com/newsletter/yellow/ap_cooper18.png");
 }
 .footing{
      margin-left: 250px;
