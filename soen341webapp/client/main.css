@@ -26,7 +26,7 @@ margin-left: 400px;
 .card{/*this will make the cards have a small effect when hovering over them*/
     border-style: groove;
     border-color: burlywood;
-    border-width: 2px;
+    border-width: 5px;
     background-image: url("https://wallpaperscraft.com/image/wood_background_texture_36573_300x360.jpg");
     width: 360px;
     height: 300px;
@@ -46,7 +46,8 @@ margin-left: 400px;
 }
 .cardCategory{/*div for the category name*/
     border-style: double;
-    border-color: orange;
+    border-color: burlywood;
+    border-width: 5px;
     float: left;
 }
 .cardSubCategory{/*div for the sub category*/
