@@ -1,7 +1,6 @@
 /***-----------------------------------Style by Class--------------------***/
 .navigateBar{
     background-image: url("http://godconversations.com/wp-content/uploads/2015/04/dream.jpg");
-    overflow: hidden;
     position: fixed;
     top:0;
     z-index: 9;
