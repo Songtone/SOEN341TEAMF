@@ -1,14 +1,16 @@
 /***-----------------------------------Style by Class--------------------***/
 .navigateBar{
-    background-image: url("http://godconversations.com/wp-content/uploads/2015/04/dream.jpg");
+    background-image: url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
     position: fixed;
     top:0;
     z-index: 9;
     height: 75px;
     padding-top: 7px;
+    border-bottom-style: solid;
+    border-bottom-color: burlywood;
+    border-bottom-width: 1px;
 }
 .side-nav-button{/*div for the side nav bar on the top left*/
-
     color: black;
     margin-left: 20px;
 }
@@ -57,7 +59,7 @@ margin-left: 400px;
     top:10px;
     width: 20px;
     height: 20px;
-    background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");
+    /*background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");*/
 }
 .likeSection{/*div for the like section*/
     float: left;
@@ -87,7 +89,6 @@ margin-left: 400px;
 }
 .brand-logo{/*div for the logo*/
     position:absolute;
-    top: 7px;
     left:0; right:0;
     margin:auto;
 
@@ -149,6 +150,46 @@ margin-left: 400px;
  }
 .information{/*div for the information on the footer*/
     margin-left: 300px;
+}
+.wantButtonSection{
+    float: left;
+}
+.makeButtonSection{
+    float: right;
+}
+.wantPage{
+    padding-top: 6%;
+    text-align: center;
+    height: 300px;
+    width: 100%;
+    margin-top: 4.5%;
+    background-image: url("http://nationkart.com/blog/wp-content/uploads/2015/09/tools.jpg");
+}
+.wantTitlePage{
+    color: burlywood;
+    font-family: "Cambria Math";
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    width: 25%;
+    border: groove;
+    border-color: burlywood;
+    border-width: 3px;
+    left:0; right:0;
+    margin:auto;
+    max-width:100%;
+    max-height:100%;
+    background-image: url("http://4.bp.blogspot.com/-X6Di7CPFPz8/Up5yIqS_NdI/AAAAAAAACdA/DjKB8Ir399k/s1600/Walnut-Wood-Flooring-002.jpg");
+}
+.wantItems{
+    height: 100%;
+    color: white;
+    margin-top: 20%;
+    border: groove;
+    border-color: burlywood;
+    border-width: 3px;
+    left:0; right:0;
+    margin:auto;
+    max-width:100%;
+    max-height:100%;
 }
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button { 

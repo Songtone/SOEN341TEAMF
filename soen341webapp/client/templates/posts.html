@@ -17,7 +17,6 @@
             <div class="card medium">
                 <div class="card-content white-text">
                     <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-
                     <div class="cardCategory">{{category}}</div>
                     <div class="cardSubCategory">{{subCategory}}</div>
                     <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
@@ -25,11 +24,10 @@
                     <!--we don't need this on the front page-->
                     <br>
                     <br>
-                        <div class="cardTitle"><h4 class="card-title">{{title}}</h4></div><!--title of the card-->
+                        <div class="cardTitle"><h1 class="card-title">{{title}}</h1></div><!--title of the card-->
                         <div class="editPost"><a class="edit-Post btn-floating teal"
                                                  onmouseover="this.style.cursor='pointer'"
                                                  style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
-
                         </div>
                     <br>
                     <br>
@@ -41,7 +39,7 @@
                     <div class="likeSection">
                         <p>Likes: {{likes}}
                             {{#if currentUser}}
-                            <button class="like-button"></button>
+                            <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
                             {{/if}}
                         </p>
                     </div>
@@ -55,8 +53,12 @@
                         <!--description of the card-->
                     </div>
                     <div class="bottomCard">
+                        <div class="wantButtonSection">
                         <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
+                        </div>
+                        <div class="makeButtonSection">
                         <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+                        </div>
                         {{#if currentUser}}
                         <br>
 
