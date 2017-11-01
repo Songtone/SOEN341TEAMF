@@ -6,30 +6,30 @@
                     <br>
                     {{#each userInfo}}
                     <h5 class="header">Username: {{userName}}</h5>
-                    <h5 class="header">Email: {{email}}</h5>
-                    {{/each}}
                     <br>
-                    <img src={{profilePic}} style="width:250px">
+                    <img src= {{picture}} style="width:250px">
+                    {{/each}}
                 </div>
                 {{#each userInfo}}
                 <div class="container">
                     <div class="header">
                         <br>
+                        <h5>About:</h5>
+                        <h6>First Name: {{firstName}}</h6>
+                        <h6>Last Name:  {{lastName}}</h6>
+                        <h6>Email:      {{email}}</h6>
+                        <h6>City:       {{city}}</h6>
+                        <h6>Province:   {{province}}</h6>
+                        <br>
                         <h5>Skills:</h5>
-                        <h6>Excellent Linguistic skills</h6>
-                        <h6>Efficient communicator</h6>
-                        <h6>Excellent leadership skills</h6>
+                        <h6>C++ Programming</h6>
+                        <h6>Control System Design</h6>
+                        <h6></h6>
                         <br>
                         <h5>Activity:</h5>
                         <h6>Number of Posts: #</h6>
                         <h6>Number of Likes: #</h6>
                         <h6>Number of Searches: #</h6>
-                        <br>
-                        <h5>Contact Info:</h5>
-                        <h6>First Name: {{firstName}}</h6>
-                        <h6>Last Name: {{lastName}}</h6>
-                        <h6>City: {{city}}</h6>
-                        <h6>Province: {{province}}</h6>
                         <br>
                     </div>
                     <!--<button class="button">Edit profile</button>-->
