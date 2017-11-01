@@ -14,7 +14,7 @@ Template.addUserData.events({
         // store the user input form fields into specific variables
         var userId = Meteor.user()._id;
         var userName = Meteor.user().username;
-        var email = Meteor.user().address;
+        var email = Meteor.user().emails[0].address;
         var firstName = event.target.firstName.value;
         var lastName = event.target.lastName.value;
         var city = event.target.city.value;

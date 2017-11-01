@@ -2,14 +2,16 @@
     <div class="container">
         <div style="border:2px black;">
             <div style="background-color:white;">
-                {{#each userInfo}}
                 <div class="container">
                     <br>
+                    {{#each userInfo}}
                     <h5 class="header">Username: {{userName}}</h5>
                     <h5 class="header">Email: {{email}}</h5>
+                    {{/each}}
                     <br>
-                    <img src= {{profilePic}} style="width:250px">
+                    <img src={{profilePic}} style="width:250px">
                 </div>
+                {{#each userInfo}}
                 <div class="container">
                     <div class="header">
                         <br>
