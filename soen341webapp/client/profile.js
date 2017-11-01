@@ -13,23 +13,25 @@ Template.addUserData.events({
 
         // store the user input form fields into specific variables
         var userId = Meteor.user()._id;
+        var userName = Meteor.user().username;
+        var email = Meteor.user().address;
         var firstName = event.target.firstName.value;
         var lastName = event.target.lastName.value;
         var city = event.target.city.value;
         var province= event.target.province.value;
         var phoneNumber = event.target.phonenumber.value;
-        var profilePic = event.target.profilePicture.value;
 
-        if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!="" && profilePic != ""){
+        if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!=""){
             //added the information of the user in to the collections, userdata to later display on profile card.
             UserData.insert({
                 userId,
+                userName,
+                email,
                 firstName,
                 lastName,
                 city,
                 province,
-                phoneNumber,
-                profilePic
+                phoneNumber
             });
             //clear form
             event.target.reset();
