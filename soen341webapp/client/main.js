@@ -12,8 +12,6 @@ Accounts.ui.config({
   passwordSignupFields:'USERNAME_ONLY'
 });
 
-
-
 //RegEx function to remove reformat search string
 RegExp.escape = function(s) {
   return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
