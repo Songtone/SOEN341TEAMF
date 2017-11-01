@@ -80,7 +80,7 @@ Template.addPost.events({
     var desc = event.target.desc.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subcategory!="" && title!="" && desc !=""){
+    if(category!="" && subCategory!="" && title!="" && desc !=""){
         if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
@@ -158,7 +158,7 @@ Template.posts.events({'click .edit-Post': function(){
   var editmodal= document.getElementById("editPost");
       editmodal.style.display = "block";
       $("#edittitle").val(this.title).focus().blur();
-      $("#editsubcategory").val(this.subcategory).focus().blur();
+      $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
@@ -179,7 +179,7 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var Editlikes=$("#editlikes").val();
   if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
     if (confirm("Are you sure you want to edit this want?")){
-  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subcategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
+  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subCategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
 }
@@ -210,7 +210,7 @@ Template.posts.events({
         userId,
         postId,
         createdAt: new Date()
-      }); 
+      });
     }
 
     else if(cursor){
@@ -225,6 +225,9 @@ Template.wants.helpers({
   userWants: function() {
     return Wants.find({ userId: Meteor.userId()});
   },
+  postTitle: function( postId) {
+  var post= Posts.findOne({ _id: postId });
+  return post.title;
+  },
 
 });
-
