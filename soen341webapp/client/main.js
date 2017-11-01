@@ -20,13 +20,13 @@ RegExp.escape = function(s) {
 };
 
 Posts.search = function(query) {
-  const options = {sort: {likes: -1}};
+  const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
   if(_.isEmpty(query))
-    return Posts.find({}, options);
+    return Posts.find({}, options); // return posts without query
   return Posts.find({
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
     {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  }, options);
+  }, options); // return posts relevant to query entered in search bar
 };
 
 Template.posts.events({
