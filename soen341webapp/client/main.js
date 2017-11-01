@@ -11,21 +11,19 @@ Accounts.ui.config({
   passwordSignupFields:'USERNAME_AND_EMAIL'
 });
 
-
-
 //RegEx function to remove reformat search string
 RegExp.escape = function(s) {
   return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };
 
 Posts.search = function(query) {
-  console.log("looking for: " + query);
+  const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
   if(_.isEmpty(query))
-    return Posts.find({});
+    return Posts.find({}, options); // return posts without query
   return Posts.find({
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
     {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  });
+  }, options); // return posts relevant to query entered in search bar
 };
 
 Template.posts.events({

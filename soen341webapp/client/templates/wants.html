@@ -1,19 +1,19 @@
 <Template name="wants">
-    <div class="container">
-        <div style="border:2px black;">
-            <div style="background-color:white;">
-                <div>
-                    <h2>Wants</h2>
-                    <ul>
-                        {{#each userWants}} 
-
-                              <li><a href="#">{{postId}}</a></li>                      
-
-                        {{/each}}
-                    </ul>
+    <div class="wantPage">
+                <div class="wantTitlePage">
+                    <h2>Your Want Page</h2>
                 </div>
-            </div>
-        </div>
+    </div>
+    <div class="wantItems white-text">
+
+        <ul>
+            {{#each userWants}}
+
+            <li><a href="#">{{postId}}</a></li>
+
+            {{/each}}
+        </ul>
+
     </div>
 </Template>
 
