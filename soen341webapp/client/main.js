@@ -98,7 +98,7 @@ Template.addPost.events({
     }
   }
     else {
-      alert("Please fill in all fields before you submit your profile changes")
+      alert("Please fill in all fields before you submit your Want")
      }
   }
 });
@@ -175,7 +175,7 @@ Template.posts.events({
         userId,
         postId,
         createdAt: new Date()
-      }); 
+      });
     }
 
     else if(cursor){
@@ -192,4 +192,3 @@ Template.wants.helpers({
   },
 
 });
-
