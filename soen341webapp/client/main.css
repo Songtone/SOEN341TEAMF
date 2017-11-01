@@ -192,8 +192,11 @@ margin-left: 400px;
     max-height:100%;
     background-color: whitesmoke;
 }
+.profileSection{
+  margin-top: 60px;
+}
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
-button { 
+button {
     background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
