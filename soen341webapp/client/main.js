@@ -43,7 +43,10 @@ Template.posts.helpers({
   },
   postsSearchQuery: function() {
     return Session.get('postsSearchQuery');
-  }
+  },
+  
+name:[{like:'working'}],
+	 
 });
 
 /* logical implementation of the like counter, likes should be stored in the 'likes' collection to allow users to
@@ -80,6 +83,7 @@ Template.addPost.events({
     var desc = event.target.desc.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
+	var like="yes"
     if(category!="" && subcategory!="" && title!="" && desc !=""){
         if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
@@ -89,6 +93,7 @@ Template.addPost.events({
         title,
         desc,
         likes,
+		like,
         createdAt: new Date()
       });
       //clear form
