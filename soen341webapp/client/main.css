@@ -190,6 +190,7 @@ margin-left: 400px;
     margin:auto;
     max-width:100%;
     max-height:100%;
+    background-color: whitesmoke;
 }
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button { 
