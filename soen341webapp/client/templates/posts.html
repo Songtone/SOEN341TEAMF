@@ -1,66 +1,69 @@
-
 <template name="posts">
-    <div class="container">
-        <div class="feature center">
-          SEARCH
-        </div>
-        <ul class="collection">
-            <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-            <ul class="collection">
-                <div class="feature center">
-                    FEATURED REQUESTS
-                </div>
-                {{#each searchResults}} {{> post }} {{/each}}
-            </ul>
-        </ul>
+    <div class="searchBackground center ">
+            <div class="searching input-field center">
+                <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+            </div>
     </div>
+    <div class="feature center">
+        <div class="featureText">FEATURED REQUESTS</div>
+    </div>
+    {{#each searchResults}} {{> post }} {{/each}}
 </template>
 
 <Template name="post">
     <div class="row">
         <div class="col s8">
-            <div class="card blue lighten-1 medium">
-                <div class="card-content black-text">
+            <div class="card medium">
+                <div class="card-content white-text">
                     <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-                    <div>{{category}}<a href="#" class="delete-post right"><i class="material-icons red-text text-darken-4">close</i></a></div>
-                    <div>{{subCategory}}</div>
-
-                    <div class="titleCard orange darken-1">
-                        <div class="col s2">
-                            <img src="https://t3.ftcdn.net/jpg/01/17/38/06/500_F_117380631_jx6tY1M9aa4GJUPQr0tdw1eJa23JK31u.jpg" alt="" class="circle responsive-img">
-                            <!--adding a picture to the cards-->
-                        </div>
-                        <h4 class="card-title">{{title}}</h4>
-                        <p>Likes: {{likes}}
-                          {{#if currentUser}}
-                            <button class="like-button">Like</button>
-                          {{/if}}
-                        </p>
-                        <!--title of the card-->
-                    </div>
-                    <div class="description blue lighten-5">
-                        <div class="container">
-                            <p>{{desc}}</p>
-                            <!--description of the card-->
-                            <br>
-                            <br>
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <p class="black-text center">post by {{userId}}</p>
-                        <!--user who added this card-->
-                        <p>{{createdAt}}</p>
-                        <!--time the card was created-->
-                    </div>
-                </div>
-                <div class="card-action blue darken-4">
-                    <a href="#" class="want-button">I also want this</a>
-                    <a href="#">I will make this</a>
-                    {{#if currentUser}}
+                    <div class="cardCategory">{{category}}</div>
+                    <div class="cardSubCategory">{{subCategory}}</div>
+                    <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
+                             class="material-icons red-text text-darken-4">close</i></a>-->
+                    <!--we don't need this on the front page-->
                     <br>
-                     <a  class="edit-Post" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;">Edit Text</a>
-                     {{/if}}
+                    <br>
+                        <div class="cardTitle"><h1 class="card-title">{{title}}</h1></div><!--title of the card-->
+                        <div class="editPost"><a class="edit-Post btn-floating teal"
+                                                 onmouseover="this.style.cursor='pointer'"
+                                                 style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
+                        </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="likeAndTime">
+                        <p class="timeCreated">{{createdAt}}</p>
+                    </div>
+                    <!--time the card was created-->
+                    <div class="likeSection">
+                        <p>Likes: {{likes}}
+                            {{#if currentUser}}
+                            <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
+                            {{/if}}
+                        </p>
+                    </div>
+                    <div class="userSection">
+                        <button class="userButton"><p class="right">{{userId}}</p></button>
+                        <!--user who added this card-->
+                    </div>
+                    <br>
+                    <div class="description blue lighten-5 black-text">
+                        <p>{{desc}}</p>
+                        <!--description of the card-->
+                    </div>
+                    <div class="bottomCard">
+                        <div class="wantButtonSection">
+                        <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
+                        </div>
+                        <div class="makeButtonSection">
+                        <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+                        </div>
+                        {{#if currentUser}}
+                        <br>
+
+                        {{/if}}
+                    </div>
                 </div>
             </div>
         </div>
