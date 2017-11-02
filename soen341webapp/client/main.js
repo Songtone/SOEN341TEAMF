@@ -169,15 +169,15 @@ Template.posts.events({'click .edit-Post': function(){
 Template.editPost.events ({'click .submit-edited-post': function(){
   var EditTitle= $("#edittitle").val();
   var EditSubCat= $("#editsubcategory").val();
-  var Editdesc= $("#editdesc").val();
+  var EditDesc= $("#editdesc").val();
   var EditCat= $("#editcategory").val();
   var EditId= $("#editID").val();
   var EditTime=$("#editTime").val();
   var EditUserID=$("#editUserID").val();
   var Editlikes=$("#editlikes").val();
-  if(EditCat!="" && EditSubCat!="" && EditTitle!="" && Editdesc !=""){
+  if(EditCat!="" && EditSubCat!="" && EditTitle!="" && EditDesc !=""){
     if (confirm("Are you sure you want to edit this want?")){
- Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subCategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
+ Posts.update({ _id: EditId },{ title: EditTitle, desc: EditDesc, subCategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
 }
