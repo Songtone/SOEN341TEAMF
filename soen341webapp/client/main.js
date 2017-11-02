@@ -153,8 +153,8 @@ Template.posts.events({
 
 // this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
 Template.posts.events({'click .edit-Post': function(){
-  var editmodal= document.getElementById("editPost");
-      editmodal.style.display = "block";
+  var editModal= document.getElementById("editPost");
+      editModal.style.display = "block";
       $("#edittitle").val(this.title).focus().blur();
       $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
@@ -167,23 +167,23 @@ Template.posts.events({'click .edit-Post': function(){
 });
 // this function checks if the edited form is complete (no empty fields) then edits the original post
 Template.editPost.events ({'click .submit-edited-post': function(){
-  var EditTitle= $("#edittitle").val();
-  var EditSubCat= $("#editsubcategory").val();
-  var EditDesc= $("#editdesc").val();
-  var EditCat= $("#editcategory").val();
-  var EditId= $("#editID").val();
-  var EditTime=$("#editTime").val();
-  var EditUserID=$("#editUserID").val();
-  var Editlikes=$("#editlikes").val();
-  if(EditCat!="" && EditSubCat!="" && EditTitle!="" && EditDesc !=""){
+  var editTitle= $("#edittitle").val();
+  var editSubCat= $("#editsubcategory").val();
+  var editDesc= $("#editdesc").val();
+  var editCat= $("#editcategory").val();
+  var editId= $("#editID").val();
+  var editTime=$("#editTime").val();
+  var editUserID=$("#editUserID").val();
+  var editLikes=$("#editlikes").val();
+  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
     if (confirm("Are you sure you want to edit this want?")){
- Posts.update({ _id: EditId },{ title: EditTitle, desc: EditDesc, subCategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
-  var editmodal= document.getElementById("editPost");
-  editmodal.style.display = "none";
+ Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
+  var editModal= document.getElementById("editPost");
+  editModal.style.display = "none";
 }
 else {
-    var editmodal= document.getElementById("editPost");
-    editmodal.style.display = "none";
+    var editModal= document.getElementById("editPost");
+    editModal.style.display = "none";
 }
 }
   else {
