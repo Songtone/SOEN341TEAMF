@@ -66,3 +66,19 @@ Template.profile.helpers({
         }
 
 });
+
+// helper
+Template.nav.helpers({
+     userInfo: function() {
+         //check if person has the profile filled out
+         var isExsist = UserData.find({ userId: Meteor.userId()});
+
+         if(!isExsist){
+             alert("Please complete the Fill Profile");
+         }
+         else {
+             return UserData.find({userId: Meteor.userId()});
+         }
+        }
+
+});
