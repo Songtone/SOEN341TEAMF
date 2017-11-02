@@ -1,25 +1,17 @@
+
 <head>
   <title>MakerHub</title>
-  <link href="https//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class =" blue-grey lighten-4"> <!-- this is the color for the entire background-->
-  <div w3-include-html="templates.html"></div>
+<body class ="blue-grey darken-3"> <!-- this is the color for the entire background-->
+
+
   {{> nav }}
-  <div class="container">
-    <div class="feature center">
-      SEARCH
-    </div>
-    <ul class="collection">
-      {{> posts }}
-    </ul>
-  </div>
-
-  <!-- {{> profile}} -->
-  {{> profile}}
-  {{> footer }}
-  {{> addPost}} <!-- add post modal template -->
-
+  {{> Template.dynamic template=mainLayout}}
+  {{> addPost}}
+  {{> addUserData}}
+  {{> editPost}}
 
   <script>
     $(document).ready(function(){
@@ -41,8 +33,9 @@
 
       } else if (value == "Arts") {
         $("#subcategory").attr("placeholder", "Specify the type of art you are looking for").val("").focus().blur();
-
       }
     };
+
+    $(".side-nav-button").sideNav({closeOnClick: true});
   </script>
 </body>

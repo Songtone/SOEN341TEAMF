@@ -1,0 +1,34 @@
+<Template name="addPost">
+    <div id="addPost" class="modal">
+        <div class="modal-content">
+            <h3 class="card-panel">New Want</h3>
+            <form class="add-form card-panel">
+                <div class="input-field col s6">
+                    <select id="category" onchange="CategoryChange()">
+                        <option value="" disabled selected>Choose a category</option>
+                        <option value="Arts">Arts</option>
+                        <option value="Prop">Prop</option>
+                        <option value="Software">Software</option>
+                    </select>
+                    <label>Category</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Please choose a main category first" id="subcategory" type="text" class="validate">
+                    <label for="subcategory" id="subcategoryinfo">Want SubCategory</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="what do you want?" id="title" type="text" class="validate">
+                    <label for="title">Want Title</label>
+                </div>
+                <div class="input-field col s6">
+                    <textarea placeholder="Try to be as descriptive as possible" id="desc" class="materialize-textarea"></textarea>
+                    <label for="desc">Description</label>
+                </div>
+                <input class="waves-effect waves-light btn" type="submit" id="submit" />
+            </form>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">close</a>
+            </div>
+        </div>
+    </div>
+</Template>

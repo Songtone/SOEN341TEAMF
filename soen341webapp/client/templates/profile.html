@@ -1,0 +1,44 @@
+<Template name="profile">
+  <div class="profileSection">
+    <div class="container">
+        <div style="border:2px black;">
+            <div style="background-color:white;">
+                <div class="container">
+                    <br>
+                    {{#each userInfo}}
+                    <h5 class="header">Username: {{userName}}</h5>
+                    <br>
+                    <img src= {{picture}} style="width:250px">
+                    {{/each}}
+                </div>
+                {{#each userInfo}}
+                <div class="container">
+                    <div class="header">
+                        <br>
+                        <h5>About:</h5>
+                        <h6>First Name: {{firstName}}</h6>
+                        <h6>Last Name:  {{lastName}}</h6>
+                        <h6>Email:      {{email}}</h6>
+                        <h6>City:       {{city}}</h6>
+                        <h6>Province:   {{province}}</h6>
+                        <br>
+                        <h5>Skills:</h5>
+                        <h6>{{skills}}</h6>
+                        <h6></h6>
+                        <br>
+                        <h5>Activity:</h5>
+                        <h6>Number of Posts:    #[TODO]</h6>
+                        <h6>Number of Likes:    #[TODO]</h6>
+                        <h6>Number of Searches: #[TODO]</h6>
+                        <br>
+                    </div>
+                    <!--<button class="button">Edit profile</button>-->
+                    <br>
+                    <br>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+  </div>
+</Template>

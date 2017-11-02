@@ -1,0 +1,46 @@
+<Template name="nav">
+
+    <nav class="navigateBar blue-grey darken-1">
+
+            <div class="nav-wrapper">
+
+                <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
+                <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub" width="200" height="67"></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li class="nav-item">
+                        {{> loginButtons}}
+                    </li>
+                </ul>
+                <!--if you are logged in, you can see the add post button -->
+                <div class="topLeft">
+                {{#if currentUser}}
+                <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
+                <button disabled>Please login to Add a Want </button>
+                {{/if}}
+
+                {{#if currentUser}}
+                <a class="waves-effect waves-light btn modal-trigger" href="#addUserData">FILL PROFILE</a> {{else}}
+                <button disabled> ... </button>
+                {{/if}}
+                </div>
+            </div>
+
+    </nav>
+
+      <ul id="slide-out" class="side-nav">
+        <li><div class="user-view">
+          <div class="background">
+            <img src="https://static.brusheezy.com/system/resources/previews/000/013/954/non_2x/free-carbon-fibre-photoshop-patterns.jpg">
+          </div>
+          <a href="#!name"><span class="white-text name">username</span></a>
+          <a href="#!email"><span class="white-text email">username@email.com</span></a>
+        </div></li>
+        <li><a href="/"><i class="material-icons">home</i>Home</a></li>
+        <li><a href="/profile"><i class="material-icons">face</i>Profile</a></li>
+        <li><a href="/wants"><i class="material-icons">pan_tool</i>Wants</a></li>
+        <li><a href="/likes"><i class="material-icons">thumb_up</i>Likes</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Making dreams come true</a></li>
+      </ul>
+
+</Template>
