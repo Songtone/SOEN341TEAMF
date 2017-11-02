@@ -142,11 +142,7 @@ Template.editPost.events ({'click .submit-edited-post': function(){
 
   if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
     if (confirm("Are you sure you want to edit this want?")){
-<<<<<<< HEAD
-  Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subcategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
-=======
  Posts.update({ _id: EditId },{ title: EditTitle, desc: Editdesc, subCategory: EditSubCat, likes:Editlikes, category:EditCat, userId:EditUserID,createdAt:EditTime });
->>>>>>> master
   var editmodal= document.getElementById("editPost");
   editmodal.style.display = "none";
 }
