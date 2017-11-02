@@ -21,8 +21,9 @@ Template.addUserData.events({
         var province= event.target.province.value;
         var phoneNumber = event.target.phoneNumber.value;
         var picture = event.target.profilePicture.value;
+        var skills = event.target.skills.value;
 
-        if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!="" && picture!=""){
+        if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!="" && picture!="" && skills!=""){
             //added the information of the user in to the collections, userdata to later display on profile card.
             UserData.insert({
                 userId,
@@ -33,7 +34,8 @@ Template.addUserData.events({
                 city,
                 province,
                 phoneNumber,
-                picture
+                picture,
+                skills
             });
             //clear form
             event.target.reset();
