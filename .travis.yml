@@ -1,13 +1,9 @@
-sudo:
-    - required
-language: 
-    - node_js
-node_js:
-    - 7
+sudo: required
+language: node_js
+node_js: "7"
 before_install:
     - "curl https://install.meteor.com | /bin/sh"
-services:
-    - mongodb
+services: mongodb
 install:
     - npm install phantomjs-prebuilt -g
     - npm install -g mocha-phantomjs
@@ -24,9 +20,6 @@ script:
     - pwd
     - make start
     - make test
-group:
-    - stable
-dist:
-    - trusty
-os:
-    - linux
+group: stable
+dist: trusty
+os: linux
