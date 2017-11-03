@@ -18,7 +18,7 @@ before_script:
 script:
     - cd soen341webapp #cd to the project folder
     - pwd #make sure we are in the good directory
-    - make test #run basic test
+    - make basic-test #run basic test
 group: stable
 dist: trusty
 os: linux

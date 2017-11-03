@@ -1,7 +1,7 @@
 .PHONY:
 	test
 
-test:
+basic-test:
 	mocha -u tdd --reporter spec
 	
 start:
