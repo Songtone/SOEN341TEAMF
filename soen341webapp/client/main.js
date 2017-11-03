@@ -22,13 +22,14 @@ Posts.search = function(query) {
     return Posts.find({}, options); // return posts without query
   return Posts.find({
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
-    {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  }, options); // return posts relevant to query entered in search bar
-};
+    {'desc': { $regex: RegExp.escape(query), $options: 'i' }},
+    {'category': { $regex: RegExp.escape(query), $options: 'i' }}]
+  });
+
 
 Template.posts.events({
-  'keypress input': function(event, template) {
-    if (event.which === 13) {
+  'keyup input': function(event, template) {
+    if (event.keyCode >= 48 && event.keyCode <= 57 || event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 8) {
       Session.set('postsSearchQuery', event.target.value);
     }
   }
