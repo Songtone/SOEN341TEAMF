@@ -5,7 +5,8 @@ before_install:
     - "curl https://install.meteor.com | /bin/sh"
 services: mongodb
 install:
-    - npm install phantomjs-prebuilt -g
+    - npm install -g phantomjs-prebuilt
+    - npm install -g mocha
     - npm install -g mocha-phantomjs
     - npm install -g gulp
     - npm install -g bower
