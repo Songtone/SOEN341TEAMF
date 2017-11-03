@@ -183,9 +183,11 @@ Template.posts.events({
     }
   }
 });
-Template.wants.onCreated(function() {
-    this.yourVar = new ReactiveVar("");
-    this.yourVar.set("title");
+Template.profile.helpers({
+  userPosts: function(){
+  return  Posts.find({ userId: Meteor.user().username});
+  },
+
 });
 Template.wants.helpers({
   userWants: function() {
