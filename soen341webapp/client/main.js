@@ -1,7 +1,6 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
-import { UserData } from '../lib/collections.js'; // the collection "user info"
 import { Wants } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
@@ -9,7 +8,7 @@ import './main.html';
 
 //Accounts config
 Accounts.ui.config({
-  passwordSignupFields:'USERNAME_ONLY'
+  passwordSignupFields:'USERNAME_AND_EMAIL'
 });
 
 //RegEx function to remove reformat search string
@@ -97,45 +96,10 @@ Template.addPost.events({
     }
   }
     else {
-      alert("Please fill in all fields before you submit your profile changes")
+      alert("Please fill in all fields before you submit your Want")
      }
   }
 });
-
-//Form used to add user data to the logged in user
-Template.addUserData.events({
-  'submit form': function(event, template) {
-    event.preventDefault(); // prevent page reload
-
-      // store the user input form fields into specific variables
-    var userId = Meteor.user().username;
-    var firstName = event.target.firstName.value;
-    var lastName = event.target.lastName.value;
-    var city = event.target.city.value;
-    var province= event.target.province.value;
-
-    if(firstName!="" && lastName!="" && city!="" && province!=""){
-      //added the information of the user in to the collections, userdata to later display on profile card.
-        UserData.insert({
-              userId,
-              firstName,
-              lastName,
-              city,
-              province
-          });
-          //clear form
-          event.target.reset();
-          //close modal
-          $('.modal').modal('close');
-          return false;
-
-    }
-    else {
-        alert("Please fill in all fields before you submit your want")
-    }
-
-  }
- });
 
 
 Template.posts.events({
@@ -175,6 +139,7 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var editTime=$("#editTime").val();
   var editUserID=$("#editUserID").val();
   var editLikes=$("#editlikes").val();
+
   if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
     if (confirm("Are you sure you want to edit this want?")){
  Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
@@ -218,9 +183,11 @@ Template.posts.events({
     }
   }
 });
-Template.wants.onCreated(function() {
-    this.yourVar = new ReactiveVar("");
-    this.yourVar.set("title");
+Template.profile.helpers({
+  userPosts: function(){
+  return  Posts.find({ userId: Meteor.user().username});
+  },
+
 });
 Template.wants.helpers({
   userWants: function() {
