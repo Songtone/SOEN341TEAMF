@@ -16,10 +16,10 @@ before_script:
     - gulp &
     - sleep 5
 script:
-    - cd soen341webapp
-    - pwd
-    - make start
-    - make test
+    - cd soen341webapp #cd to the project folder
+    - pwd #make sure we are in the good directory
+    - make start #build and run application
+    - make test #run basic test
 group: stable
 dist: trusty
 os: linux
