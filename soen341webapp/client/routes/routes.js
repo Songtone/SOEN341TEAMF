@@ -59,3 +59,13 @@ FlowRouter.route('/teamPage',{
     }
 });
 
+FlowRouter.route('/termsOfUse',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'termsOfUse',
+            footer:'footer'
+        });
+    }
+});
+
