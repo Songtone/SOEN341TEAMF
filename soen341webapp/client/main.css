@@ -224,6 +224,9 @@ margin-left: 400px;
 .privacyPolicySection{
     margin-top: 10%;
 }
+.helpSection{
+    margin-top: 10%;
+}
 
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
