@@ -49,3 +49,13 @@ FlowRouter.route( '/post', {
     }
 });
 
+FlowRouter.route('/teamPage',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'teamPage',
+            footer:'footer'
+        });
+    }
+});
+
