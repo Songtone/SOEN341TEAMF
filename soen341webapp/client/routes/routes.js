@@ -69,3 +69,12 @@ FlowRouter.route('/termsOfUse',{
     }
 });
 
+FlowRouter.route('/privacyPolicy',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'privacyPolicy',
+            footer:'footer'
+        });
+    }
+});
