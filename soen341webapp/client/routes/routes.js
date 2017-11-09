@@ -1,51 +1,60 @@
 FlowRouter.route( '/profile', {
-	name: 'test', 
+	name: 'test',
   	action: function() {
   		console.log( "test is successfull" );
-    	BlazeLayout.render( 'mainLayout', { 
+    	BlazeLayout.render( 'mainLayout', {
     		body: 'profile',
-    		footer:'footer' 
-    	}); 
+    		footer:'footer'
+    	});
   	}
 });
 
 FlowRouter.route( '/', {
-	name: 'test', 
+	name: 'test',
   	action: function() {
-    	BlazeLayout.render( 'mainLayout', { 
+    	BlazeLayout.render( 'mainLayout', {
     		body:'posts',
-    		footer:'footer' 
-    	}); 
+    		footer:'footer'
+    	});
   	}
 });
 
 FlowRouter.route( '/likes', {
-  name: 'test', 
+  name: 'test',
     action: function() {
       alert("likes page not created yet");
-      BlazeLayout.render( 'mainLayout', { 
-        footer:'footer' 
-      }); 
+      BlazeLayout.render( 'mainLayout', {
+        footer:'footer'
+      });
     }
 });
 
 FlowRouter.route( '/wants', {
-  name: 'test', 
+  name: 'test',
     action: function() {
-      BlazeLayout.render( 'mainLayout', { 
+      BlazeLayout.render( 'mainLayout', {
         body: 'wants',
-        footer:'footer' 
-      }); 
+        footer:'footer'
+      });
     }
 });
 
 FlowRouter.route( '/post', {
-  name: 'test', 
+  name: 'test',
     action: function() {
       alert("post page not created yet");
-      BlazeLayout.render( 'mainLayout', { 
-        footer:'footer' 
-      }); 
+      BlazeLayout.render( 'mainLayout', {
+				footer:'footer'
+      });
     }
 });
 
+FlowRouter.route( '/ad', {
+  name: 'test',
+    action: function() {
+      BlazeLayout.render( 'mainLayout', {
+				body:'ad',
+				footer:'footer'
+      });
+    }
+});
