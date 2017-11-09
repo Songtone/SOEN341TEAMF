@@ -16,3 +16,33 @@ Template.ad.helpers({
 
 });
 
+Template.ad.helpers({
+  retrieveAdData: function( postId,  field) {
+      var wantedData="";
+      var post= Posts.findOne({ _id: postId });
+      switch (field) {
+        case "title":
+        wantedData= post.title;
+          break;
+        case "category":
+        wantedData= post.category;
+        break;
+        case "userId":
+        wantedData= post.userId;
+        break;
+        case "description":
+        wantedData= post.desc;
+        break;
+        case "subCategory":
+        wantedData= post.subCategory;
+        break;
+        case "creationTime":
+        wantedData= post.createdAt;
+        break;
+        case "likes":
+        wantedData= post.likes;
+        break;
+      }
+      return wantedData;
+  },
+});
