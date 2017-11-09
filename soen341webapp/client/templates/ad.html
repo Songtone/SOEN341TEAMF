@@ -1,0 +1,40 @@
+<Template name="ad">
+  <div class="adInfoSection">
+    <div class="container">
+        <div style="border:2px black;">
+            <div style="background-color:white;">
+                <div class="container">
+                    <br>
+                    <!--{{#each userInfo}}-->
+                    <h5 class="header">Title: {{title}}</h5>
+                    <br>
+                    <img src= {{picture}} style="width:250px">
+                    <!--{{/each}}-->
+                </div>
+                <!--{{#each userInfo}}-->
+                <div class="container">
+                    <div class="header">
+                        <br>
+                        <h5>About:</h5>
+                        <h6>Category:     {{category}}</h6>
+                        <h6>Subcategory:  {{subCategory}}</h6>
+                        <h6>Created At:   {{createdAt}}</h6>
+                        <h6>Likes:        {{likes}}</h6>
+                        <h6>Posted By:    {{userId}}</h6>
+                        <br>
+                        <h5>Description:</h5>
+                        <h6>{{desc}}</h6>
+                        <h6></h6>
+                        <br>
+                    </div>
+                    <!--<button class="button">Edit profile</button>-->
+                    <br>
+                    <br>
+                </div>
+                <!--{{/each}}-->
+            </div>
+        </div>
+    </div>
+  </div>
+
+</Template>
