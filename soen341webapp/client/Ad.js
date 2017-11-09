@@ -1,4 +1,4 @@
-/*import { Template } from 'meteor/templating';
+import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
 import { Wants } from '../lib/collections.js';
@@ -7,20 +7,12 @@ import { Tracker } from 'meteor/tracker';
 import { Accounts } from 'meteor/accounts-base';
 
 
-// helper
-Template.post.helpers({
+// Function is used to grab the data from the ad post
+Template.ad.helpers({
      postInfo: function() {
            //check if post is present
-           var isExsist = UserData.find({ userId: Meteor.userId()});
-
-           if(!isExsist){
-               alert("Please complete the Fill Profile");
+               return Posts.find();
            }
-           else {
-               return UserData.find({userId: Meteor.userId()});
-           }
-
-        }
 
 });
-*/
+

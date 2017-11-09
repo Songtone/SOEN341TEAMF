@@ -5,3 +5,5 @@ export const Likes = new Mongo.Collection("likes"); // create the collection for
 export const UserData = new Mongo.Collection("userData"); // use meteor mongo on cmd and performed from client side
 export const Wants = new Mongo.Collection("wants"); // create the collection for storing likes
 // use meteor mongo on cmd and performed from client side
+
+// function to diplay the ad values to the user
