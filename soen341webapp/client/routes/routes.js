@@ -49,12 +49,12 @@ FlowRouter.route( '/post', {
     }
 });
 
-FlowRouter.route( '/ad', {
+FlowRouter.route('/ad/:_id', {
   name: 'test',
     action: function() {
       BlazeLayout.render( 'mainLayout', {
-				body:'ad',
-				footer:'footer'
+        body:'ad',
+        footer:'footer'
       });
     }
 });

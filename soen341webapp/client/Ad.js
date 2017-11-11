@@ -8,10 +8,20 @@ import { Accounts } from 'meteor/accounts-base';
 
 
 // Function is used to grab the data from the ad post
+// Function is used to grab the data from the ad post
+
+Template.posts.events({
+  'click .ad': function() {
+    var postId =  Posts.findOne(this._id)._id;
+    FlowRouter.go('/ad/'+ postId);
+  }
+});
+
 Template.ad.helpers({
      postInfo: function() {
            //check if post is present
-               return Posts.find();
+           var adId = FlowRouter.getParam("_id");
+           return Posts.find({ "_id" : adId});
            }
 
 });

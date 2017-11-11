@@ -113,6 +113,8 @@ margin-left: 400px;
     margin:auto;
     max-width:100%;
     max-height:100%;
+    padding-left: 15px;
+    padding-right:15px;
 }
 
 .feature{/*div for the feature section*/
@@ -198,8 +200,6 @@ button {
 
 #search{
     margin:auto;
-    width: 700px;
-    padding-left:15px;
 }
 #nav-mobile{
     margin-right: 175px;
