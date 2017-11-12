@@ -11,14 +11,33 @@ Accounts.ui.config({
   passwordSignupFields:'USERNAME_AND_EMAIL'
 });
 
+// Close the dropdown menu if the user clicks outside of it
 Template.posts.events({
   'click .dropDownButton': function() {
     document.getElementById("categoriesMenu").classList.toggle("show");
   }
 });
 
-// Close the dropdown menu if the user clicks outside of it
+// Change selection for dropdown menu
+Template.posts.events({
+  'click .categoriesDropdownItem': function() {
+    document.getElementById("dDownButton").innerHTML = document.getElementById("dDownButton").innerHTML.replace(/.*/i, document.getElementsByClassName("categoriesDropdownItem").innerHTML);
+  }
+});
 
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropDownButton')) {
+    var dropdowns = document.getElementsByClassName("categoriesMenuContent");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
 
 //RegEx function to remove reformat search string
 RegExp.escape = function(s) {
@@ -26,6 +45,7 @@ RegExp.escape = function(s) {
 };
 
 Posts.search = function(query) {
+
   const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
   if(_.isEmpty(query))
     return Posts.find({}, options); // return posts without query
@@ -109,7 +129,6 @@ Template.addPost.events({
      }
   }
 });
-
 
 Template.posts.events({
   'click .delete-post': function() {
