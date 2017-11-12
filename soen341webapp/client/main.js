@@ -22,10 +22,9 @@ Posts.search = function(query) {
   if(!_.isEmpty(categoryDropdown)){ // if the user selects a category
     selectedCategory = categoryDropdown.options[categoryDropdown.selectedIndex].value;
   }
-  console.log("category:" + selectedCategory);
   const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
   if(_.isEmpty(query))
-    return Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query
+    return Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query except for category
   return Posts.find({
     'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' },
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
@@ -34,8 +33,9 @@ Posts.search = function(query) {
 };
 
 Template.posts.events({
-  'click .categoryItem': function(event, template){
-    Session.set('postsSearchQuery', event.target.value);
+  'change #category-dropDown': function(event, template){
+    delete Session.keys['postsSearchQuery']; // this will reset session on search every time the category option is changed
+    Session.set('postsSearchQuery', ""); // set new session on search to NULL on option change
   },
   'keypress input': function(event, template) {
     if (event.which === 13) {
