@@ -163,8 +163,9 @@ Template.posts.events({
   'click .want-button': function() {
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
+    var userName = Meteor.user().username;
 
-    var cursor = Wants.find({ "userId" : userId, "postId": postId});
+    var cursor = Wants.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
     //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
@@ -173,12 +174,13 @@ Template.posts.events({
       Wants.insert({
         userId,
         postId,
+        userName,
         createdAt: new Date()
       });
     }
 
     else if(cursor){
-      Wants.find({ "userId" : userId, "postId": postId}).forEach(function(want){
+      Wants.find({ "userId" : userId, "postId": postId, "userName": userName}).forEach(function(want){
         Wants.remove({_id: want._id});
       });
     }
