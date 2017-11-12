@@ -195,45 +195,6 @@ margin-left: 400px;
 .profileSection{
   margin-top: 60px;
 }
-
-.dropDownButton {
-    background-color: #4CAF50;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropDownButton:hover, .dropDownButton:focus {
-    background-color: #3e8e41;
-}
-
-.CategoriesDropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.categoriesMenuContent {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    min-width: 230px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.categoriesMenuContent a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.CategoriesDropdown a:hover {background-color: #ddd}
-
-.show {display:block;}
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
     background-color: Transparent;
@@ -246,12 +207,14 @@ button {
 /***-------------------------------------Style by ID------------------***/
 
 #search{
+    margin:auto;
     width: 700px;
 }
 #nav-mobile{
     margin-right: 175px;
 
 }
+
 
 /**----------------------------------Styles by pseudoclass -----------------**/
 
