@@ -1,8 +1,18 @@
 <template name="posts">
-  <div class="searchBackground center ">
-    <div class="searching input-field center">
-      <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-      <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+  <div class="searchBackground center">
+    <div class="searchGroup">
+      <div class="categories">
+        <select class="browser-default" value="{{postsSearchCategory}}">
+          <option value="placeholder">Select a Category</option>
+          <option value="arts">Arts</option>
+          <option value="props">Props</option>
+          <option value="software">Software</option>
+        </select>
+      </div>
+      <div class="searching input-field">
+        <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+        <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+      </div>
     </div>
   </div>
   <div class="feature center">
