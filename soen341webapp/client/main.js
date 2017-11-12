@@ -11,6 +11,24 @@ Accounts.ui.config({
   passwordSignupFields:'USERNAME_AND_EMAIL'
 });
 
+function selectCategory() {
+    document.getElementById("categoriesMenu").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropDown')) {
+    var dropdowns = document.getElementsByClassName("categoriesMenuContent");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 //RegEx function to remove reformat search string
 RegExp.escape = function(s) {
   return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
