@@ -231,8 +231,9 @@ Template.posts.events({
   'click .make-button': function() {
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
+    var userName = Meteor.user().username;
 
-    var cursor = Makers.find({ "userId" : userId, "postId": postId});
+    var cursor = Makers.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
     //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
@@ -241,12 +242,13 @@ Template.posts.events({
       Makers.insert({
         userId,
         postId,
+        userName,
         createdAt: new Date()
       });
     }
 
     else if(cursor){
-      Makers.find({ "userId" : userId, "postId": postId}).forEach(function(makers){
+      Makers.find({ "userId" : userId, "postId": postId, "userName": userName}).forEach(function(makers){
         Makers.remove({_id: makers._id});
       });
     }
