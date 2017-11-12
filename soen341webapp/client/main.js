@@ -17,16 +17,26 @@ RegExp.escape = function(s) {
 };
 
 Posts.search = function(query) {
+  var categoryDropdown = document.getElementById("category-dropDown");
+  var selectedCategory = "";
+  if(!_.isEmpty(categoryDropdown)){ // if the user selects a category
+    selectedCategory = categoryDropdown.options[categoryDropdown.selectedIndex].value;
+  }
+  console.log("category:" + selectedCategory);
   const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
   if(_.isEmpty(query))
-    return Posts.find({}, options); // return posts without query
+    return Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query
   return Posts.find({
+    'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' },
     $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
     {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
   }, options); // return posts relevant to query entered in search bar
 };
 
 Template.posts.events({
+  'click .categoryItem': function(event, template){
+    Session.set('postsSearchQuery', event.target.value);
+  },
   'keypress input': function(event, template) {
     if (event.which === 13) {
       Session.set('postsSearchQuery', event.target.value);
