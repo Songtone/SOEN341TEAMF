@@ -81,7 +81,7 @@ margin-left: 400px;
     rgba(0,0,0,0.22);
 }
 /*End of card section*/
-.row{/*div for making the cards in a row*/
+.inline{/*div for making the cards in a row*/
     display: inline-block;
 }
 .brand-logo{/*div for the logo*/
@@ -113,6 +113,8 @@ margin-left: 400px;
     margin:auto;
     max-width:100%;
     max-height:100%;
+    padding-left: 15px;
+    padding-right:15px;
 }
 
 .feature{/*div for the feature section*/
@@ -185,6 +187,13 @@ margin-left: 400px;
 .profileSection{
   margin-top: 60px;
 }
+
+.adContainer{
+  padding: 120px 30px 40px 30px;
+  background-color: rgba(87, 104, 119, 0.85);
+  color: white;
+}
+
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
     background-color: Transparent;
@@ -198,8 +207,6 @@ button {
 
 #search{
     margin:auto;
-    width: 700px;
-    padding-left:15px;
 }
 #nav-mobile{
     margin-right: 175px;
