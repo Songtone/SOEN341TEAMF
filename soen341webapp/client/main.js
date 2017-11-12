@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
+import { Makers } from '../lib/collections.js';
 import { Wants } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
@@ -222,4 +223,32 @@ Template.wants.helpers({
   }
   return wantedData;
   },
+});
+
+
+
+Template.posts.events({
+  'click .make-button': function() {
+    var userId =  Meteor.userId();
+    var postId =  Posts.findOne(this._id)._id;
+
+    var cursor = Makers.find({ "userId" : userId, "postId": postId});
+    var count = cursor.count();
+
+    //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
+
+    if(!count){
+      Makers.insert({
+        userId,
+        postId,
+        createdAt: new Date()
+      });
+    }
+
+    else if(cursor){
+      Makers.find({ "userId" : userId, "postId": postId}).forEach(function(makers){
+        Makers.remove({_id: makers._id});
+      });
+    }
+  }
 });
