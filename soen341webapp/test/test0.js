@@ -1,4 +1,4 @@
-/* Random test
+/*// Random test
 (function() {
   var assert = require("assert");
   var plus = function (one, two) {
@@ -27,13 +27,14 @@ function addWant(Id, cat, tit, descript, sub, like )
     
     if (category != "" && subCategory != "" && title != "" && desc != "") {
         //if (confirm("Are you sure you want to create this want?")) { //if 
-                    //Posts.insert({
-        userId = Id;
-        category = cat;
-        subCategory = sub;
-        title = tit;
-        desc = desscript;
-        likes = like;
+        //Posts.insert({
+        //simulating the insert function
+        var userId = Id;
+        var category = cat;
+        var subCategory = sub;
+        var title = tit;
+        var desc = desscript;
+        var likes = like;
                         //createdAt: new Date()
                     //});
         /*
@@ -48,7 +49,9 @@ function addWant(Id, cat, tit, descript, sub, like )
     return false;
 }
 
+//main function to perform the test
 (function () {
-
-
+    //for now, just testing 1 want
+    assert.expect(1);
+    assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are", 0), "Passed!");
 }).call(this);
