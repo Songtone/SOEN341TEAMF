@@ -20,31 +20,35 @@ var desc = "Testing if this works";
 var subCategory = "I forgot what the options for this are";
 var likes = 0;
 
-function addWant()
+
+function addWant(Id, cat, tit, descript, sub, like )
 {
-            event.preventDefault(); // prevent page reload
-            if (category != "" && subCategory != "" && title != "" && desc != "") {
-                if (confirm("Are you sure you want to create this want?")) {
-                    Posts.insert({
-                        userId,
-                        category,
-                        subCategory,
-                        title,
-                        desc,
-                        likes,
-                        createdAt: new Date()
-                    });
+    //event.preventDefault(); // prevent page reload
+    
+    if (category != "" && subCategory != "" && title != "" && desc != "") {
+        //if (confirm("Are you sure you want to create this want?")) { //if 
+                    //Posts.insert({
+        userId = Id;
+        category = cat;
+        subCategory = sub;
+        title = tit;
+        desc = desscript;
+        likes = like;
+                        //createdAt: new Date()
+                    //});
+        /*
                     //clear form
                     event.target.reset();
                     //close modal
                     $('.modal').modal('close');
-                    return false;
-                }
-            }
-            else {
-                alert("Please fill in all fields before you submit your Want")
-            }
-        }
-    });
-
+                    return false;*/
+        //}
+        return true;
+    }
+    return false;
 }
+
+(function () {
+
+
+}).call(this);
