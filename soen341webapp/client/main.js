@@ -16,20 +16,29 @@ RegExp.escape = function(s) {
   return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };
 
+/*	Function returns cursor of a mongoDB search result.
+*	Will return posts according to the string typed in the search bar
+*	As well as the option selected from the dropdown 
+*/
 Posts.search = function(query) {
   var categoryDropdown = document.getElementById("category-dropDown");
   var selectedCategory = "";
+  var searchResults;
   if(!_.isEmpty(categoryDropdown)){ // if the user selects a category
     selectedCategory = categoryDropdown.options[categoryDropdown.selectedIndex].value;
   }
   const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
-  if(_.isEmpty(query))
-    return Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query except for category
-  return Posts.find({
-    'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' },
-    $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
-    {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  }, options); // return posts relevant to query entered in search bar
+  if(_.isEmpty(query)){
+    searchResults = Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query except for category
+  }
+  else{
+	  searchResults = Posts.find({
+		'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' },
+		$or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
+		{'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
+	  }, options); // return posts relevant to query entered in search bar
+  }
+  return searchResults;
 };
 
 Template.posts.events({
