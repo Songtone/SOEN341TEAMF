@@ -196,29 +196,27 @@ margin-left: 400px;
   margin-top: 60px;
 }
 /**This is the Team Page Section **/
-.teamPageSection{
-    padding-left: 18%;
-    padding-right: 18%;
-}
 .teamPageTitle{
-    margin-top: 10%;
+    width: 75%;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.teamPageSection{
+    width: 35%;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.teamMemberArnav{
-    margin-top: 5%;
+.cardMembers{
+    width: 100%;
 }
-.teamMemberJosh{
-    margin-left: 400px;
-}
-.teamMemberNick{
-    margin-left: 400px;
-}
-.teamMemberDarrin{
-    margin-left: 400px;
-}
-.teamMemberSiamak{
-    margin-left: 400px;
-}
+
 
 /**This is the Terms of Use Page Section **/
 .termsOfUseTitle{
