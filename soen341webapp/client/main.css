@@ -195,6 +195,7 @@ margin-left: 400px;
 .profileSection{
   margin-top: 60px;
 }
+/**This is the Team Page Section **/
 .teamPageSection{
     padding-left: 18%;
     padding-right: 18%;
@@ -218,15 +219,42 @@ margin-left: 400px;
 .teamMemberSiamak{
     margin-left: 400px;
 }
-.termsOfUseSection{
+
+/**This is the Terms of Use Page Section **/
+.termsOfUseTitle{
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    font-size: xx-large;
+    width: 25%;
+    height: auto;
     margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
+.termsOfUseSection{
+    width: 50%;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: medium;
+    border-color: black;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+/**This is the Privacy Policy Page Section **/
 .privacyPolicySection{
     margin-top: 10%;
 }
+/**This is the Help Page Section **/
 .helpSection{
     margin-top: 10%;
 }
+
+
 
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
