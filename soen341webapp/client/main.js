@@ -76,9 +76,10 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
+    var picture = event.target.picture.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subCategory!="" && title!="" && desc !=""){
+    if(category!="" && subCategory!="" && title!="" && desc !="" && picture !=""){
         if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
@@ -86,6 +87,7 @@ Template.addPost.events({
         subCategory,
         title,
         desc,
+        picture,
         likes,
         createdAt: new Date()
       });
@@ -123,6 +125,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#edittitle").val(this.title).focus().blur();
       $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
       $("#editTime").val(this.createdAt).focus().blur();
@@ -136,15 +139,16 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var editTitle= $("#edittitle").val();
   var editSubCat= $("#editsubcategory").val();
   var editDesc= $("#editdesc").val();
+  var editPicture = $("#editPicture").val();
   var editCat= $("#editcategory").val();
   var editId= $("#editID").val();
   var editTime=$("#editTime").val();
   var editUserID=$("#editUserID").val();
   var editLikes=$("#editlikes").val();
 
-  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
+  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !="" && editPicture !=""){
     if (confirm("Are you sure you want to edit this want?")){
- Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
+ Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, picture: editPicture, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
   var editModal= document.getElementById("editPost");
   editModal.style.display = "none";
 }
@@ -213,6 +217,9 @@ Template.wants.helpers({
     break;
     case "description":
     wantedData= post.desc;
+    break;
+    case "picture":
+    wantedData= post.picture;
     break;
     case "subCategory":
     wantedData= post.subCategory;
