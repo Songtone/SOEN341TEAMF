@@ -130,6 +130,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editlikes").val(this.likes)
 }
 });
+
 // this function checks if the edited form is complete (no empty fields) then edits the original post
 Template.editPost.events ({'click .submit-edited-post': function(){
   var editTitle= $("#edittitle").val();
