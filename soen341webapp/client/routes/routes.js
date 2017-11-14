@@ -48,7 +48,7 @@ FlowRouter.route( '/post', {
       }); 
     }
 });
-FlowRouter.route('/about',{
+FlowRouter.route('/aboutPage',{
     name: 'test',
     action: function () {
         BlazeLayout.render('mainLayout',{
@@ -87,12 +87,4 @@ FlowRouter.route('/privacyPolicy',{
         });
     }
 });
-FlowRouter.route('/help',{
-    name: 'test',
-    action: function () {
-        BlazeLayout.render('mainLayout',{
-            body:'help',
-            footer:'footer'
-        });
-    }
-});
+

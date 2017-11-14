@@ -206,7 +206,7 @@ margin-left: 400px;
     margin-right: auto;
 }
 .aboutSection{
-   
+
     margin-top: 5%;
     width: 77%;
     margin-left: auto;
@@ -285,28 +285,7 @@ margin-left: 400px;
     margin-right: auto;
 }
 /**This is the Help Page Section **/
-.helpTitle{
-    background-color: whitesmoke;
-    border-style: solid;
-    border-width: medium;
-    border-color: black;
-    font-size: xx-large;
-    width: 25%;
-    height: auto;
-    margin-top: 10%;
-    margin-left: auto;
-    margin-right: auto;
-}
-.helpSection{
-    width: 50%;
-    background-color: whitesmoke;
-    border-style: solid;
-    border-width: medium;
-    border-color: black;
-    margin-top: 5%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 
 
