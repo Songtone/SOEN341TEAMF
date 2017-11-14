@@ -4,10 +4,10 @@
     position: fixed;
     top:0;
     z-index: 9;
-    height: 75px;
-    padding-top: 7px;
+    height: 85px;
+    padding-top: 10px;
     border-bottom-style: solid;
-    border-bottom-color: burlywood;
+    border-bottom-color: #5c5e63;
     border-bottom-width: 1px;
 }
 .side-nav-button{/*div for the side nav bar on the top left*/
@@ -25,10 +25,10 @@ margin-left: 400px;
 }
 /*Card section starts here */
 .card{/*this will make the cards have a small effect when hovering over them*/
-    border-style: groove;
-    border-color: burlywood;
-    border-width: 5px;
-    background-image: url("https://wallpaperscraft.com/image/wood_background_texture_36573_300x360.jpg");
+    border-style: solid;
+    border-color: #5c5e63;
+    border-width: 3px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("https://wallpaperscraft.com/image/wood_background_texture_36573_300x360.jpg");
     width: 360px;
     height: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
@@ -46,9 +46,6 @@ margin-left: 400px;
     float:right;
 }
 .cardCategory{/*div for the category name*/
-    border-style: double;
-    border-color: burlywood;
-    border-width: 5px;
     float: left;
 }
 .cardSubCategory{/*div for the sub category*/
@@ -66,15 +63,15 @@ margin-left: 400px;
 }
 .userSection{/*div for the user section*/
     height: 30px;
-    border-style: double;
-    border-color: burlywood;
+
     float: right;
 }
 .description{/*div for the description*/
     margin-top: 15px;
+    padding:5px;
     height: 100px;
     border-style: solid;
-    border-color: burlywood;
+    border-color: #5c5e63;
 }
 .bottomCard{/*div for the bottom of the cards*/
     margin-top: 10px;
@@ -84,7 +81,7 @@ margin-left: 400px;
     rgba(0,0,0,0.22);
 }
 /*End of card section*/
-.row{/*div for making the cards in a row*/
+.inline{/*div for making the cards in a row*/
     display: inline-block;
 }
 .brand-logo{/*div for the logo*/
@@ -97,8 +94,8 @@ margin-left: 400px;
 }
 .searchBackground{/*div for the search background*/
     border-bottom-style: solid;
-    border-bottom-color: burlywood;
-    background-image: url("https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg");
+    border-bottom-color: #5c5e63;
+    background-image: linear-gradient(rgba(26, 36, 64, 0.5), rgba(255, 255, 255, .5)), url(https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg);
     background-size: 1700px 500px;
     width: 100%;
     height: 400px;
@@ -114,37 +111,23 @@ margin-left: 400px;
 .searching{/*div for the search bar*/
     border-style: solid;
     border-width: 3px;
-    border-color: burlywood;
+    border-color: #5c5e63;
+    width: 700px;
     background-color: whitesmoke;
     margin:auto;
     max-width:100%;
     max-height:100%;
-    float:left;
-    display:inline;
-}
-.categories{
-    margin:auto;
-    border-style: solid;
-    border-width: 3px;
-    border-color: burlywood;
-    background-color: whitesmoke;
-    max-width:100%;
-    max-height:100%;
-    float:left;
-    display:inline;
+    padding-left: 15px;
+    padding-right:15px;
 }
 .feature{/*div for the feature section*/
     border-bottom: solid;
     border-bottom-width: 2px;
-    border-bottom-color: orange;
+    border-bottom-color: #5c5e63;
 
-
+    font-size:25px;
     width: 75%;
     height: 60px;
-    font-size: larger;
-    font-weight: 700;
-    font-family: "Droid Sans";
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     color: white;
     padding-top: 15px;
     left:0; right:0;
@@ -154,11 +137,8 @@ margin-left: 400px;
     max-height:100%;
 }
 .featureText{/*div for the feature text*/
-    border-style: groove;
-    border-width: 3px;
-    border-color: burlywood;
+
     display: inline;
-    background-image: url("http://www.activeworlds.com/newsletter/yellow/ap_cooper18.png");
 }
 .footing{/*div for the footer*/
      margin-left: 250px;
@@ -210,6 +190,13 @@ margin-left: 400px;
 .profileSection{
   margin-top: 60px;
 }
+
+.adContainer{
+  padding: 120px 30px 40px 30px;
+  background-color: rgba(87, 104, 119, 0.85);
+  color: white;
+}
+
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
     background-color: Transparent;
@@ -223,11 +210,22 @@ button {
 
 #search{
     margin:auto;
-    width: 700px;
 }
 #nav-mobile{
     margin-right: 175px;
 
+}
+
+#overlay {
+    background:  url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
+    -webkit-filter: grayscale(100%);
+    z-index: -1;
+    opacity: 0.5; /*make it as your requirement*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 
 
@@ -238,13 +236,7 @@ button {
 /***---------------------------------------Styles by tag -----------------------***/
 
 body {
-    background-image: url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: repeat;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+font-family: 'Open Sans', sans-serif;
 }
 
 main{

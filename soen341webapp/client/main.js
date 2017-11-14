@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Posts } from '../lib/collections.js'; // import the "table"
 import { Likes } from '../lib/collections.js';
+import { Makers } from '../lib/collections.js';
 import { Wants } from '../lib/collections.js';
 import { Accounts } from 'meteor/accounts-base'; // Accounts-ui takes care of password protection.
 import { Tracker } from 'meteor/tracker';
@@ -94,9 +95,10 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
+    var picture = event.target.picture.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subCategory!="" && title!="" && desc !=""){
+    if(category!="" && subCategory!="" && title!="" && desc !="" && picture !=""){
         if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
@@ -104,6 +106,7 @@ Template.addPost.events({
         subCategory,
         title,
         desc,
+        picture,
         likes,
         createdAt: new Date()
       });
@@ -141,6 +144,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#edittitle").val(this.title).focus().blur();
       $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
       $("#editTime").val(this.createdAt).focus().blur();
@@ -148,28 +152,30 @@ Template.posts.events({'click .edit-Post': function(){
       $("#editlikes").val(this.likes)
 }
 });
+
 // this function checks if the edited form is complete (no empty fields) then edits the original post
 Template.editPost.events ({'click .submit-edited-post': function(){
   var editTitle= $("#edittitle").val();
   var editSubCat= $("#editsubcategory").val();
   var editDesc= $("#editdesc").val();
+  var editPicture = $("#editPicture").val();
   var editCat= $("#editcategory").val();
   var editId= $("#editID").val();
   var editTime=$("#editTime").val();
   var editUserID=$("#editUserID").val();
   var editLikes=$("#editlikes").val();
 
-  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
+  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !="" && editPicture !=""){
     if (confirm("Are you sure you want to edit this want?")){
- Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
+ Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, picture: editPicture, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
   var editModal= document.getElementById("editPost");
   editModal.style.display = "none";
 }
 else {
     var editModal= document.getElementById("editPost");
     editModal.style.display = "none";
-}
-}
+    }
+  }
   else {
     alert("Please fill in all fields before you submit your want");
    }
@@ -181,8 +187,9 @@ Template.posts.events({
   'click .want-button': function() {
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
+    var userName = Meteor.user().username;
 
-    var cursor = Wants.find({ "userId" : userId, "postId": postId});
+    var cursor = Wants.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
     //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
@@ -191,12 +198,13 @@ Template.posts.events({
       Wants.insert({
         userId,
         postId,
+        userName,
         createdAt: new Date()
       });
     }
 
     else if(cursor){
-      Wants.find({ "userId" : userId, "postId": postId}).forEach(function(want){
+      Wants.find({ "userId" : userId, "postId": postId, "userName": userName}).forEach(function(want){
         Wants.remove({_id: want._id});
       });
     }
@@ -229,6 +237,9 @@ Template.wants.helpers({
     case "description":
     wantedData= post.desc;
     break;
+    case "picture":
+    wantedData= post.picture;
+    break;
     case "subCategory":
     wantedData= post.subCategory;
     break;
@@ -241,4 +252,34 @@ Template.wants.helpers({
   }
   return wantedData;
   },
+});
+
+
+
+Template.posts.events({
+  'click .make-button': function() {
+    var userId =  Meteor.userId();
+    var postId =  Posts.findOne(this._id)._id;
+    var userName = Meteor.user().username;
+
+    var cursor = Makers.find({ "userId" : userId, "postId": postId, "userName": userName});
+    var count = cursor.count();
+
+    //var username = Meteor.users.findOne({ _id: userId }).username;  //to find usernmae by ID
+
+    if(!count){
+      Makers.insert({
+        userId,
+        postId,
+        userName,
+        createdAt: new Date()
+      });
+    }
+
+    else if(cursor){
+      Makers.find({ "userId" : userId, "postId": postId, "userName": userName}).forEach(function(makers){
+        Makers.remove({_id: makers._id});
+      });
+    }
+  }
 });
