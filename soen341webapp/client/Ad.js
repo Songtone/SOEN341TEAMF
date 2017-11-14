@@ -41,6 +41,7 @@ Template.ad.events({'click .edit-Post': function(){
       $("#edittitle").val(this.title).focus().blur();
       $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
       $("#editTime").val(this.createdAt).focus().blur();

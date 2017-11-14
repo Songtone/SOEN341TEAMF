@@ -17,17 +17,36 @@ RegExp.escape = function(s) {
   return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 };
 
+/*	Function returns cursor of a mongoDB search result.
+*	Will return posts according to the string typed in the search bar
+*	As well as the option selected from the dropdown 
+*/
 Posts.search = function(query) {
+  var categoryDropdown = document.getElementById("category-dropDown");
+  var selectedCategory = "";
+  var searchResults;
+  if(!_.isEmpty(categoryDropdown)){ // if the user selects a category
+    selectedCategory = categoryDropdown.options[categoryDropdown.selectedIndex].value;
+  }
   const options = {sort: {likes: -1}}; // option for the find() function call, will sort the results in descending order according to likes
-  if(_.isEmpty(query))
-    return Posts.find({}, options); // return posts without query
-  return Posts.find({
-    $or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
-    {'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
-  }, options); // return posts relevant to query entered in search bar
+  if(_.isEmpty(query)){
+    searchResults = Posts.find({'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' }}, options); // return posts without query except for category
+  }
+  else{
+	  searchResults = Posts.find({
+		'category': { $regex: RegExp.escape(selectedCategory), $options: 'i' },
+		$or: [{'title': { $regex: RegExp.escape(query), $options: 'i' }},
+		{'desc': { $regex: RegExp.escape(query), $options: 'i' }}]
+	  }, options); // return posts relevant to query entered in search bar
+  }
+  return searchResults;
 };
 
 Template.posts.events({
+  'change #category-dropDown': function(event, template){
+    delete Session.keys['postsSearchQuery']; // this will reset session on search every time the category option is changed
+    Session.set('postsSearchQuery', ""); // set new session on search to NULL on option change
+  },
   'keypress input': function(event, template) {
     if (event.which === 13) {
       Session.set('postsSearchQuery', event.target.value);
@@ -76,9 +95,10 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
+    var picture = event.target.picture.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
-    if(category!="" && subCategory!="" && title!="" && desc !=""){
+    if(category!="" && subCategory!="" && title!="" && desc !="" && picture !=""){
         if (confirm("Are you sure you want to create this want?")){
       Posts.insert({
         userId,
@@ -86,6 +106,7 @@ Template.addPost.events({
         subCategory,
         title,
         desc,
+        picture,
         likes,
         createdAt: new Date()
       });
@@ -123,6 +144,7 @@ Template.posts.events({'click .edit-Post': function(){
       $("#edittitle").val(this.title).focus().blur();
       $("#editsubcategory").val(this.subCategory).focus().blur();
       $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
       $("#editID").val(this._id).focus().blur();
       $("#editUserID").val(this.userId).focus().blur();
       $("#editTime").val(this.createdAt).focus().blur();
@@ -136,15 +158,16 @@ Template.editPost.events ({'click .submit-edited-post': function(){
   var editTitle= $("#edittitle").val();
   var editSubCat= $("#editsubcategory").val();
   var editDesc= $("#editdesc").val();
+  var editPicture = $("#editPicture").val();
   var editCat= $("#editcategory").val();
   var editId= $("#editID").val();
   var editTime=$("#editTime").val();
   var editUserID=$("#editUserID").val();
   var editLikes=$("#editlikes").val();
 
-  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !=""){
+  if(editCat!="" && editSubCat!="" && editTitle!="" && editDesc !="" && editPicture !=""){
     if (confirm("Are you sure you want to edit this want?")){
- Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
+ Posts.update({ _id: editId },{ title: editTitle, desc: editDesc, picture: editPicture, subCategory: editSubCat, likes:editLikes, category:editCat, userId:editUserID,createdAt:editTime });
   var editModal= document.getElementById("editPost");
   editModal.style.display = "none";
 }
@@ -213,6 +236,9 @@ Template.wants.helpers({
     break;
     case "description":
     wantedData= post.desc;
+    break;
+    case "picture":
+    wantedData= post.picture;
     break;
     case "subCategory":
     wantedData= post.subCategory;
