@@ -1,81 +1,79 @@
 <template name="posts">
-  <div class="searchBackground center">
-    <div class="searchGroup">
-      <div class="categories">
-        <select class="browser-default" id="category-dropDown">
-          <option class="categoryItem" value="">All</option>
-          <option class="categoryItem" value="arts">Arts</option>
-          <option class="categoryItem" value="prop">Props</option>
-          <option class="categoryItem" value="software">Software</option>
-        </select>
-      </div>
-      <div class="searching input-field">
-        <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-        <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
-      </div>
+    <div class="searchBackground center">
+        <div class="searchGroup">
+            <div class="categories">
+                <select class="browser-default" id="category-dropDown">
+                    <option class="categoryItem" value="">All</option>
+                    <option class="categoryItem" value="arts">Arts</option>
+                    <option class="categoryItem" value="prop">Props</option>
+                    <option class="categoryItem" value="software">Software</option>
+                </select>
+            </div>
+            <div class="searching input-field">
+                <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="feature center">
-    <div class="featureText">FEATURED REQUESTS</div>
-  </div>
-  {{#each searchResults}} {{> post }} {{/each}}
+    <div class="feature center">
+        <div class="featureText">FEATURED REQUESTS</div>
+    </div>
+    {{#each searchResults}} {{> post }} {{/each}}
 </template>
 
 <Template name="post">
-  <div class="row">
-    <div class="col s8">
-      <div class="card medium">
-        <div class="card-content white-text">
-          <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-          <div class="cardCategory">{{category}}</div>
-          <div class="cardSubCategory">{{subCategory}}</div>
-          <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
-          class="material-icons red-text text-darken-4">close</i></a>-->
-          <!--we don't need this on the front page-->
-          <br>
-          <br>
-          <div class="cardTitle"><h1 class="card-title">{{title}}</h1></div><!--title of the card-->
-          <div class="editPost"><a class="edit-Post btn-floating teal"
-            onmouseover="this.style.cursor='pointer'"
-            style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
-          </div>
-          <br>
-          <br>
-          <br>
-          <div class="likeAndTime">
-            <p class="timeCreated">{{createdAt}}</p>
-          </div>
-          <!--time the card was created-->
-          <div class="likeSection">
-            <p>Likes: {{likes}}
-              {{#if currentUser}}
-              <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
-              {{/if}}
-            </p>
-          </div>
-          <div class="userSection">
-            <button class="userButton"><p class="right">{{userId}}</p></button>
-            <!--user who added this card-->
-          </div>
-          <br>
-          <div class="description blue lighten-5 black-text">
-            <p>{{desc}}</p>
-            <!--description of the card-->
-          </div>
-          <div class="bottomCard">
-            <div class="wantButtonSection">
-              <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
-            </div>
-            <div class="makeButtonSection">
-              <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+    <div class="row inline">
+        <div class="col">
+            <div class="card medium">
+                <div class="card-content white-text">
+                    <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
+                    <div class="cardCategory">{{category}}</div>
+                    <div class="cardSubCategory">{{subCategory}}</div>
+                    <br>
+                    <br>
+                    <a href="#" class="ad"><i class="material-icons">link</i>{{title}}</a>
+                    <div class="cardTitle">
+                        <h1 class="card-title">{{title}}</h1></div>
+                    <div class="editPost"><a class="edit-Post btn-floating teal" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="likeAndTime">
+                        <p class="timeCreated">{{createdAt}}</p>
+                    </div>
+                    <!--time the card was created-->
+                    <div class="likeSection">
+                        <p>Likes: {{likes}} {{#if currentUser}}
+                            <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
+                            {{/if}}
+                        </p>
+                    </div>
+                    <div class="userSection">
+                        <button class="userButton">
+                            <p class="right">{{userId}}</p>
+                        </button>
+                        <!--user who added this card-->
+                    </div>
+                    <br>
+                    <div class="description blue lighten-5 black-text">
+                        <p>{{desc}}</p>
+                        <!--description of the card-->
+                    </div>
+                    <div class="bottomCard">
+                        <div class="wantButtonSection">
+                            <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
+                        </div>
+                        <div class="makeButtonSection">
+                            <a href="#" class="make-button waves-effect waves-light btn">MAKE</a>
+                        </div>
+                        {{#if currentUser}}
+                        <br> {{/if}}
+                    </div>
+                </div>
             </div>
             {{#if currentUser}}
-            <br>
-
-            {{/if}}
-          </div>
+            <br> {{/if}}
         </div>
-      </div>
     </div>
-  </div>
 </Template>
