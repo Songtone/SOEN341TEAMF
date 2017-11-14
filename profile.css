@@ -1,0 +1,19 @@
+.container_box{
+	padding: 4em 2em;
+	box-shadow: 0 2px 5px rgba(0,0,0,.3);
+	max-width: 960px;
+    margin: 0 auto;
+	h5{
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: rgba(0,0,0,.5);
+	}
+	h6{
+    margin-top: 1.5em;
+    font-size: 1.5em;
+    line-height: 1.5;
+    color: rgba(0,0,0,.5);
+	}
+	background-image: url("http://4.bp.blogspot.com/-X6Di7CPFPz8/Up5yIqS_NdI/AAAAAAAACdA/DjKB8Ir399k/s1600/Walnut-Wood-Flooring-002.jpg");	
+}
