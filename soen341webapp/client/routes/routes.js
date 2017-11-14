@@ -48,6 +48,15 @@ FlowRouter.route( '/post', {
       }); 
     }
 });
+FlowRouter.route('/about',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'aboutPage',
+            footer:'footer'
+        });
+    }
+});
 
 FlowRouter.route('/teamPage',{
     name: 'test',
