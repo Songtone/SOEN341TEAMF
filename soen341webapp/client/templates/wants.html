@@ -1,68 +1,73 @@
 <Template name="wants">
     <div class="wantPage">
-                <div class="wantTitlePage">
-                    <h2>Your Want Page</h2>
-                </div>
+        <div class="wantTitlePage">
+            <h2>Your Want Page</h2>
+        </div>
     </div>
     <div class="wantItems white-text">
 
         <ul>
-            {{#each userWants}}
-            <div class="row">
-                <div class="col s8">
-                    <div class="card medium">
-                        <div class="card-content white-text">
-                            <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
-                            <div class="cardCategory">{{postData (postId) "category"  }}</div>
-                            <div class="cardSubCategory">{{postData(postId) "subCategory"}}</div>
-                            <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
+            <div class="card-div">
+                {{#each userWants}}
+                <div class="row inline">
+                    <div class="col s8">
+                        <div class="card medium">
+                            <div class="card-content white-text">
+                                <!-- the following adds the close icon that deletes the cards. The red-text text-darken-4 makes the icon red-->
+                                <div class="cardCategory">{{postData (postId) "category" }}</div>
+                                <div class="cardSubCategory">{{postData(postId) "subCategory"}}</div>
+                                <!--<div class="deleteCard"> <a href="#" class="delete-post right"><i
                                      class="material-icons red-text text-darken-4">close</i></a>-->
-                            <!--we don't need this on the front page-->
-                            <br>
-                            <br>
-                                <div class="cardTitle"><h1 class="card-title">{{postData(postId) "title"}}</h1></div><!--title of the card-->
-                              
-                            <br>
-                            <br>
-                            <br>
-                            <div class="likeAndTime">
-                                <p class="timeCreated">{{postData(postId) "creationTime"}}</p>
-                            </div>
-                            <!--time the card was created-->
-                            <div class="likeSection">
-                                <p>Likes: {{postData(postId) "likes"}}
-                                    {{#if currentUser}}
-                                    <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
-                                    {{/if}}
-                                </p>
-                            </div>
-                            <div class="userSection">
-                                <button class="userButton"><p class="right">{{postData(postId) "userId"}}</p></button>
-                                <!--user who added this card-->
-                            </div>
-                            <br>
-                            <div class="description blue lighten-5 black-text">
-                                <p>{{postData(postId) "description"}}</p>
-                                <!--description of the card-->
-                            </div>
-                            <div class="bottomCard">
-                                <div class="wantButtonSection">
-                                <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
-                                </div>
-                                <div class="makeButtonSection">
-                                <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
-                                </div>
-                                {{#if currentUser}}
+                                <!--we don't need this on the front page-->
                                 <br>
+                                <br>
+                                <div class="cardTitle">
+                                    <h1 class="card-title">
+                                  <a href="#" class="ad">{{postData(postId) "title"}}</a>
+                                  </h1></div>
+                                <!--title of the card-->
 
-                                {{/if}}
+                                <br>
+                                <br>
+                                <br>
+                                <div class="likeAndTime">
+                                    <p class="timeCreated">{{postData(postId) "creationTime"}}</p>
+                                </div>
+                                <!--time the card was created-->
+                                <div class="likeSection">
+                                    <p>Likes: {{postData(postId) "likes"}} {{#if currentUser}}
+                                        <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
+                                        {{/if}}
+                                    </p>
+                                </div>
+                                <div class="userSection">
+                                    <button class="userButton">
+                                        <p class="right">{{postData(postId) "userId"}}</p>
+                                    </button>
+                                    <!--user who added this card-->
+                                </div>
+                                <br>
+                                <div class="description blue lighten-5 black-text">
+                                    <p>{{postData(postId) "description"}}</p>
+                                    <!--description of the card-->
+                                </div>
+                                <div class="bottomCard">
+                                    <div class="wantButtonSection">
+                                        <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
+                                    </div>
+                                    <div class="makeButtonSection">
+                                        <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+                                    </div>
+                                    {{#if currentUser}}
+                                    <br> {{/if}}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            {{/each}}
+                {{/each}}
+            </div>
         </ul>
 
     </div>

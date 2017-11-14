@@ -2,7 +2,7 @@
     <div class="searchBackground center">
         <div class="searchGroup">
             <div class="categories">
-                <select class="browser-default" id="category-dropDown">
+                <select class="browser-default teal" id="category-dropDown">
                     <option class="categoryItem" value="">All</option>
                     <option class="categoryItem" value="arts">Arts</option>
                     <option class="categoryItem" value="prop">Props</option>
@@ -10,7 +10,9 @@
                 </select>
             </div>
             <div class="searching input-field">
-                <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                <div class="search-entry">
+                    <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                </div>
                 <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
             </div>
         </div>
@@ -18,7 +20,9 @@
     <div class="feature center">
         <div class="featureText">FEATURED REQUESTS</div>
     </div>
-    {{#each searchResults}} {{> post }} {{/each}}
+    <div class="card-div">
+        {{#each searchResults}} {{> post }} {{/each}}
+    </div>
 </template>
 
 <Template name="post">
@@ -31,9 +35,12 @@
                     <div class="cardSubCategory">{{subCategory}}</div>
                     <br>
                     <br>
-                    <a href="#" class="ad"><i class="material-icons">link</i>{{title}}</a>
+
                     <div class="cardTitle">
-                        <h1 class="card-title">{{title}}</h1></div>
+                        <h1 class="card-title">
+                        <a href="#" class="ad">{{title}}</a>
+                        </h1>
+                    </div>
                     <div class="editPost"><a class="edit-Post btn-floating teal" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
                     </div>
                     <br>
@@ -76,4 +83,5 @@
             <br> {{/if}}
         </div>
     </div>
+
 </Template>

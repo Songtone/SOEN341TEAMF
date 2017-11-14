@@ -1,14 +1,15 @@
 /***-----------------------------------Style by Class--------------------***/
 .navigateBar{
-    background-image: url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
+    /*background-image: url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");*/
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
     position: fixed;
     top:0;
     z-index: 9;
     height: 85px;
     padding-top: 10px;
     border-bottom-style: solid;
-    border-bottom-color: #5c5e63;
-    border-bottom-width: 1px;
+    border-bottom-color: rgb(189,189,189);
+    border-bottom-width: 3px;
 }
 .side-nav-button{/*div for the side nav bar on the top left*/
     color: black;
@@ -26,15 +27,37 @@ margin-left: 400px;
 /*Card section starts here */
 .card{/*this will make the cards have a small effect when hovering over them*/
     border-style: solid;
-    border-color: #5c5e63;
+    border-color: rgb(189,189,189);
     border-width: 3px;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("https://wallpaperscraft.com/image/wood_background_texture_36573_300x360.jpg");
+
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
     width: 360px;
     height: 300px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
     rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    margin: 6px;
 }
+
+.card-div{
+  width: 86%;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
+  align-self: center;
+
+}
+
+.ad{/*div for the card title*/
+    float: left;
+    /*text-shadow: 2px 2px #000000;*/
+    line-height: 6px;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(38,179,163);
+    /*text-shadow: 2px 2px #ffffff;*/
+}
+
 .cardTitle{/*div for the card title*/
     float: left;
 }
@@ -47,24 +70,28 @@ margin-left: 400px;
 }
 .cardCategory{/*div for the category name*/
     float: left;
+    font-size: 25px;
 }
 .cardSubCategory{/*div for the sub category*/
     float: right;
+    font-size: 25px;
 }
 .like-button{/*div for the like button*/
     right: 0;
     top:10px;
     width: 20px;
     height: 20px;
+    font-size: 20px;
     /*background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");*/
 }
 .likeSection{/*div for the like section*/
     float: left;
+    font-size: 20px;
 }
 .userSection{/*div for the user section*/
     height: 30px;
-
     float: right;
+    font-size: 20px;
 }
 .description{/*div for the description*/
     margin-top: 15px;
@@ -74,7 +101,7 @@ margin-left: 400px;
     border-color: #5c5e63;
 }
 .bottomCard{/*div for the bottom of the cards*/
-    margin-top: 10px;
+    margin-top: 20px;
 }
 .card:hover {/*div for the effect on the cards*/
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px
@@ -94,8 +121,9 @@ margin-left: 400px;
 }
 .searchBackground{/*div for the search background*/
     border-bottom-style: solid;
-    border-bottom-color: #5c5e63;
-    background-image: linear-gradient(rgba(26, 36, 64, 0.5), rgba(255, 255, 255, .5)), url(https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg);
+    border-bottom-color: rgb(189,189,189);
+    border-bottom-width: 3px;
+    background-image: linear-gradient(rgba(26, 36, 64, 0.35), rgba(255, 255, 255, 0.35)), url(https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg);
     background-size: 1700px 500px;
     width: 100%;
     height: 400px;
@@ -103,35 +131,50 @@ margin-left: 400px;
 
 }
 .searchGroup{
-    margin-left:21%;
-    position:absolute;
+    /*margin-left:21%;*/
+    /*position:absolute;*/
     align-self: center;
-}
+    width: 700px;
 
-.searching{/*div for the search bar*/
     border-style: solid;
     border-width: 3px;
-    border-color: #5c5e63;
+    border-color: rgb(0,0,0);/*#5c5e63*/
     width: 700px;
     background-color: whitesmoke;
     margin:auto;
     max-width:100%;
     max-height:100%;
+    align-self: center;
+}
+
+.searching{/*div for the search bar*/
+    border-style: solid;
+    border-width: 0px;
+    border-color: rgb(0,0,0);/*#5c5e63*/
+    width: 700px;
+    background-color: rgb(50,50,50);
+    margin:auto;
+    max-width:100%;
+    max-height:100%;
     padding-left: 15px;
     padding-right:15px;
+    align-self: center;
+}
+.search-entry{
+    color: white;
 }
 .feature{/*div for the feature section*/
     border-bottom: solid;
     border-bottom-width: 2px;
     border-bottom-color: #5c5e63;
-
     font-size:25px;
     width: 75%;
     height: 60px;
     color: white;
-    padding-top: 15px;
+    margin-top: 2%;
     left:0; right:0;
-    margin:auto;
+    margin-right: auto;
+    margin-left: auto;
 
     max-width:100%;
     max-height:100%;
@@ -139,6 +182,11 @@ margin-left: 400px;
 .featureText{/*div for the feature text*/
 
     display: inline;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 5px 5px #000000;
+    line-height: 30px;
+
 }
 .footing{/*div for the footer*/
      margin-left: 250px;
@@ -202,7 +250,6 @@ margin-left: 400px;
     margin-right: auto;
 }
 .aboutSection{
-
     margin-top: 5%;
     width: 77%;
     margin-left: auto;
@@ -221,7 +268,7 @@ margin-left: 400px;
 }
 .teamPageSection{
     margin-top: 5%;
-    width: 30%;
+    width: 40%;
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
@@ -280,15 +327,9 @@ margin-left: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
-
-
-
 .adContainer{
   padding: 120px 30px 40px 30px;
-  background-color: rgba(87, 104, 119, 0.85);
+  background-color: rgba(119, 119, 119, 0.85);
   color: white;
 }
 
@@ -316,7 +357,7 @@ button {
     background:  url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
     -webkit-filter: grayscale(100%);
     z-index: -1;
-    opacity: 0.5; /*make it as your requirement*/
+    opacity: 1; /*make it as your requirement*/
     position: fixed;
     top: 0;
     bottom: 0;
