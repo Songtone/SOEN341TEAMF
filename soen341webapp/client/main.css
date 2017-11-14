@@ -250,7 +250,6 @@ margin-left: 400px;
     margin-right: auto;
 }
 .aboutSection{
-
     margin-top: 5%;
     width: 77%;
     margin-left: auto;
@@ -269,7 +268,7 @@ margin-left: 400px;
 }
 .teamPageSection{
     margin-top: 5%;
-    width: 30%;
+    width: 40%;
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
@@ -328,12 +327,6 @@ margin-left: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-
-
-
-
-
-
 .adContainer{
   padding: 120px 30px 40px 30px;
   background-color: rgba(119, 119, 119, 0.85);
