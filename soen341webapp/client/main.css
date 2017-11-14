@@ -202,12 +202,13 @@ margin-left: 400px;
     border-style: solid;
     border-width: medium;
     border-color: black;
-    margin-top: 5%;
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
 }
 .teamPageSection{
-    width: 35%;
+    margin-top: 5%;
+    width: 45%;
     vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
