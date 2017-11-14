@@ -1,14 +1,24 @@
 <template name="posts">
-    <div class="searchBackground center ">
-            <div class="searching input-field center">
-                <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
-            </div>
+  <div class="searchBackground center">
+    <div class="searchGroup">
+      <div class="categories">
+        <select class="browser-default" id="category-dropDown">
+          <option class="categoryItem" value="">All</option>
+          <option class="categoryItem" value="arts">Arts</option>
+          <option class="categoryItem" value="prop">Props</option>
+          <option class="categoryItem" value="software">Software</option>
+        </select>
+      </div>
+      <div class="searching input-field">
+        <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+        <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+      </div>
     </div>
-    <div class="feature center">
-        <div class="featureText">FEATURED REQUESTS</div>
-    </div>
-    {{#each searchResults}} {{> post }} {{/each}}
+  </div>
+  <div class="feature center">
+    <div class="featureText">FEATURED REQUESTS</div>
+  </div>
+  {{#each searchResults}} {{> post }} {{/each}}
 </template>
 
 <Template name="post">
@@ -64,6 +74,16 @@
                     </div>
                 </div>
             </div>
+            <div class="makeButtonSection">
+              <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+            </div>
+            {{#if currentUser}}
+            <br>
+
+            {{/if}}
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </Template>
