@@ -48,6 +48,45 @@ FlowRouter.route( '/post', {
       });
     }
 });
+FlowRouter.route('/aboutPage',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'aboutPage',
+            footer:'footer'
+        });
+    }
+});
+
+FlowRouter.route('/teamPage',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'teamPage',
+            footer:'footer'
+        });
+    }
+});
+
+FlowRouter.route('/termsOfUse',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'termsOfUse',
+            footer:'footer'
+        });
+    }
+});
+
+FlowRouter.route('/privacyPolicy',{
+    name: 'test',
+    action: function () {
+        BlazeLayout.render('mainLayout',{
+            body:'privacyPolicy',
+            footer:'footer'
+        });
+    }
+});
 
 FlowRouter.route('/ad/:_id', {
   name: 'test',
