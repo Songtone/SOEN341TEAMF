@@ -4,8 +4,13 @@
   <div class="row">
     <div class="col s12">
       <h2 class="center-align">Ad Info</h2>
-
+      <div class="editPost"><a class="edit-Post btn-floating teal"
+                               onmouseover="this.style.cursor='pointer'"
+                               style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
+      </div>
+      
       {{#each postInfo}}
+      {{> editPost}}
 
 
       <h5>Title: {{title}}</h5>
