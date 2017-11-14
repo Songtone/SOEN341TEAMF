@@ -33,7 +33,7 @@ function addWant(Id, cat, tit, descript, sub, like )
         var category = cat;
         var subCategory = sub;
         var title = tit;
-        var desc = desscript;
+        var desc = descript;
         var likes = like;
                         //createdAt: new Date()
                     //});
@@ -51,7 +51,8 @@ function addWant(Id, cat, tit, descript, sub, like )
 
 //main function to perform the test
 (function () {
+	var assert = require("assert");
     //for now, just testing 1 want
-    assert.expect(1);
+    //assert.expect(1);
     assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are", 0), "Passed!");
 }).call(this);
