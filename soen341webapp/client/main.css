@@ -105,34 +105,19 @@ margin-left: 400px;
     padding-top: 175px;
 
 }
-.searchGroup{
-    margin-left:21%;
-    position:absolute;
-    align-self: center;
-}
-
 .searching{/*div for the search bar*/
     border-style: solid;
     border-width: 3px;
     border-color: burlywood;
+    width: 700px;
     background-color: whitesmoke;
+    top:15px; bottom:0;
+    left:0; right:0;
     margin:auto;
     max-width:100%;
     max-height:100%;
-    float:left;
-    display:inline;
 }
-.categories{
-    margin:auto;
-    border-style: solid;
-    border-width: 3px;
-    border-color: burlywood;
-    background-color: whitesmoke;
-    max-width:100%;
-    max-height:100%;
-    float:left;
-    display:inline;
-}
+
 .feature{/*div for the feature section*/
     border-bottom: solid;
     border-bottom-width: 2px;
