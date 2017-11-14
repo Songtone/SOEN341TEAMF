@@ -151,8 +151,8 @@ Template.editPost.events ({'click .submit-edited-post': function(){
 else {
     var editModal= document.getElementById("editPost");
     editModal.style.display = "none";
-}
-}
+    }
+  }
   else {
     alert("Please fill in all fields before you submit your want");
    }
