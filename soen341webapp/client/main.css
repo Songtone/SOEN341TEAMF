@@ -377,18 +377,21 @@ button {
 
 /**tags for the profile page**/
 #top{
-	 background-image:  url("http://www.seniormarketsolutions.com/wp-content/uploads/2017/04/bigstock-Dark-Grey-Background-10095875.jpg");
-	 background-position:55% 55%;
+	 background-image: url("https://hdwallpapersbuzz.com/wp-content/uploads/2017/03/circuit-board-wallpaper-images-41.jpg");
 	 color: white;
-	 border-bottom:thick solid black;
-	 border-radius:20px 20px 0px 0px;
+	 border:6px solid #1a7b72;
+	 border-radius:10px;
 	 padding-top: 6px;
 	 padding-left: 15px;
+
 }
 #credentials{
-	 background-image: url("http://4.bp.blogspot.com/-X6Di7CPFPz8/Up5yIqS_NdI/AAAAAAAACdA/DjKB8Ir399k/s1600/Walnut-Wood-Flooring-002.jpg"); 
+	 background-image: url("http://www.seniormarketsolutions.com/wp-content/uploads/2017/04/bigstock-Dark-Grey-Background-10095875.jpg"); 
 	 color: white;
-	 border-radius:0px 0px 20px 20px;
+	 border-color: #1a7b72;
+	 border-style: solid;
+	 border-width: 0px 6px 6px 6px;
+	 border-radius: 10px;
 	 padding-left: 15px;
 }
 
@@ -397,7 +400,7 @@ button {
 	display: block;
     margin: auto;
     width: 40%;
-	padding-bottom: 18px;
+	padding-bottom: 20px;
 }
 
 /**----------------------------------Styles by pseudoclass -----------------**/
