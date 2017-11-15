@@ -9,6 +9,7 @@
         <ul>
             <div class="card-div">
                 {{#each userWants}}
+                  {{#if notNull}}
                 <div class="row inline">
                     <div class="col s8">
                         <div class="card medium">
@@ -65,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-
+                      {{/if}}
                 {{/each}}
             </div>
         </ul>
