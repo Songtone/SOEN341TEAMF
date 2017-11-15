@@ -377,15 +377,27 @@ button {
 
 /**tags for the profile page**/
 #top{
-	 background-image:  url('https://image.ibb.co/nkWoCb/want_Page_Pic.jpg');
+	 background-image:  url("http://www.seniormarketsolutions.com/wp-content/uploads/2017/04/bigstock-Dark-Grey-Background-10095875.jpg");
 	 background-position:55% 55%;
+	 color: white;
 	 border-bottom:thick solid black;
 	 border-radius:20px 20px 0px 0px;
+	 padding-top: 6px;
+	 padding-left: 15px;
 }
 #credentials{
 	 background-image: url("http://4.bp.blogspot.com/-X6Di7CPFPz8/Up5yIqS_NdI/AAAAAAAACdA/DjKB8Ir399k/s1600/Walnut-Wood-Flooring-002.jpg"); 
 	 color: white;
 	 border-radius:0px 0px 20px 20px;
+	 padding-left: 15px;
+}
+
+/** centralizes the profile picture**/
+.centerimg{
+	display: block;
+    margin: auto;
+    width: 40%;
+	padding-bottom: 18px;
 }
 
 /**----------------------------------Styles by pseudoclass -----------------**/
