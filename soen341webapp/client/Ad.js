@@ -23,6 +23,12 @@ Template.profile.events({
     FlowRouter.go('/ad/'+ postId);
   }
 });
+Template.wants.events({
+  'click .ad': function() {
+    var postId =  Posts.findOne(this.postId)._id;
+    FlowRouter.go('/ad/'+ postId);
+  }
+});
 
 Template.ad.helpers({
     postInfo: function() {
