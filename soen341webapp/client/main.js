@@ -95,6 +95,7 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
+    var date= formatDate(new Date());
     var picture = event.target.picture.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
@@ -108,7 +109,7 @@ Template.addPost.events({
         desc,
         picture,
         likes,
-        createdAt: new Date()
+        createdAt: date
       });
       //clear form
       event.target.reset();
@@ -165,7 +166,7 @@ Template.posts.events({
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
     var userName = Meteor.user().username;
-
+    var date= formatDate(new Date());
     var cursor = Wants.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
@@ -176,7 +177,7 @@ Template.posts.events({
         userId,
         postId,
         userName,
-        createdAt: new Date()
+        createdAt: date
       });
     }
 
@@ -238,7 +239,7 @@ Template.posts.events({
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
     var userName = Meteor.user().username;
-
+    var date= formatDate(new Date());
     var cursor = Makers.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
@@ -249,7 +250,7 @@ Template.posts.events({
         userId,
         postId,
         userName,
-        createdAt: new Date()
+        createdAt: date
       });
     }
 
@@ -260,3 +261,17 @@ Template.posts.events({
     }
   }
 });
+function formatDate(date) {
+  var monthNames = [
+    "January", "February", "March",
+    "April", "May", "June", "July",
+    "August", "September", "October",
+    "November", "December"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + ' ' + monthNames[monthIndex] + ' ' + year;
+}
