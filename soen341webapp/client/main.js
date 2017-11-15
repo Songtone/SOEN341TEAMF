@@ -19,7 +19,7 @@ RegExp.escape = function(s) {
 
 /*	Function returns cursor of a mongoDB search result.
 *	Will return posts according to the string typed in the search bar
-*	As well as the option selected from the dropdown
+*	As well as the option selected from the dropdown 
 */
 Posts.search = function(query) {
   var categoryDropdown = document.getElementById("category-dropDown");
@@ -95,7 +95,6 @@ Template.addPost.events({
     var category = event.target.category.value;
     var title = event.target.title.value;
     var desc = event.target.desc.value;
-    var date= formatDate(new Date());
     var picture = event.target.picture.value;
     var subCategory= event.target.subcategory.value;
     var likes = 0;
@@ -109,7 +108,7 @@ Template.addPost.events({
         desc,
         picture,
         likes,
-        createdAt: date
+        createdAt: new Date()
       });
       //clear form
       event.target.reset();
@@ -122,6 +121,36 @@ Template.addPost.events({
       alert("Please fill in all fields before you submit your Want")
      }
   }
+});
+
+
+Template.posts.events({
+  'click .delete-post': function() {
+    if (confirm("Are you sure you want to delete this post?")){
+    Posts.remove(this._id);
+    //remove likes associated with this post
+    Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+      Likes.remove({_id: like._id});
+    });
+    return false;
+  }
+  }
+});
+
+// this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
+Template.posts.events({'click .edit-Post': function(){
+  var editModal= document.getElementById("editPost");
+      editModal.style.display = "block";
+      $("#edittitle").val(this.title).focus().blur();
+      $("#editsubcategory").val(this.subCategory).focus().blur();
+      $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
+      $("#editID").val(this._id).focus().blur();
+      $("#editUserID").val(this.userId).focus().blur();
+      $("#editTime").val(this.createdAt).focus().blur();
+      $("#editcategory").val(this.category)
+      $("#editlikes").val(this.likes)
+}
 });
 
 // this function checks if the edited form is complete (no empty fields) then edits the original post
@@ -152,13 +181,6 @@ else {
    }
 }
 });
-Template.editPost.events ({'click .close-edited-post': function(){
-
-    var editModal= document.getElementById("editPost");
-    editModal.style.display = "none";
-
-}
-});
 
 
 Template.posts.events({
@@ -166,7 +188,7 @@ Template.posts.events({
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
     var userName = Meteor.user().username;
-    var date= formatDate(new Date());
+
     var cursor = Wants.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
@@ -177,7 +199,7 @@ Template.posts.events({
         userId,
         postId,
         userName,
-        createdAt: date
+        createdAt: new Date()
       });
     }
 
@@ -239,7 +261,7 @@ Template.posts.events({
     var userId =  Meteor.userId();
     var postId =  Posts.findOne(this._id)._id;
     var userName = Meteor.user().username;
-    var date= formatDate(new Date());
+
     var cursor = Makers.find({ "userId" : userId, "postId": postId, "userName": userName});
     var count = cursor.count();
 
@@ -250,7 +272,7 @@ Template.posts.events({
         userId,
         postId,
         userName,
-        createdAt: date
+        createdAt: new Date()
       });
     }
 
@@ -261,17 +283,3 @@ Template.posts.events({
     }
   }
 });
-function formatDate(date) {
-  var monthNames = [
-    "January", "February", "March",
-    "April", "May", "June", "July",
-    "August", "September", "October",
-    "November", "December"
-  ];
-
-  var day = date.getDate();
-  var monthIndex = date.getMonth();
-  var year = date.getFullYear();
-
-  return day + ' ' + monthNames[monthIndex] + ' ' + year;
-}

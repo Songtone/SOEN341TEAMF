@@ -17,12 +17,6 @@ Template.posts.events({
     FlowRouter.go('/ad/'+ postId);
   }
 });
-Template.profile.events({
-  'click .ad': function() {
-    var postId =  Posts.findOne(this._id)._id;
-    FlowRouter.go('/ad/'+ postId);
-  }
-});
 
 Template.ad.helpers({
     postInfo: function() {

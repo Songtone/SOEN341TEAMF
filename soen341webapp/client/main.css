@@ -68,16 +68,6 @@ margin-left: 400px;
     width: 10px;
     float:right;
 }
-.deletePost{/*div for the delete post button*/
-  margin-right: 25px;
-  margin-top: 10px;
-  height: 10px;
-  width: 10px;
-  float:right;
-}
-.right{
-  float:right;
-}
 .cardCategory{/*div for the category name*/
     float: left;
     font-size: 25px;
