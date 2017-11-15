@@ -231,11 +231,10 @@ Template.wants.helpers({
   return wantedData;
   },
   notNull: function() {
-    var test=true;
+    var test=false;
     var wantedData="";
     var post= Posts.findOne({ _id: this.postId });
     if (post.category!=null){test=true;}
-    test=true;
     return test;
   },
 });
