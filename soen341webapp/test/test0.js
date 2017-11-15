@@ -53,6 +53,13 @@ function addWant(Id, cat, tit, descript, sub, like )
 (function () {
 	var assert = require("assert");
     //for now, just testing 1 want
-    //assert.expect(1);
-    assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are", 0), "Passed!");
+    
+	//if assert.ok(true) then passes
+	//need suite and test to make the test actually work
+	suite("addWant", function() {
+    test("adding want", function() {
+      return assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are", 0));
+    });
+  });
+  
 }).call(this);
