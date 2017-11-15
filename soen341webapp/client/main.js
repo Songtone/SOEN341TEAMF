@@ -19,7 +19,7 @@ RegExp.escape = function(s) {
 
 /*	Function returns cursor of a mongoDB search result.
 *	Will return posts according to the string typed in the search bar
-*	As well as the option selected from the dropdown 
+*	As well as the option selected from the dropdown
 */
 Posts.search = function(query) {
   var categoryDropdown = document.getElementById("category-dropDown");
@@ -136,6 +136,7 @@ Template.posts.events({
   }
   }
 });
+
 
 // this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
 Template.posts.events({'click .edit-Post': function(){

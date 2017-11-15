@@ -48,9 +48,36 @@ Template.addUserData.events({
             alert("Please fill in all fields before you complete your Profile")
         }
 
-    }
+    },
+
 });
 
+Template.profile.events({
+  'click .delete-post': function() {
+    if (confirm("Are you sure you want to delete this post?")){
+    Posts.remove(this._id);
+    //remove likes associated with this post
+    Likes.find({"post" : this._id, "likedBy": Meteor.user()._id}).forEach(function(like){
+      Likes.remove({_id: like._id});
+    });
+    return false;
+  }
+  }
+});
+Template.profile.events({'click .edit-Post': function(){
+  var editModal= document.getElementById("editPost");
+      editModal.style.display = "block";
+      $("#edittitle").val(this.title).focus().blur();
+      $("#editsubcategory").val(this.subCategory).focus().blur();
+      $("#editdesc").val(this.desc).focus().blur();
+      $("#editPicture").val(this.picture).focus().blur();
+      $("#editID").val(this._id).focus().blur();
+      $("#editUserID").val(this.userId).focus().blur();
+      $("#editTime").val(this.createdAt).focus().blur();
+      $("#editcategory").val(this.category)
+      $("#editlikes").val(this.likes)
+}
+});
 // helper
 Template.profile.helpers({
      userInfo: function() {
