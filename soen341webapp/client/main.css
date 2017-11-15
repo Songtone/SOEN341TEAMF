@@ -412,7 +412,12 @@ button {
 body {
 font-family: 'Open Sans', sans-serif;
 }
-
+h5{
+	font-size: 20px;
+}
+h6{
+	font-size: 20px;
+}
 main{
     flex: 1 0 auto;
 }
