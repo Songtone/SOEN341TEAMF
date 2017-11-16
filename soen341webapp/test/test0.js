@@ -18,7 +18,6 @@
 //i will make this
 //editing a post
 //helper to find a want base on userid
-//add userdata 
 
 //variables for a want post
 var userID;
@@ -43,7 +42,7 @@ var skills;
 
 
 //---------------------------------------------Function to add a want-----------------------------------------------
-function addWant(Id, cat, tit, descript, sub)
+function addWant(cat, tit, descript, sub)
 {
     //event.preventDefault(); // prevent page reload
     
@@ -51,12 +50,12 @@ function addWant(Id, cat, tit, descript, sub)
         //if (confirm("Are you sure you want to create this want?")) { //if 
         //Posts.insert({
         //simulating the insert function
-        var userId = Id;
+        userId = 1;
         var category = cat;
         var subCategory = sub;
         var title = tit;
         var desc = descript;
-        var likes = 0;
+        likes = 0;
                         //createdAt: new Date()
                     //});
         /*
@@ -69,6 +68,24 @@ function addWant(Id, cat, tit, descript, sub)
         return true;
     }
     return false;
+}
+
+//--------------------------------------------Function to like a want-----------------------------------------------
+function likeWant(Id)
+{
+    //when using more than 1 data, i'll do the following to find the user based on the id
+    //var cursor = Likes.find({ "post": this._id, "likedBy": Meteor.user()._id });
+    //var count = cursor.count();
+    // if the user has not liked this post, like it (save post _id and user _id as like)
+
+    if (likes == 0) {
+        likes = 1;
+    }
+        // if the user has already liked this post, unlike it (remove like from db.likes)
+    else {
+        likes -= 1;
+    }
+    return true;   
 }
 
 //--------------------------------------------Function to add user data---------------------------------------------
@@ -107,7 +124,7 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
     //test suite for adding a want
 	suite("addWant", function() {
     test("adding want", function() {
-      return assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are"));
+      return assert.ok(addWant("Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are"));
         });
 	});
 
@@ -125,26 +142,6 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
 
 
 //--------Functions extracted from the website's js for me to use their functionality-------------
-//---for the likes---
-/*Template.post.events({
-    'click .like-button': function () {
-        var cursor = Likes.find({ "post": this._id, "likedBy": Meteor.user()._id });
-        var count = cursor.count();
-        // if the user has not liked this post, like it (save post _id and user _id as like)
-        if (!count) {
-            Likes.insert({ "post": this._id, "likedBy": Meteor.user()._id });
-            Posts.update({ _id: this._id }, { $set: { likes: this.likes + 1 } });
-        }
-            // if the user has already liked this post, unlike it (remove like from db.likes)
-        else if (cursor) {
-            Likes.find({ "post": this._id, "likedBy": Meteor.user()._id }).forEach(function (like) {
-                Likes.remove({ _id: like._id });
-            });
-            Posts.update({ _id: this._id }, { $set: { likes: this.likes - 1 } });
-        }
-        return false;
-    }
-});*/
 
 //---for editing a post---
 // this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
