@@ -134,6 +134,17 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
 	        return assert.ok(addUserData("makerHubTester", "myemail@meme.com", "Nick", "Nic", "Montreal", "QC", 5, "www.mypic.com", "no skill"));
 	    });
 	});
+
+    //test suite for liking and unliking a want
+	suite("likeWant", function () {
+	    for (var i = 0; i < 2; i++)
+	    {
+	        test("liking/unliking Want", function () {
+	            return assert.ok(likeWant(1));
+	        });
+	    }
+
+	});
   
 }).call(this);
 
