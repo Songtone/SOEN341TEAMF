@@ -14,9 +14,9 @@
 
 //functions to consider adding
 //find a want <- this will need more than 1 want...can only do this if i implement an array
-//i will make this
-//editing a post
+//i will make this <- currently don't have the existing function for this, will do after
 //helper to find a want base on userid <- this too
+//search for a want
 
 //variables for a want post
 var userID;
@@ -134,7 +134,8 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
    return false;
 }
 
-//main function to perform the test
+
+//---------------------------------main function to perform the test-------------------------------
 (function () {
 	var assert = require("assert");
     //for now, just testing 1
@@ -180,8 +181,6 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
 
 
 //--------Functions extracted from the website's js for me to use their functionality-------------
-
-
 //---i want this---
 /*Template.posts.events({
     'click .want-button': function () {
