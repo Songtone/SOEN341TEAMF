@@ -166,6 +166,12 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
 	    }
 
 	});
+
+	suite("editPost", function () {
+	    test("editing my want", function () {
+	        return assert.ok(editPost("New Title", "I still don't know these options", "Yuppie", "arts"));
+	    })
+	});
   
 }).call(this);
 
