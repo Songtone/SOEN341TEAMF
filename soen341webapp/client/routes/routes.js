@@ -19,11 +19,11 @@ FlowRouter.route( '/', {
   	}
 });
 
-FlowRouter.route( '/likes', {
+FlowRouter.route( '/flowChart', {
   name: 'test',
     action: function() {
-      alert("likes page not created yet");
       BlazeLayout.render( 'mainLayout', {
+          body:'flowChart',
         footer:'footer'
       });
     }
