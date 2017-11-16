@@ -311,24 +311,28 @@ margin-left: 400px;
 
 /**This is the Privacy Policy Page Section **/
 .privacyPolicyTitle{
+    margin-top: 5%;
     background-color: whitesmoke;
     border-style: solid;
     border-width: medium;
     border-color: black;
     font-size: xx-large;
-    width: 25%;
+    width: 50%;
     height: auto;
-    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
 }
 .privacyPolicySection{
+
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 3%;
     width: 50%;
     background-color: whitesmoke;
     border-style: solid;
     border-width: medium;
     border-color: black;
-    margin-top: 5%;
+    margin-top:7%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -336,9 +340,6 @@ margin-left: 400px;
   padding: 120px 30px 40px 30px;
   background-color: rgba(119, 119, 119, 0.85);
   color: white;
-}
-.footerSection{
-    flex: 1 0 auto;
 }
 
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
