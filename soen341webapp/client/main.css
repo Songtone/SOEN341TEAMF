@@ -375,6 +375,33 @@ button {
     left: 0;
 }
 
+/**tags for the profile page**/
+#top{
+	 background-image: url("https://hdwallpapersbuzz.com/wp-content/uploads/2017/03/circuit-board-wallpaper-images-41.jpg");
+	 color: white;
+	 border:6px solid #1a7b72;
+	 border-radius:10px;
+	 padding-top: 6px;
+	 padding-left: 15px;
+
+}
+#credentials{
+	 background-image: url("http://www.seniormarketsolutions.com/wp-content/uploads/2017/04/bigstock-Dark-Grey-Background-10095875.jpg"); 
+	 color: white;
+	 border-color: #1a7b72;
+	 border-style: solid;
+	 border-width: 0px 6px 6px 6px;
+	 border-radius: 10px;
+	 padding-left: 15px;
+}
+
+/** centralizes the profile picture**/
+.centerimg{
+	display: block;
+    margin: auto;
+    width: 40%;
+	padding-bottom: 20px;
+}
 
 /**----------------------------------Styles by pseudoclass -----------------**/
 
@@ -385,7 +412,12 @@ button {
 body {
 font-family: 'Open Sans', sans-serif;
 }
-
+h5{
+	font-size: 20px;
+}
+h6{
+	font-size: 20px;
+}
 main{
     flex: 1 0 auto;
 }
