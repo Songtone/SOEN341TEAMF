@@ -28,7 +28,7 @@ var desc = "Testing if this works";
 var subCategory = "I forgot what the options for this are";
 var likes = 0;
 
-
+//---------------------------------------------Function to add a want-----------------------------------------------
 function addWant(Id, cat, tit, descript, sub, like )
 {
     //event.preventDefault(); // prevent page reload
@@ -55,6 +55,31 @@ function addWant(Id, cat, tit, descript, sub, like )
         return true;
     }
     return false;
+}
+
+//--------------------------------------------Function to add user data---------------------------------------------
+function addUserData(Id, userName, mail, fName, lName, ville, provinc, number, pic, skill)
+{
+   // store the user input form fields into specific variables
+   var userId = Id;
+   var userName = userName;
+   var email = mail;
+   var firstName = fName;
+   var lastName = lName;
+   var city = ville;
+   var province = provinc;
+   var phoneNumber = number;
+   var picture = pic;
+   var skills = skill;
+
+   if (firstName != "" && lastName != "" && city != "" && province != "" && phoneNumber != "" && picture != "" && skills != "") {
+       //added the information of the user in to the collections, userdata to later display on profile card.
+       //future application of the test can store the data into an array or vector
+
+       return true;
+   }
+
+   return false;
 }
 
 //main function to perform the test
@@ -167,50 +192,5 @@ Template.editPost.events({
                 Wants.remove({ _id: want._id });
             });
         }
-    }
-});*/
-
-//---Add profile data---
-/*Template.addUserData.events({
-    'submit form': function(event, template) {
-        event.preventDefault(); // prevent page reload
-
-        // store the user input form fields into specific variables
-        var userId = Meteor.user()._id;
-        var userName = Meteor.user().username;
-        var email = Meteor.user().emails[0].address;
-        var firstName = event.target.firstName.value;
-        var lastName = event.target.lastName.value;
-        var city = event.target.city.value;
-        var province= event.target.province.value;
-        var phoneNumber = event.target.phoneNumber.value;
-        var picture = event.target.profilePicture.value;
-        var skills = event.target.skills.value;
-
-        if(firstName!="" && lastName!="" && city!="" && province!="" && phoneNumber!="" && picture!="" && skills!=""){
-            //added the information of the user in to the collections, userdata to later display on profile card.
-            UserData.insert({
-                userId,
-                userName,
-                email,
-                firstName,
-                lastName,
-                city,
-                province,
-                phoneNumber,
-                picture,
-                skills
-            });
-            //clear form
-            event.target.reset();
-            //close modal
-            $('.modal').modal('close');
-            return false;
-
-        }
-        else {
-            alert("Please fill in all fields before you complete your Profile")
-        }
-
     }
 });*/
