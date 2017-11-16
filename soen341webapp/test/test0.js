@@ -13,11 +13,10 @@
 */
 
 //functions to consider adding
-//find a want
-//like a want
+//find a want <- this will need more than 1 want...can only do this if i implement an array
 //i will make this
 //editing a post
-//helper to find a want base on userid
+//helper to find a want base on userid <- this too
 
 //variables for a want post
 var userID;
@@ -88,6 +87,28 @@ function likeWant(Id)
     return true;   
 }
 
+//--------------------------------------------Function to edit a post----------------------------------------------
+function editPost(title, subCat, description, cate)
+{
+    //no way for me to test the css part of the function
+
+    // this checks if the edited form is complete (no empty fields) then edits the original post
+    var editTitle = title;
+    var editSubCat = subCat;
+    var editDesc = description;
+    var editCat = cate;
+
+    if (editCat != "" && editSubCat != "" && editTitle != "" && editDesc != "") {
+        title = editTitle;
+        category = editCat;
+        subCategory = editSubCat;
+        desc = description;
+
+        return true;
+    }
+    return false;
+}
+
 //--------------------------------------------Function to add user data---------------------------------------------
 function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, skill)
 {
@@ -154,50 +175,6 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
 
 //--------Functions extracted from the website's js for me to use their functionality-------------
 
-//---for editing a post---
-// this functions gets all the info from the post and puts them in an edit form( the edit form looks like the form used to create a new post)
-/*Template.posts.events({
-    'click .edit-Post': function () {
-        var editModal = document.getElementById("editPost");
-        editModal.style.display = "block";
-        $("#edittitle").val(this.title).focus().blur();
-        $("#editsubcategory").val(this.subCategory).focus().blur();
-        $("#editdesc").val(this.desc).focus().blur();
-        $("#editID").val(this._id).focus().blur();
-        $("#editUserID").val(this.userId).focus().blur();
-        $("#editTime").val(this.createdAt).focus().blur();
-        $("#editcategory").val(this.category)
-        $("#editlikes").val(this.likes)
-    }
-});
-// this function checks if the edited form is complete (no empty fields) then edits the original post
-Template.editPost.events({
-    'click .submit-edited-post': function () {
-        var editTitle = $("#edittitle").val();
-        var editSubCat = $("#editsubcategory").val();
-        var editDesc = $("#editdesc").val();
-        var editCat = $("#editcategory").val();
-        var editId = $("#editID").val();
-        var editTime = $("#editTime").val();
-        var editUserID = $("#editUserID").val();
-        var editLikes = $("#editlikes").val();
-
-        if (editCat != "" && editSubCat != "" && editTitle != "" && editDesc != "") {
-            if (confirm("Are you sure you want to edit this want?")) {
-                Posts.update({ _id: editId }, { title: editTitle, desc: editDesc, subCategory: editSubCat, likes: editLikes, category: editCat, userId: editUserID, createdAt: editTime });
-                var editModal = document.getElementById("editPost");
-                editModal.style.display = "none";
-            }
-            else {
-                var editModal = document.getElementById("editPost");
-                editModal.style.display = "none";
-            }
-        }
-        else {
-            alert("Please fill in all fields before you submit your want");
-        }
-    }
-});*/
 
 //---i want this---
 /*Template.posts.events({
