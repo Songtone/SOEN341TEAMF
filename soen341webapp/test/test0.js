@@ -20,13 +20,27 @@
 //helper to find a want base on userid
 //add userdata 
 
-//Initializing sample variables for a want post
-var userID = "Nick Nic";
-var category = "Arts";
-var title = "Testing Drawing";
-var desc = "Testing if this works";
-var subCategory = "I forgot what the options for this are";
-var likes = 0;
+//variables for a want post
+var userID;
+var category;
+var title;
+var desc;
+var subCategory;
+var likes;
+
+//variables for user data
+var userId;
+var userName;
+var email;
+var firstName;
+var lastName;
+var city;
+var province;
+var phoneNumber;
+var picture;
+var skills;
+
+
 
 //---------------------------------------------Function to add a want-----------------------------------------------
 function addWant(Id, cat, tit, descript, sub, like )
@@ -61,16 +75,16 @@ function addWant(Id, cat, tit, descript, sub, like )
 function addUserData(Id, userName, mail, fName, lName, ville, provinc, number, pic, skill)
 {
    // store the user input form fields into specific variables
-   var userId = Id;
-   var userName = userName;
-   var email = mail;
-   var firstName = fName;
-   var lastName = lName;
-   var city = ville;
-   var province = provinc;
-   var phoneNumber = number;
-   var picture = pic;
-   var skills = skill;
+   userId = Id;
+   userName = userName;
+   email = mail;
+   firstName = fName;
+   lastName = lName;
+   city = ville;
+   province = provinc;
+   phoneNumber = number;
+   picture = pic;
+   skills = skill;
 
    if (firstName != "" && lastName != "" && city != "" && province != "" && phoneNumber != "" && picture != "" && skills != "") {
        //added the information of the user in to the collections, userdata to later display on profile card.
