@@ -269,22 +269,32 @@ margin-left: 400px;
 .profileSection{
   margin-top: 60px;
 }
-
-.aboutTitle{
-    width: 75%;
-    background-color: whitesmoke;
-    border-style: solid;
-    border-width: medium;
-    border-color: black;
-    margin-top: 10%;
+/**This is the About Section **/
+.aboutTitle {
+    font-size: xx-large;
+    color: whitesmoke;
+    width: 15%;
+    border: groove;
+    border-color: whitesmoke;
+    border-width: 3px;
+    left: 0;
+    right: 0;
+    margin-top: 7%;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
 .aboutSection{
-    margin-top: 5%;
-    width: 77%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    height: 50%;
+    width: auto;
+    vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
+
 }
 /**This is the Team Page Section **/
 .teamPageTitle{
