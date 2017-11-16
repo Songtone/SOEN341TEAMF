@@ -291,19 +291,23 @@ margin-left: 400px;
     border-width: medium;
     border-color: black;
     font-size: xx-large;
-    width: 25%;
+    margin-top: 5%;
+    width: 50%;
     height: auto;
-    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
 }
 .termsOfUseSection{
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-bottom: 3%;
     width: 65%;
     background-color: whitesmoke;
     border-style: solid;
     border-width: medium;
     border-color: black;
-    margin-top: 5%;
+    margin-top: 7%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
 
@@ -327,12 +331,13 @@ margin-left: 400px;
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 3%;
-    width: 50%;
+    width: 65%;
     background-color: whitesmoke;
     border-style: solid;
     border-width: medium;
     border-color: black;
     margin-top:7%;
+    margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
 }
