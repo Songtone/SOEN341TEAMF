@@ -40,6 +40,7 @@ margin-left: 400px;
 }
 
 .card-div{
+
   width: 86%;
   margin-top: auto;
   margin-left: auto;
@@ -336,7 +337,9 @@ margin-left: 400px;
   background-color: rgba(119, 119, 119, 0.85);
   color: white;
 }
-
+.footerSection{
+    flex: 1 0 auto;
+}
 
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
