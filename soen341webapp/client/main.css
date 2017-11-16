@@ -210,40 +210,34 @@ margin-left: 400px;
 .makeButtonSection{
     float: right;
 }
-.wantPage{
-    padding-top: 6%;
-    text-align: center;
-    height: 300px;
-    width: 100%;
-    margin-top: 4.5%;
-    background-image: url("https://image.ibb.co/nkWoCb/want_Page_Pic.jpg");
-}
+
 .wantTitlePage{
-    color: burlywood;
-    font-family: "Cambria Math";
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    width: 25%;
+    color: whitesmoke;
+    width: 30%;
     border: groove;
-    border-color: burlywood;
+    border-color: whitesmoke;
     border-width: 3px;
     left:0; right:0;
-    margin:auto;
+    margin-top: 6%;
+    margin-left:auto;
+    margin-right: auto;
     max-width:100%;
     max-height:100%;
-    background-image: url("http://4.bp.blogspot.com/-X6Di7CPFPz8/Up5yIqS_NdI/AAAAAAAACdA/DjKB8Ir399k/s1600/Walnut-Wood-Flooring-002.jpg");
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
 .wantItems{
     height: 100%;
     color: white;
-    margin-top: 20%;
+    margin-top: 1%;
     border: groove;
-    border-color: burlywood;
+    border-color: whitesmoke;
     border-width: 3px;
     left:0; right:0;
-    margin:auto;
+    margin-left: auto;
+    margin-right: auto;
     max-width:100%;
     max-height:100%;
-    background-color: whitesmoke;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
 .profileSection{
   margin-top: 60px;
