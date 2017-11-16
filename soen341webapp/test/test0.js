@@ -102,13 +102,16 @@ function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, 
     //for now, just testing 1
     
 	//if assert.ok(true) then passes
-	//need suite and test to make the test actually work
+    //need suite and test to make the test actually work
+
+    //test suite for adding a want
 	suite("addWant", function() {
     test("adding want", function() {
       return assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are"));
         });
 	});
 
+    //test suite for adding user data
 	suite("addUserData", function () {
 	    test("adding profile data", function () {
 	        return assert.ok(addUserData("makerHubTester", "myemail@meme.com", "Nick", "Nic", "Montreal", "QC", 5, "www.mypic.com", "no skill"));
