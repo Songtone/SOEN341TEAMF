@@ -43,7 +43,7 @@ var skills;
 
 
 //---------------------------------------------Function to add a want-----------------------------------------------
-function addWant(Id, cat, tit, descript, sub, like )
+function addWant(Id, cat, tit, descript, sub)
 {
     //event.preventDefault(); // prevent page reload
     
@@ -56,7 +56,7 @@ function addWant(Id, cat, tit, descript, sub, like )
         var subCategory = sub;
         var title = tit;
         var desc = descript;
-        var likes = like;
+        var likes = 0;
                         //createdAt: new Date()
                     //});
         /*
@@ -72,10 +72,10 @@ function addWant(Id, cat, tit, descript, sub, like )
 }
 
 //--------------------------------------------Function to add user data---------------------------------------------
-function addUserData(Id, userName, mail, fName, lName, ville, provinc, number, pic, skill)
+function addUserData(userName, mail, fName, lName, ville, provinc, number, pic, skill)
 {
    // store the user input form fields into specific variables
-   userId = Id;
+   //userId = Id; //id will be used in the future for the array index
    userName = userName;
    email = mail;
    firstName = fName;
@@ -99,15 +99,21 @@ function addUserData(Id, userName, mail, fName, lName, ville, provinc, number, p
 //main function to perform the test
 (function () {
 	var assert = require("assert");
-    //for now, just testing 1 want
+    //for now, just testing 1
     
 	//if assert.ok(true) then passes
 	//need suite and test to make the test actually work
 	suite("addWant", function() {
     test("adding want", function() {
-      return assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are", 0));
-    });
-  });
+      return assert.ok(addWant("Nick Nic", "Arts", "Testing Drawing", "Testing if this works", "I forgot what the options for this are"));
+        });
+	});
+
+	suite("addUserData", function () {
+	    test("adding profile data", function () {
+	        return assert.ok(addUserData("makerHubTester", "myemail@meme.com", "Nick", "Nic", "Montreal", "QC", 5, "www.mypic.com", "no skill"));
+	    });
+	});
   
 }).call(this);
 
