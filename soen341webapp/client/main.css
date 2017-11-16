@@ -15,6 +15,12 @@
     color: black;
     margin-left: 20px;
 }
+.user-view{
+    height: 135px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+
+}
+
 .topLeft{/*div for the add want and fill profile buttons*/
     margin-left: 100px;
 }
@@ -29,7 +35,6 @@ margin-left: 400px;
     border-style: solid;
     border-color: rgb(189,189,189);
     border-width: 3px;
-
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
     width: 360px;
     height: 300px;
