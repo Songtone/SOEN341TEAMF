@@ -2,32 +2,33 @@
 
     <nav class="navigateBar blue-grey darken-1">
 
-            <div class="nav-wrapper">
+        <div class="nav-wrapper">
 
-                <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
-                <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub" width="200" height="67"></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="nav-item">
-                        {{> loginButtons}}
-                    </li>
-                </ul>
-                <!--if you are logged in, you can see the add post button -->
-                <div class="topLeft">
+            <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
+            <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub"
+                                                       width="200" height="67"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="nav-item">
+                    {{> loginButtons}}
+                </li>
+            </ul>
+            <!--if you are logged in, you can see the add post button -->
+            <div class="topLeft">
                 {{#if currentUser}}
                 <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
-                <button disabled>Please login to Add a Want </button>
+                <button disabled>Please login to Add a Want</button>
                 {{/if}}
 
                 {{#if currentUser}}
                 <a class="waves-effect waves-light btn modal-trigger" href="#addUserData">FILL PROFILE</a> {{else}}
-                <button disabled> ... </button>
+                <button disabled> ...</button>
                 {{/if}}
-                </div>
             </div>
+        </div>
 
     </nav>
 
-      <ul id="slide-out" class="side-nav">
+    <ul id="slide-out" class="side-nav">
         <div class="user-view">
             <a href="/"> <img src="https://image.ibb.co/iFtAFb/makerhub4.png" width="200px" height="70px"></a>
         </div>
@@ -35,8 +36,19 @@
         <li><a href="/profile"><i class="material-icons">face</i>Profile</a></li>
         <li><a href="/wants"><i class="material-icons">pan_tool</i>Wants</a></li>
         <li><a href="/flowChart"><i class="material-icons">help</i>Flow Chart</a></li>
-        <li><div class="divider"></div></li>
+        <li>
+            <div class="divider"></div>
+        </li>
         <li><a class="subheader">Making dreams come true</a></li>
-      </ul>
+        <li>
+            <div class="container">
+                <div class="row">
+                    <a href=""><img src="https://image.ibb.co/e4grHm/facebook.jpg" alt="facebook" border="0"></a>
+                    <a href=""> <img src="https://image.ibb.co/h9Z6iR/instgram.png" alt="instgram" border="0"></a>
+                    <a href=""><img src="https://image.ibb.co/eiPBHm/twitter.png" alt="twitter" border="0"></a>
+                </div>
+            </div>
+        </li>
+    </ul>
 
 </Template>
