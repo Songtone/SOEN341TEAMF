@@ -1,142 +1,160 @@
 /***-----------------------------------Style by Class--------------------***/
-.navigateBar{
+.navigateBar {
     /*background-image: url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");*/
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
     position: fixed;
-    top:0;
+    top: 0;
     z-index: 9;
     height: 85px;
     padding-top: 10px;
     border-bottom-style: solid;
-    border-bottom-color: rgb(189,189,189);
+    border-bottom-color: rgb(189, 189, 189);
     border-bottom-width: 3px;
 }
-.side-nav-button{/*div for the side nav bar on the top left*/
+
+.side-nav-button { /*div for the side nav bar on the top left*/
     color: black;
     margin-left: 20px;
 }
-.user-view{
+
+.user-view {
     height: 135px;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
 
-.topLeft{/*div for the add want and fill profile buttons*/
+.topLeft { /*div for the add want and fill profile buttons*/
     margin-left: 100px;
 }
-.login{/*the login button*/
-margin-left: 400px;
+
+.login { /*the login button*/
+    margin-left: 400px;
 }
-.searchIcon{/*div for the search icon*/
-    margin-left:660px;
+
+.searchIcon { /*div for the search icon*/
+    margin-left: 660px;
 }
+
 /*Card section starts here */
-.card{/*this will make the cards have a small effect when hovering over them*/
+.card { /*this will make the cards have a small effect when hovering over them*/
     border-style: solid;
-    border-color: rgb(189,189,189);
+    border-color: rgb(189, 189, 189);
     border-width: 3px;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
     width: 360px;
     height: 300px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px
-    rgba(0,0,0,0.24);
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     margin: 6px;
 }
 
-.card-div{
+.card-div {
 
-  width: 86%;
-  margin-top: auto;
-  margin-left: auto;
-  margin-right: auto;
-  align-self: center;
+    width: 86%;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
 
 }
 
-.ad{/*div for the card title*/
+.ad { /*div for the card title*/
     float: left;
     /*text-shadow: 2px 2px #000000;*/
     line-height: 6px;
     font-size: 30px;
     font-weight: bold;
-    color: rgb(38,179,163);
+    color: rgb(38, 179, 163);
     /*text-shadow: 2px 2px #ffffff;*/
 }
 
-.cardTitle{/*div for the card title*/
+.cardTitle { /*div for the card title*/
     float: left;
 }
-.editPost{/*div for the edit post button*/
+
+.editPost { /*div for the edit post button*/
     margin-right: 25px;
     margin-top: 10px;
     height: 10px;
     width: 10px;
-    float:right;
+    float: right;
 }
-.deletePost{/*div for the delete post button*/
-  margin-right: 25px;
-  margin-top: 10px;
-  height: 10px;
-  width: 10px;
-  float:right;
+
+.deletePost { /*div for the delete post button*/
+    margin-right: 25px;
+    margin-top: 10px;
+    height: 10px;
+    width: 10px;
+    float: right;
 }
-.right{
-  float:right;
+
+.right {
+    float: right;
 }
-.cardCategory{/*div for the category name*/
+
+.cardCategory { /*div for the category name*/
     float: left;
     font-size: 25px;
 }
-.cardSubCategory{/*div for the sub category*/
+
+.cardSubCategory { /*div for the sub category*/
     float: right;
     font-size: 25px;
 }
-.like-button{/*div for the like button*/
+
+.like-button { /*div for the like button*/
     right: 0;
-    top:10px;
+    top: 10px;
     width: 20px;
     height: 20px;
     font-size: 20px;
     /*background-image: url("http://inventure.cmlinks.com/images/Up_Arrow.jpg");*/
 }
-.likeSection{/*div for the like section*/
+
+.likeSection { /*div for the like section*/
     float: left;
     font-size: 20px;
 }
-.userSection{/*div for the user section*/
+
+.userSection { /*div for the user section*/
     height: 30px;
     float: right;
     font-size: 20px;
 }
-.description{/*div for the description*/
+
+.description { /*div for the description*/
     margin-top: 15px;
-    padding:5px;
+    padding: 5px;
     height: 100px;
     border-style: solid;
     border-color: #5c5e63;
 }
-.bottomCard{/*div for the bottom of the cards*/
+
+.bottomCard { /*div for the bottom of the cards*/
     margin-top: 20px;
 }
-.card:hover {/*div for the effect on the cards*/
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px
-    rgba(0,0,0,0.22);
+
+.card:hover { /*div for the effect on the cards*/
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
+
 /*End of card section*/
-.inline{/*div for making the cards in a row*/
+.inline { /*div for making the cards in a row*/
     display: inline-block;
 }
-.brand-logo{/*div for the logo*/
-    position:absolute;
-    left:0; right:0;
-    margin:auto;
 
-    max-width:100%;
-    max-height:100%;
+.brand-logo { /*div for the logo*/
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    max-width: 100%;
+    max-height: 100%;
 }
-.searchBackground{/*div for the search background*/
+
+.searchBackground { /*div for the search background*/
     border-bottom-style: solid;
-    border-bottom-color: rgb(189,189,189);
+    border-bottom-color: rgb(189, 189, 189);
     border-bottom-width: 3px;
     background-image: linear-gradient(rgba(26, 36, 64, 0.35), rgba(255, 255, 255, 0.35)), url(https://www.getwhatyouwant.ca/wp-content/uploads/2014/11/ToolsRessourceBanner-min.jpg);
     background-size: 1700px 500px;
@@ -145,7 +163,8 @@ margin-left: 400px;
     padding-top: 175px;
 
 }
-.searchGroup{
+
+.searchGroup {
     /*margin-left:21%;*/
     /*position:absolute;*/
     align-self: center;
@@ -153,48 +172,52 @@ margin-left: 400px;
 
     border-style: solid;
     border-width: 3px;
-    border-color: rgb(0,0,0);/*#5c5e63*/
+    border-color: rgb(0, 0, 0); /*#5c5e63*/
     width: 700px;
     background-color: whitesmoke;
-    margin:auto;
-    max-width:100%;
-    max-height:100%;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
     align-self: center;
 }
 
-.searching{/*div for the search bar*/
+.searching { /*div for the search bar*/
     border-style: solid;
     border-width: 0px;
-    border-color: rgb(0,0,0);/*#5c5e63*/
+    border-color: rgb(0, 0, 0); /*#5c5e63*/
     width: 700px;
-    background-color: rgb(50,50,50);
-    margin:auto;
-    max-width:100%;
-    max-height:100%;
+    background-color: rgb(50, 50, 50);
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
     padding-left: 15px;
-    padding-right:15px;
+    padding-right: 15px;
     align-self: center;
 }
-.search-entry{
+
+.search-entry {
     color: white;
 }
-.feature{/*div for the feature section*/
+
+.feature { /*div for the feature section*/
     border-bottom: solid;
     border-bottom-width: 2px;
     border-bottom-color: #5c5e63;
-    font-size:25px;
+    font-size: 25px;
     width: 75%;
     height: 60px;
     color: white;
     margin-top: 2%;
-    left:0; right:0;
+    left: 0;
+    right: 0;
     margin-right: auto;
     margin-left: auto;
 
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 }
-.featureText{/*div for the feature text*/
+
+.featureText { /*div for the feature text*/
 
     display: inline;
     font-size: 40px;
@@ -203,64 +226,74 @@ margin-left: 400px;
     line-height: 30px;
 
 }
-.footing{/*div for the footer*/
-     margin-left: 250px;
- }
-.information{/*div for the information on the footer*/
+
+.footing { /*div for the footer*/
+    margin-left: 250px;
+}
+
+.information { /*div for the information on the footer*/
     margin-left: 300px;
 }
-.wantButtonSection{
+
+.wantButtonSection {
     float: left;
 }
-.makeButtonSection{
+
+.makeButtonSection {
     float: right;
 }
 
-.wantTitlePage{
+.wantTitlePage {
     color: whitesmoke;
     width: 30%;
     border: groove;
     border-color: whitesmoke;
     border-width: 3px;
-    left:0; right:0;
+    left: 0;
+    right: 0;
     margin-top: 6%;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
-    max-width:100%;
-    max-height:100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    max-width: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
-.wantItems{
+
+.wantItems {
     height: 100%;
     color: white;
     margin-top: 1%;
     border: groove;
     border-color: whitesmoke;
     border-width: 3px;
-    left:0; right:0;
+    left: 0;
+    right: 0;
     margin-left: auto;
     margin-right: auto;
-    max-width:100%;
-    max-height:100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    max-width: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
-.flowChartTitle{
+
+.flowChartTitle {
     font-size: xx-large;
     color: whitesmoke;
     width: 25%;
     border: groove;
     border-color: whitesmoke;
     border-width: 3px;
-    left:0; right:0;
+    left: 0;
+    right: 0;
     margin-top: 7%;
-    margin-left:auto;
+    margin-left: auto;
     margin-right: auto;
-    max-width:100%;
-    max-height:100%;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
+    max-width: 100%;
+    max-height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 
 }
-.flowChartSection{
+
+.flowChartSection {
     margin-top: 2%;
     margin-bottom: 2%;
     height: 50%;
@@ -270,9 +303,10 @@ margin-left: 400px;
     margin-right: auto;
 }
 
-.profileSection{
-  margin-top: 60px;
+.profileSection {
+    margin-top: 60px;
 }
+
 /**This is the About Section **/
 .aboutTitle {
     font-size: xx-large;
@@ -290,7 +324,8 @@ margin-left: 400px;
     max-height: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .5)), url("http://www.webprecis.com/wp-content/uploads/2016/03/grey-washed-wall.jpg");
 }
-.aboutSection{
+
+.aboutSection {
     margin-top: 2%;
     margin-bottom: 2%;
     height: 50%;
@@ -300,8 +335,9 @@ margin-left: 400px;
     margin-right: auto;
 
 }
+
 /**This is the Team Page Section **/
-.teamPageTitle{
+.teamPageTitle {
     width: 75%;
     background-color: whitesmoke;
     border-style: solid;
@@ -311,7 +347,8 @@ margin-left: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-.teamPageSection{
+
+.teamPageSection {
     margin-top: 5%;
     width: 40%;
     vertical-align: middle;
@@ -319,13 +356,12 @@ margin-left: 400px;
     margin-right: auto;
 }
 
-.cardMembers{
+.cardMembers {
     width: 100%;
 }
 
-
 /**This is the Terms of Use Page Section **/
-.termsOfUseTitle{
+.termsOfUseTitle {
     background-color: whitesmoke;
     border-style: solid;
     border-width: medium;
@@ -337,7 +373,8 @@ margin-left: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-.termsOfUseSection{
+
+.termsOfUseSection {
     padding-right: 5%;
     padding-left: 5%;
     padding-bottom: 3%;
@@ -354,7 +391,7 @@ margin-left: 400px;
 }
 
 /**This is the Privacy Policy Page Section **/
-.privacyPolicyTitle{
+.privacyPolicyTitle {
     margin-top: 5%;
     background-color: whitesmoke;
     border-style: solid;
@@ -366,7 +403,8 @@ margin-left: 400px;
     margin-left: auto;
     margin-right: auto;
 }
-.privacyPolicySection{
+
+.privacyPolicySection {
 
     padding-right: 5%;
     padding-left: 5%;
@@ -376,38 +414,40 @@ margin-left: 400px;
     border-style: solid;
     border-width: medium;
     border-color: black;
-    margin-top:7%;
+    margin-top: 7%;
     margin-bottom: 2%;
     margin-left: auto;
     margin-right: auto;
 }
-.adContainer{
-  padding: 120px 30px 40px 30px;
-  background-color: rgba(119, 119, 119, 0.85);
-  color: white;
+
+.adContainer {
+    padding: 120px 30px 40px 30px;
+    background-color: rgba(119, 119, 119, 0.85);
+    color: white;
 }
 
 /***-------------------------------------css used to make a button invisible(used to fix header bug)------------------***/
 button {
     background-color: Transparent;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     border: none;
     overflow: hidden;
-    outline:none;
+    outline: none;
 }
 
 /***-------------------------------------Style by ID------------------***/
 
-#search{
-    margin:auto;
+#search {
+    margin: auto;
 }
-#nav-mobile{
+
+#nav-mobile {
     margin-right: 175px;
 
 }
 
 #overlay {
-    background:  url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
+    background: url("http://www.abcgreenbrier.org/wp-content/uploads/2017/01/Blue-print-Copy.jpg");
     -webkit-filter: grayscale(100%);
     z-index: -1;
     opacity: 1; /*make it as your requirement*/
@@ -418,20 +458,17 @@ button {
     left: 0;
 }
 
-
 /**----------------------------------Styles by pseudoclass -----------------**/
-
-
 
 /***---------------------------------------Styles by tag -----------------------***/
 
 body {
-font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     display: flex;
     min-height: 100vh;
     flex-direction: column;
 }
 
-main{
+main {
     flex: 1 0 auto;
 }
