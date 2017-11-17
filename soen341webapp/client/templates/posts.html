@@ -1,6 +1,12 @@
 <template name="posts">
     <div class="searchBackground center">
         <div class="searchGroup">
+            <div class="searching input-field">
+                <div class="search-entry">
+                    <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
+                </div>
+                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
+            </div>
             <div class="categories">
                 <select class="browser-default teal" id="category-dropDown">
                     <option class="categoryItem" value="">All</option>
@@ -8,12 +14,6 @@
                     <option class="categoryItem" value="prop">Props</option>
                     <option class="categoryItem" value="software">Software</option>
                 </select>
-            </div>
-            <div class="searching input-field">
-                <div class="search-entry">
-                    <input id="search" type="text" placeholder="Search..." value="{{postsSearchQuery}}">
-                </div>
-                <label class="searchIcon label-icon" for="search"><i class="material-icons">search</i></label>
             </div>
         </div>
     </div>
@@ -38,7 +38,7 @@
 
                     <div class="cardTitle">
                         <h1 class="card-title">
-                        <a href="#" class="ad">{{title}}</a>
+                            <a href="#" class="ad">{{title}}</a>
                         </h1>
                     </div>
                     <br>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="userSection">
                         <button class="userButton">
-                            <p class="right">{{userId}}</p>
+                            <a href="/profile"><p class="right">{{userId}}</p></a>
                         </button>
                         <!--user who added this card-->
                     </div>

@@ -15,10 +15,10 @@
                             <br>
                             <h5><b><u>About:</u></b></h5>
                             <h6>First Name: {{firstName}}</h6>
-                            <h6>Last Name:  {{lastName}}</h6>
-                            <h6>Email:      {{email}}</h6>
-                            <h6>City:       {{city}}</h6>
-                            <h6>Province:   {{province}}</h6>
+                            <h6>Last Name: {{lastName}}</h6>
+                            <h6>Email: {{email}}</h6>
+                            <h6>City: {{city}}</h6>
+                            <h6>Province: {{province}}</h6>
                             <br>
                             <h5><b><u>Skills:</u></b></h5> 
                             <h6 style="font-family: monospace">{{skills}}</h6>
@@ -49,13 +49,19 @@
                                                 <br>
                                                 <div class="cardTitle">
                                                     <h1 class="card-title">
-                                                <a href="#" class="ad">{{title}}</a>
-                                                  </h1></div>
+                                                        <a href="#" class="ad">{{title}}</a>
+                                                    </h1></div>
                                                 <!--title of the card-->
-                                                <div class="deletePost"><a class="delete-post btn-floating red" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">close</i></a>
+                                                <div class="deletePost"><a class="delete-post btn-floating red"
+                                                                           onmouseover="this.style.cursor='pointer'"
+                                                                           style="cursor: pointer; cursor: hand;"><i
+                                                        class="tiny material-icons">close</i></a>
                                                 </div>
 
-                                                <div class="editPost"><a class="edit-Post btn-floating teal" onmouseover="this.style.cursor='pointer'" style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
+                                                <div class="editPost"><a class="edit-Post btn-floating teal"
+                                                                         onmouseover="this.style.cursor='pointer'"
+                                                                         style="cursor: pointer; cursor: hand;"><i
+                                                        class="tiny material-icons">mode_edit</i></a>
                                                 </div>
                                                 <br>
                                                 <br>
@@ -66,7 +72,8 @@
                                                 <!--time the card was created-->
                                                 <div class="likeSection">
                                                     <p>Likes: {{likes}} {{#if currentUser}}
-                                                        <button class="like-button"><i class="tiny material-icons">thumb_up</i></button>
+                                                        <button class="like-button"><i class="tiny material-icons">thumb_up</i>
+                                                        </button>
                                                         {{/if}}
                                                     </p>
                                                 </div>
@@ -86,7 +93,8 @@
                                                         <a href="#" class="want-button waves-effect waves-light btn">WANT</a>
                                                     </div>
                                                     <div class="makeButtonSection">
-                                                        <a href="#" class="makeButton waves-effect waves-light btn">MAKE</a>
+                                                        <a href="#"
+                                                           class="makeButton waves-effect waves-light btn">MAKE</a>
                                                     </div>
                                                     {{#if currentUser}}
                                                     <br> {{/if}}

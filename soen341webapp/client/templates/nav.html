@@ -2,47 +2,59 @@
 
     <nav class="navigateBar blue-grey darken-1">
 
-            <div class="nav-wrapper">
+        <div class="nav-wrapper">
 
-                <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
-                <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub" width="200" height="67"></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li class="nav-item">
-                        {{> loginButtons}}
-                    </li>
-                </ul>
-                <!--if you are logged in, you can see the add post button -->
-                <div class="topLeft">
+            <a href="#" data-activates="slide-out" class="side-nav-button left"><i class="material-icons">menu</i></a>
+            <a href="/" class="brand-logo center"><img src="https://image.ibb.co/iFtAFb/makerhub4.png" alt="makerhub"
+                                                       width="200" height="67"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="nav-item">
+                    {{> loginButtons}}
+                </li>
+            </ul>
+            <!--if you are logged in, you can see the add post button -->
+            <div class="topLeft">
                 {{#if currentUser}}
                 <a class="waves-effect waves-light btn modal-trigger" href="#addPost">Add a Want</a> {{else}}
-                <button disabled>Please login to Add a Want </button>
+                <button disabled>Please login to Add a Want</button>
                 {{/if}}
 
                 {{#if currentUser}}
                 <a class="waves-effect waves-light btn modal-trigger" href="#addUserData">FILL PROFILE</a> {{else}}
-                <button disabled> ... </button>
+                <button disabled> ...</button>
                 {{/if}}
-                </div>
             </div>
+        </div>
 
     </nav>
 
-      <ul id="slide-out" class="side-nav">
-        <li><div class="user-view">
-          <div class="background">
-            <img src="https://static.brusheezy.com/system/resources/previews/000/013/954/non_2x/free-carbon-fibre-photoshop-patterns.jpg">
-          </div>
-          {{#each userInfo}}
-          <a href="#!name"><span class="white-text name">{{userName}}</span></a>
-          <a href="#!email"><span class="white-text email">{{email}}</span></a>
-          {{/each}}
-        </div></li>
+    <ul id="slide-out" class="side-nav">
+        <div class="user-view">
+            <a href="/"> <img src="https://image.ibb.co/iFtAFb/makerhub4.png" width="200px" height="70px"></a>
+        </div>
         <li><a href="/"><i class="material-icons">home</i>Home</a></li>
         <li><a href="/profile"><i class="material-icons">face</i>Profile</a></li>
         <li><a href="/wants"><i class="material-icons">pan_tool</i>Wants</a></li>
-        <li><a href="/likes"><i class="material-icons">thumb_up</i>Likes</a></li>
-        <li><div class="divider"></div></li>
+        <li><a href="/flowChart"><i class="material-icons">help</i>Flow Chart</a></li>
+
+        <div class="divider"></div>
+        <li><a class="contactUs">Contact Us</a>
+        </li>
+        <li><a class="emailContact">info@makerhub.com</a></li>
+        <li><a class="phoneContact">514-MAKEHUB (514-625-3482)</a></li>
+        <li>
+            <div class="container">
+                <div class="row">
+                    <a href="https://www.facebook.com"><img src="https://image.ibb.co/e4grHm/facebook.jpg" alt="facebook" border="0"></a>
+                    <a href="https://www.instagram.com"> <img src="https://image.ibb.co/h9Z6iR/instgram.png" alt="instagram" border="0"></a>
+                    <a href="https://www.twitter.com"><img src="https://image.ibb.co/eiPBHm/twitter.png" alt="twitter" border="0"></a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="divider"></div>
+        </li>
         <li><a class="subheader">Making dreams come true</a></li>
-      </ul>
+    </ul>
 
 </Template>
