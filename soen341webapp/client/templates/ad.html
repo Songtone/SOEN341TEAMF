@@ -1,84 +1,85 @@
 <Template name="ad">
 
-<div class="container adContainer">
-  <div class="row">
-    <div class="col s12">
-      <h2 class="center-align">Ad Info</h2>
+    <div class="container adContainer">
+        <div class="row">
+            <div class="col s12">
+                <h2 class="center-align">Ad Info</h2>
 
-      {{#each postInfo}}
-      {{> editPost}}
+                {{#each postInfo}}
+                {{> editPost}}
 
-      <div class="editPost"><a class="edit-Post btn-floating teal"
-                               onmouseover="this.style.cursor='pointer'"
-                               style="cursor: pointer; cursor: hand;"><i class="tiny material-icons">mode_edit</i></a>
-      </div>
+                <div class="editPost"><a class="edit-Post btn-floating teal"
+                                         onmouseover="this.style.cursor='pointer'"
+                                         style="cursor: pointer; cursor: hand;"><i
+                        class="tiny material-icons">mode_edit</i></a>
+                </div>
 
-      <h5>Title: {{title}}</h5>
-      <p>posted by: {{userId}} on {{createdAt}}</p>
-      <div class="divider"></div>
-      <div class="section">
-        <h5>Category</h5>
-        <p>{{category}} - {{subCategory}}</p>
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        <h5>Description</h5>
-        <p>{{desc}}</p>
-      </div>
-      <div class="divider"></div>
-      <div class="section">
-        <h5>Extra Info</h5>
-        <p>likes:{{likes}}</p>
-      </div>
-      <img src= {{picture}} style="width:250px">
-      {{/each}}
+                <h5>Title: {{title}}</h5>
+                <p>posted by: {{userId}} on {{createdAt}}</p>
+                <div class="divider"></div>
+                <div class="section">
+                    <h5>Category</h5>
+                    <p>{{category}} - {{subCategory}}</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h5>Description</h5>
+                    <p>{{desc}}</p>
+                </div>
+                <div class="divider"></div>
+                <div class="section">
+                    <h5>Extra Info</h5>
+                    <p>likes:{{likes}}</p>
+                </div>
+                <img src={{picture}} style="width:250px">
+                {{/each}}
+            </div>
+
+            <div class="col s12 m6 center-align">
+                <h2>Wanters</h2>
+                <table class="centered responsive-table bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each wanters}}
+                    <tr>
+                        <td data-title="Name">{{userName}}</td>
+                        <td data-title="Link">
+                            <a href="#"><i class="material-icons">email</i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col s12 m6 center-align">
+                <h2>Makers</h2>
+                <table class="centered responsive-table bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each makers}}
+                    <tr>
+                        <td data-title="Name">{{userName}}</td>
+                        <td data-title="Link">
+                            <a href="#"><i class="material-icons">email</i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-
-    <div class="col s12 m6 center-align">
-      <h2>Wanters</h2>
-      <table class="centered responsive-table bordered">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each wanters}}
-            <tr>
-              <td data-title="Name">{{userName}}</td>
-              <td data-title="Link">
-                <a href="#"><i class="material-icons">email</i></a>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-    </div>
-
-    <div class="col s12 m6 center-align">
-      <h2>Makers</h2>
-      <table class="centered responsive-table bordered">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each makers}}
-            <tr>
-              <td data-title="Name">{{userName}}</td>
-              <td data-title="Link">
-                <a href="#"><i class="material-icons">email</i></a>
-              </td>
-            </tr>
-            {{/each}}
-          </tbody>
-        </table>
-    </div>
-  </div>
-</div>
 
 
 </Template>
