@@ -1,6 +1,6 @@
 FlowRouter.route('/profile', {
     name: 'test',
-    action: function () {
+    action: function() {
         console.log("test is successfull");
         BlazeLayout.render('mainLayout', {
             body: 'profile',
@@ -11,7 +11,7 @@ FlowRouter.route('/profile', {
 
 FlowRouter.route('/', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'posts',
             footer: 'footer'
@@ -21,7 +21,7 @@ FlowRouter.route('/', {
 
 FlowRouter.route('/flowChart', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'flowChart',
             footer: 'footer'
@@ -31,7 +31,7 @@ FlowRouter.route('/flowChart', {
 
 FlowRouter.route('/wants', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'wants',
             footer: 'footer'
@@ -41,7 +41,7 @@ FlowRouter.route('/wants', {
 
 FlowRouter.route('/post', {
     name: 'test',
-    action: function () {
+    action: function() {
         alert("post page not created yet");
         BlazeLayout.render('mainLayout', {
             footer: 'footer'
@@ -50,7 +50,7 @@ FlowRouter.route('/post', {
 });
 FlowRouter.route('/aboutPage', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'aboutPage',
             footer: 'footer'
@@ -60,7 +60,7 @@ FlowRouter.route('/aboutPage', {
 
 FlowRouter.route('/teamPage', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'teamPage',
             footer: 'footer'
@@ -70,7 +70,7 @@ FlowRouter.route('/teamPage', {
 
 FlowRouter.route('/termsOfUse', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'termsOfUse',
             footer: 'footer'
@@ -80,24 +80,20 @@ FlowRouter.route('/termsOfUse', {
 
 FlowRouter.route('/privacyPolicy', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'privacyPolicy',
             footer: 'footer'
         });
     }
-<<<<<<< HEAD
-});
-=======
 });
 
 FlowRouter.route('/ad/:_id', {
     name: 'test',
-    action: function () {
+    action: function() {
         BlazeLayout.render('mainLayout', {
             body: 'ad',
             footer: 'footer'
         });
     }
 });
->>>>>>> master
