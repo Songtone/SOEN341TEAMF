@@ -1,12 +1,24 @@
-#set up for travis to recognize that we are using meteor with nodeJS and mongoDb -> setup to test again laika
-# source: https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
+sudo: required
 language: node_js
-node_js:
-  - "7"
+node_js: "7"
 before_install:
-  - "curl -L https://raw.githubusercontent.com/arunoda/travis-ci-laika/master/configure.sh | /bin/sh"
-services:
-  - mongodb
-env:
-  - LAIKA_OPTIONS="-t 5000"
-script: 
+    - "curl https://install.meteor.com | /bin/sh"
+services: mongodb
+install:
+    - npm install phantomjs-prebuilt -g
+    - npm install -g mocha-phantomjs
+    - npm install -g gulp
+    - npm install -g bower
+    - npm install
+before_script:
+    - phantomjs -v
+    - mocha-phantomjs -V
+    - gulp &
+    - sleep 5
+script:
+    - cd soen341webapp #cd to the project folder
+    - pwd #make sure we are in the good directory
+    - make test #run basic test
+group: stable
+dist: trusty
+os: linux
