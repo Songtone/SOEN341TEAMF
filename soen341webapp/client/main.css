@@ -328,13 +328,13 @@
 .aboutSection {
     margin-top: 2%;
     margin-bottom: 2%;
-    height: 50%;
+    height: auto;
     width: auto;
-    vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
 
 }
+
 
 /**This is the Team Page Section **/
 .teamPageTitle {
